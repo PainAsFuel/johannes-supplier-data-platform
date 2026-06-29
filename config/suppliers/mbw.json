@@ -1,0 +1,18 @@
+{
+  "supplier_id": "mbw",
+  "supplier_name": "mbw (Giveaways & Plush)",
+  "category_hint": "Giveaways",
+  "format": "excel",
+  "source": "data/incoming/mbw_products.xlsx",
+  "options": { "sheet": "Artikel" },
+  "currency_default": "EUR",
+  "field_map": {
+    "supplier_sku": "Artikelnummer", "ean": "GTIN", "name": "Artikelname", "manufacturer": "Marke",
+    "category": "Kategorie", "material": "Material", "colors": "Farbauswahl",
+    "min_order_qty": "Mindestbestellmenge", "print_methods": "Druckart", "print_area": "Druckbereich",
+    "weight_kg": "Gewicht_g", "weight_unit": "g", "image_url": "Bild_URL", "stock_qty": "Lagerbestand",
+    "lead_time_days": "Lieferzeit_Tage", "description": "Beschreibung"
+  },
+  "colors_sep": "/", "print_sep": "/",
+  "price_tiers_csv": [ {"qty": 250, "field": "Staffel_250"}, {"qty": 1000, "field": "Staffel_1000"}, {"qty": 5000, "field": "Staffel_5000"} ]
+}

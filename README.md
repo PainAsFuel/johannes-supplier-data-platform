@@ -1,87 +1,87 @@
-# Supplier Product Data Platform — working demo
+# SOURCE — Promotional-Product Data Platform (working demo)
 
-A small but **complete, runnable** prototype of the product-data platform described in the job:
-ingest product feeds from many suppliers in many formats, normalize them into one canonical
-model, score and report on data quality, and publish a versioned **single source of truth**.
+A runnable prototype of the product-data platform from the job: ingest promotional-product
+feeds from many suppliers **in the formats the industry actually uses**, normalize them into
+one product model, score & report data quality back to suppliers, and publish a **versioned
+single source of truth** — all on a GCP-native architecture (BigQuery · Dataform · Cloud
+Composer · Terraform).
 
-Built as a local simulation of the target Google Cloud stack (BigQuery · Dataform ·
-Cloud Composer · Terraform) so it runs end-to-end with **one command and zero cloud setup**.
-See [`GCP_PRODUCTION_MAPPING.md`](GCP_PRODUCTION_MAPPING.md) for how each piece maps to GCP.
+It runs end-to-end with **one command and no cloud setup**, and ships with an animated,
+SOURCE-branded dashboard.
 
-> **Live dashboard:** _(GitHub Pages link goes here once deployed)_
-> Or open `docs/index.html` locally after running the pipeline.
+> **🔗 Live dashboard:** https://painasfuel.github.io/johannes-supplier-data-platform/
+> Or open `docs/index.html` after running the pipeline.
+
+> Sample supplier/product names (uma, Halfar, mbw, REFLECTS) are illustrative demo data, not a real catalog.
 
 ---
 
-## What it demonstrates (matches the brief point-for-point)
+## Why this is built for *your* business specifically
 
-| Brief requirement | In this demo |
+- **Real promo-industry formats.** Adapters for **BMEcat 1.2 XML**, **Promidata JSON**, plus
+  CSV & Excel — the formats SOURCE actually receives. One adapter per *standard* means most of
+  your 50+ suppliers are covered out of the box.
+- **Promo-specific quality rules.** Quantity **price scales**, **min order quantity**,
+  **print/decoration methods**, EAN-13, eco flags, colour variants, images — not generic ETL checks.
+- **Supplier scorecards.** Each feed gets a score + a plain-English fix list you can send back
+  to the supplier (exactly the "report quality back to suppliers" requirement).
+- **Single source of truth.** Only error-free articles are promoted; every run is snapshotted
+  and diffed so you can trace what changed between feeds.
+
+| Job requirement | In this demo |
 |---|---|
-| 50+ suppliers, **x formats** | 4 suppliers in **CSV, Excel, XML, and REST-API/JSON** — adding more is a config file, not code |
-| **Fully automate transformation** | `python run_pipeline.py` runs ingest → normalize → quality → publish |
-| Normalize to a common model | `config/common_model.json` — one schema, with currency→EUR, unit→kg, category mapping |
-| **Analyse & report data quality to suppliers** | Per-supplier HTML report = a plain-English fix list (`docs/suppliers/*.html`) |
-| **Single source of truth, versioned** | `warehouse/transformed/products_current.json` + immutable snapshot & diff per run |
-| Migrate Talend ETL | Transformation rules live in config + small modules, the migration target shape |
-
----
+| 50+ suppliers, **x formats** | BMEcat / Promidata / CSV / Excel adapters; new supplier = one config file |
+| Fully automate transformation | `python run_pipeline.py` runs ingest → normalize → quality → publish |
+| Analyse & **report data quality to suppliers** | Per-supplier scorecard + fix list (click a supplier in the dashboard) |
+| **Single source of truth**, versioned | `warehouse/transformed/products_current.json` + snapshot & diff per run |
+| Migrate Talend ETL | Transformation rules isolated in adapters/config — the migration target shape |
 
 ## Quickstart
 
 ```bash
 pip install -r requirements.txt
-python tools/make_samples.py   # writes 4 messy sample feeds into data/incoming/
-python run_pipeline.py         # runs the full pipeline, writes docs/index.html
+python tools/make_samples.py   # writes BMEcat/CSV/Excel/Promidata sample feeds
+python run_pipeline.py         # runs the pipeline, writes docs/data.js
 # open docs/index.html
 ```
 
-Sample run output:
+Sample run:
 
 ```
-ACME Supplies (CSV feed)        score= 31.4  records= 7  errors= 5  warnings= 6
-Globex GmbH (Excel feed)        score= 93.3  records= 6  errors= 0  warnings= 1
-Initech Ltd (XML feed)          score= 52.0  records= 5  errors= 3  warnings= 1
-Umbrella Corp (REST API feed)   score= 30.0  records= 4  errors= 3  warnings= 6
-Source of truth: 14 products
+Halfar System (Bags)        CSV             score= 84.0  recs= 5  err= 0  warn= 3
+mbw (Giveaways & Plush)     Excel (.xlsx)   score= 52.0  recs= 5  err= 2  warn= 1
+REFLECTS (Promidata feed)   Promidata JSON  score= 64.0  recs= 5  err= 1  warn= 3
+uma Schreibgeräte           BMEcat 1.2 XML  score= 84.0  recs= 5  err= 0  warn= 3
+Published to source of truth: 17 products across 5 categories
 ```
 
 ## Architecture
 
 ```
-config/common_model.json        canonical product model + currency/category maps
-config/suppliers/*.json          one mapping file PER SUPPLIER (the only thing you add)
-data/incoming/                   raw supplier feeds (CSV / XLSX / XML / JSON)
+config/common_model.json     canonical promo-product model + category/currency maps
+config/suppliers/*.json       one mapping file per supplier (format + metadata)
+data/incoming/                sample feeds: uma_bmecat.xml, halfar_products.csv,
+                              mbw_products.xlsx, reflects_promidata.json
 src/
-  ingest.py        read any format -> raw records
-  normalize.py     map -> common model (currency, units, categories)
-  quality.py       validation rules + transparent 0-100 score
-  storage.py       raw / staged / transformed layers + version diff
-  report.py        static HTML dashboard + per-supplier reports
-run_pipeline.py    orchestrator (= one Airflow DAG run)
-warehouse/         generated medallion layers (raw -> staged -> transformed -> versions)
-docs/              generated dashboard (served by GitHub Pages)
+  ingest.py      adapters: BMEcat, Promidata, CSV, Excel
+  normalize.py   map to common model (currency→EUR, units→kg, category, price scales)
+  quality.py     promo-specific rules + 0-100 score + supplier tally
+  storage.py     raw / staged / transformed layers + version diff
+run_pipeline.py  orchestrator (= one Cloud Composer DAG run); exports docs/data.js
+docs/            animated SOURCE-branded dashboard (index.html + styles.css + app.js)
+warehouse/       generated medallion layers (raw → staged → transformed → versions)
 ```
 
 ### Onboarding a new supplier
-Drop their feed in `data/incoming/` and add one `config/suppliers/<id>.json` mapping their
-column names to the common model. No pipeline code changes. That is the whole point of the
-framework — it scales to supplier #51 without growing.
+BMEcat or Promidata supplier? Add one `config/suppliers/<id>.json` pointing at the feed — the
+standard adapter handles the rest. CSV/Excel? Add a `field_map` in the same file. No pipeline
+code changes.
 
-### Data lineage / single source of truth
-Each run keeps the exact bytes received (`warehouse/raw/`), the normalized+annotated version
-(`warehouse/staged/`), and promotes **only error-free records** to the current product table.
-Every run also writes an immutable snapshot and a diff (`added` / `changed` / `removed` SKUs)
-under `warehouse/versions/<run_id>/`, so you can trace exactly what changed between feeds.
-
-## Roadmap to production
-- Swap local JSON layers for **BigQuery** datasets (raw / staging / mart)
-- Move SQL transforms into **Dataform** with tests & assertions
-- Schedule with **Cloud Composer (Airflow)**; one task per stage, retries + alerting
-- Provision everything with **Terraform**
-- Auto-email the per-supplier quality report (PDF/HTML) on a schedule
-
-See `GCP_PRODUCTION_MAPPING.md`, plus the illustrative `terraform/`, `dataform/`, and
-`airflow/` folders for the intended shape.
+## Roadmap to production (GCP)
+Swap local JSON layers for **BigQuery** (raw / staging / mart), move SQL transforms into
+**Dataform** with assertions, schedule with **Cloud Composer (Airflow)**, provision with
+**Terraform**, and auto-email supplier scorecards. See `GCP_PRODUCTION_MAPPING.md` and the
+illustrative `terraform/`, `dataform/`, `airflow/` folders.
 
 ---
-_Demo by Yaroslav for the Product Data Management Platform role._
+_Demo by Yaroslav for SOURCE GmbH._

@@ -1,0 +1,9 @@
+{
+  "supplier_id": "reflects",
+  "supplier_name": "REFLECTS (Promidata feed)",
+  "category_hint": "Drinkware",
+  "format": "promidata",
+  "source": "data/incoming/reflects_promidata.json",
+  "currency_default": "EUR",
+  "note": "Promidata delivers a normalized JSON feed for 150+ promotional suppliers; one adapter handles all of them."
+}

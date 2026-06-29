@@ -1,23 +1,33 @@
 {
-  "_comment": "Canonical product data model. Every supplier feed is normalized into THIS shape. Adding supplier #51 means writing one mapping file, not changing the pipeline.",
+  "_comment": "Canonical promotional-product model for SOURCE. Every supplier feed (BMEcat / Promidata / CSV / Excel) is normalized into THIS shape so the webshop & ERP consume one consistent contract.",
   "fields": {
-    "sku":          { "type": "string",  "required": true,  "description": "Unique stock keeping unit (our internal key)" },
-    "gtin":         { "type": "string",  "required": false, "description": "Global Trade Item Number / barcode (EAN-13)" },
-    "title":        { "type": "string",  "required": true,  "description": "Product title" },
-    "brand":        { "type": "string",  "required": false, "description": "Manufacturer / brand" },
-    "category":     { "type": "string",  "required": false, "description": "Normalized internal category" },
-    "price_eur":    { "type": "number",  "required": true,  "description": "Net price in EUR (converted from supplier currency)" },
-    "stock_qty":    { "type": "integer", "required": true,  "description": "Available quantity" },
-    "weight_kg":    { "type": "number",  "required": false, "description": "Weight normalized to kilograms" },
-    "image_url":    { "type": "string",  "required": false, "description": "Primary product image (must be https + image extension)" },
-    "description":  { "type": "string",  "required": false, "description": "Marketing description" }
+    "sku":            { "required": true,  "desc": "SOURCE internal article number" },
+    "supplier_sku":   { "required": true,  "desc": "Supplier's own article id" },
+    "ean":            { "required": false, "desc": "EAN-13 barcode" },
+    "name":           { "required": true,  "desc": "Product name" },
+    "manufacturer":   { "required": false, "desc": "Manufacturer / brand" },
+    "category":       { "required": false, "desc": "SOURCE internal category" },
+    "material":       { "required": false, "desc": "Primary material" },
+    "colors":         { "required": false, "desc": "Available colours" },
+    "price_from_eur": { "required": true,  "desc": "Lowest scale price in EUR (net)" },
+    "price_tiers":    { "required": true,  "desc": "Quantity scale prices [{qty, eur}]" },
+    "min_order_qty":  { "required": true,  "desc": "Minimum order quantity" },
+    "print_methods":  { "required": false, "desc": "Decoration methods (e.g. Tampondruck, Lasergravur)" },
+    "print_area":     { "required": false, "desc": "Max print area / dimensions" },
+    "weight_kg":      { "required": false, "desc": "Unit weight in kg" },
+    "eco":            { "required": false, "desc": "Sustainable product flag" },
+    "image_url":      { "required": false, "desc": "Primary product image (https, image file)" },
+    "stock_qty":      { "required": true,  "desc": "Available stock" },
+    "lead_time_days": { "required": false, "desc": "Production / delivery lead time" },
+    "description":    { "required": false, "desc": "Marketing description" }
   },
   "category_map": {
-    "elec": "Electronics", "electronic": "Electronics", "electronics": "Electronics",
-    "comp": "Computers", "computers": "Computers", "pc": "Computers",
-    "home": "Home & Kitchen", "kitchen": "Home & Kitchen", "household": "Home & Kitchen",
-    "toy": "Toys", "toys": "Toys",
-    "garden": "Garden", "outdoor": "Garden"
+    "pen": "Writing", "pens": "Writing", "schreibgeraete": "Writing", "kugelschreiber": "Writing", "writing": "Writing",
+    "bag": "Bags & Travel", "bags": "Bags & Travel", "taschen": "Bags & Travel", "rucksack": "Bags & Travel",
+    "drinkware": "Drinkware", "trinkflaschen": "Drinkware", "becher": "Drinkware", "tassen": "Drinkware", "bottle": "Drinkware",
+    "tech": "Technology", "technik": "Technology", "usb": "Technology", "electronics": "Technology",
+    "giveaway": "Giveaways", "giveaways": "Giveaways", "werbeartikel": "Giveaways", "plush": "Giveaways", "plueschtiere": "Giveaways",
+    "textil": "Apparel", "textiles": "Apparel", "apparel": "Apparel", "kleidung": "Apparel"
   },
   "fx_to_eur": { "EUR": 1.0, "USD": 0.92, "GBP": 1.17, "CHF": 1.03 }
 }

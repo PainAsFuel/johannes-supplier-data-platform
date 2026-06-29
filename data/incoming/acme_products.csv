@@ -1,8 +1,0 @@
-Item No,Name,Maker,Cat,Price,Curr,Qty,Weight(lb),Image,Desc,Barcode
-AC-1001,Wireless Mouse Pro,Logi,elec,19.99,USD,120,0.25,https://cdn.acme.com/1001.jpg,Ergonomic 2.4GHz wireless mouse with silent click.,4006381333931
-AC-1002,Mechanical Keyboard,Logi,comp,,USD,45,2.1,https://cdn.acme.com/1002.jpg,"RGB mechanical keyboard, blue switches.",4006381333948
-AC-1003,USB-C Hub 7in1,Anker,comp,34.50,USD,0,0.3,http://cdn.acme.com/1003.jpg,7-in-1 USB-C hub.,
-AC-1004,Garden Hose 20m,GreenLine,yardstuff,29.00,USD,60,3.4,https://cdn.acme.com/1004.jpg,Flexible 20m garden hose.,4006381333962
-AC-1001,Wireless Mouse Pro (dup),Logi,elec,18.50,USD,10,0.25,https://cdn.acme.com/1001.jpg,Duplicate SKU row.,4006381333931
-AC-1006,LED Desk Lamp,Lumi,home,24.99,USD,200,0.9,https://cdn.acme.com/1006.jpg,Dimmable LED desk lamp with USB port.,4006381333986
-AC-1007,Bluetooth Speaker,JBL,elec,0,USD,75,0.6,https://cdn.acme.com/1007.jpg,Portable speaker.,4006381333993

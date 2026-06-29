@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-SUPPLIERS = ["acme", "globex", "initech", "umbrella"]  # loaded from a config table
+SUPPLIERS = ["uma", "halfar", "mbw", "reflects"]  # loaded from a config table
 
 default_args = {
     "owner": "data-eng",

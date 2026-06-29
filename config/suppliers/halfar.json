@@ -1,0 +1,18 @@
+{
+  "supplier_id": "halfar",
+  "supplier_name": "Halfar System (Bags)",
+  "category_hint": "Bags & Travel",
+  "format": "csv",
+  "source": "data/incoming/halfar_products.csv",
+  "options": { "delimiter": ";" },
+  "currency_default": "EUR",
+  "field_map": {
+    "supplier_sku": "ArtNr", "ean": "EAN", "name": "Bezeichnung", "manufacturer": "Hersteller",
+    "category": "Warengruppe", "material": "Material", "colors": "Farben",
+    "min_order_qty": "MindestMenge", "print_methods": "Veredelung", "print_area": "Werbeflaeche",
+    "weight_kg": "GewichtKg", "image_url": "Bild", "stock_qty": "Bestand",
+    "lead_time_days": "Lieferzeit", "description": "Beschreibung"
+  },
+  "colors_sep": ",", "print_sep": ",",
+  "price_tiers_csv": [ {"qty": 100, "field": "Preis100"}, {"qty": 250, "field": "Preis250"}, {"qty": 500, "field": "Preis500"} ]
+}

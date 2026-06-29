@@ -1,28 +1,33 @@
 -- Illustrative Dataform model (not run in the demo).
--- Normalizes a supplier's raw feed into the canonical product model in SQL,
--- mirroring src/normalize.py. One model per supplier, unioned in mart.products.
+-- Normalizes a BMEcat supplier's raw feed into the canonical promo-product model
+-- in SQL, mirroring src/normalize.py. One model per supplier, unioned into mart.products.
 
 config {
   type: "table",
   schema: "staging",
-  description: "Normalized products from the ACME raw feed",
+  description: "Normalized products from the uma (BMEcat) raw feed",
   assertions: {
-    nonNull: ["sku", "title", "price_eur", "stock_qty"],
+    nonNull: ["sku", "name", "price_from_eur", "min_order_qty"],
     uniqueKey: ["sku"]
   }
 }
 
 SELECT
-  CAST(`Item No` AS STRING)                                   AS sku,
-  NULLIF(TRIM(Barcode), '')                                   AS gtin,
-  TRIM(Name)                                                  AS title,
-  TRIM(Maker)                                                 AS brand,
-  cm.internal_category                                        AS category,
-  ROUND(SAFE_CAST(Price AS FLOAT64) * fx.rate_to_eur, 2)      AS price_eur,
-  SAFE_CAST(Qty AS INT64)                                     AS stock_qty,
-  ROUND(SAFE_CAST(`Weight(lb)` AS FLOAT64) * 0.45359237, 3)   AS weight_kg,
-  Image                                                       AS image_url,
-  Desc                                                        AS description
-FROM ${ref("raw", "acme_products")} r
-LEFT JOIN ${ref("category_map")} cm ON LOWER(TRIM(r.Cat)) = cm.supplier_value
-LEFT JOIN ${ref("fx_rates")} fx     ON COALESCE(r.Curr, 'USD') = fx.currency
+  CONCAT('SRC-UMA-', r.supplier_aid)                          AS sku,
+  r.supplier_aid                                              AS supplier_sku,
+  NULLIF(TRIM(r.ean), '')                                     AS ean,
+  TRIM(r.description_short)                                   AS name,
+  r.manufacturer_name                                        AS manufacturer,
+  cm.internal_category                                       AS category,
+  -- cheapest scale price, converted to EUR
+  ROUND(MIN(p.price_amount) * fx.rate_to_eur, 2)             AS price_from_eur,
+  SAFE_CAST(r.min_order_qty AS INT64)                        AS min_order_qty,
+  r.print_methods,
+  SAFE_CAST(r.weight_g AS FLOAT64) / 1000                    AS weight_kg,
+  r.image_url,
+  SAFE_CAST(r.stock AS INT64)                                AS stock_qty
+FROM ${ref("raw", "uma_bmecat")} r
+LEFT JOIN UNNEST(r.price_scales) p
+LEFT JOIN ${ref("category_map")} cm ON LOWER(TRIM(r.warengruppe)) = cm.supplier_value
+LEFT JOIN ${ref("fx_rates")} fx     ON COALESCE(r.currency, 'EUR') = fx.currency
+GROUP BY 1,2,3,4,5,6,8,9,11,12, fx.rate_to_eur

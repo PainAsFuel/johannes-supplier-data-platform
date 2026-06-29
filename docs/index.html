@@ -1,73 +1,120 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Supplier Data Quality Dashboard</title><style>
-:root{--bg:#0d1117;--card:#161b22;--line:#27303b;--mut:#8b97a7;--fg:#e6edf3;--accent:#3b82f6}
-*{box-sizing:border-box}body{margin:0;font:15px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--fg)}
-a{color:#7aa2ff;text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
-.head{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
-.head h1{margin:0 0 4px;font-size:24px}.head .sub{color:var(--mut);font-size:13px}
-.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-.kpi .n{font-size:28px;font-weight:700}.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:18px 0}
-.card h2{margin:0 0 14px;font-size:16px}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
-tr:hover td{background:#1b222c}
-.err{color:#ff7b72}.warn{color:#e3b341}.ok{color:#3fb950}
-.pill{font-size:11px;padding:1px 7px;border-radius:6px;border:1px solid var(--line);margin:2px 4px 2px 0;display:inline-block}
-.pill.e{color:#ff7b72;border-color:#5a2a2a}.pill.w{color:#e3b341;border-color:#5a4a1a}
-.foot{color:var(--mut);font-size:12px;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
-.diff span{margin-right:16px}
-</style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script></head>
-<body><div class="wrap">
-<div class="head"><h1>Supplier Product Data — Quality &amp; Ingestion Dashboard</h1>
-<div class="sub">Run <code>run_20260629_220619</code> · generated 2026-06-29 22:06 UTC · demo by Yaroslav</div></div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOURCE · Product Data Platform</title>
+<meta name="description" content="Automated multi-format supplier ingestion, data-quality reporting and a versioned single source of truth for SOURCE promotional products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-<div class="kpis">
-<div class="kpi"><div class="n">4</div><div class="l">Suppliers ingested</div></div>
-<div class="kpi"><div class="n">22</div><div class="l">Incoming records</div></div>
-<div class="kpi"><div class="n">14</div><div class="l">Promoted to source of truth</div></div>
-<div class="kpi"><div class="n" style="color:#ff7b72">51.7</div><div class="l">Avg quality score</div></div>
+<!-- top nav -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">SOURCE</span>
+      <span class="brand-sub">Product&nbsp;Data&nbsp;Platform</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#quality">Quality</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#insights">Insights</a>
+    </nav>
+    <div class="nav-live"><span class="dot"></span><span id="nav-run">live</span></div>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="badge-row reveal">
+      <span class="pill">Demo built for Johannes · SOURCE GmbH</span>
+      <span class="pill pill-ghost" id="hero-run">run —</span>
+    </div>
+    <h1 class="reveal">One pipeline for <span class="grad">50+ supplier feeds</span>,<br>one trustworthy product catalog.</h1>
+    <p class="hero-lead reveal">Automated ingestion of BMEcat, Promidata, CSV &amp; Excel feeds → normalized to a single
+      product model → data-quality scored &amp; reported back to each supplier → published as a
+      versioned single source of truth. Running live below on sample promotional-product data.</p>
+    <div class="hero-kpis" id="hero-kpis"></div>
+  </div>
+</section>
+
+<main>
+  <!-- quality by supplier -->
+  <section class="section" id="quality">
+    <div class="section-head reveal">
+      <h2>Supplier data quality</h2>
+      <p>Every feed is scored. Click a supplier to see the exact issues to send back to them.</p>
+    </div>
+    <div class="supplier-grid" id="supplier-grid"></div>
+  </section>
+
+  <!-- pipeline flow -->
+  <section class="section section-alt" id="pipeline">
+    <div class="section-head reveal">
+      <h2>How the data flows</h2>
+      <p>Each stage maps 1:1 to a managed service on Google Cloud (BigQuery · Dataform · Cloud Composer · Terraform).</p>
+    </div>
+    <div class="flow" id="flow"></div>
+  </section>
+
+  <!-- catalog explorer -->
+  <section class="section" id="catalog">
+    <div class="section-head reveal">
+      <h2>Published catalog <span class="count-chip" id="catalog-count"></span></h2>
+      <p>Only error-free articles are promoted to the source of truth. Search and filter the live result.</p>
+    </div>
+    <div class="catalog-controls reveal">
+      <input type="search" id="search" placeholder="Search products, suppliers, materials…" autocomplete="off">
+      <div class="chips" id="cat-chips"></div>
+    </div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </section>
+
+  <!-- insights -->
+  <section class="section section-alt" id="insights">
+    <div class="section-head reveal">
+      <h2>Insights</h2>
+      <p>Where the catalog is strong, and where suppliers need to improve their feeds.</p>
+    </div>
+    <div class="insights">
+      <div class="card reveal">
+        <h3>Catalog by category</h3>
+        <div class="donut-wrap"><svg id="donut" viewBox="0 0 200 200"></svg>
+          <div class="donut-center"><span class="cnt" id="donut-total" data-n="0">0</span><small>products</small></div></div>
+        <div class="legend" id="donut-legend"></div>
+      </div>
+      <div class="card reveal">
+        <h3>Top data-quality issues across all suppliers</h3>
+        <div class="issues" id="issue-bars"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <div class="brand-mark small">SOURCE</div>
+      <p>Working demo of a promotional-product data platform — multi-format ingest, quality reporting &amp; a versioned single source of truth. Sample data is illustrative.</p>
+    </div>
+    <div class="foot-meta" id="foot-meta"></div>
+  </div>
+</footer>
+
+<!-- supplier drill-down -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-card" id="modal-card"></div>
 </div>
 
-<div class="card"><h2>Quality score by supplier</h2><canvas id="c" height="90"></canvas></div>
-
-<div class="card"><h2>Suppliers</h2>
-<table><thead><tr><th>Supplier</th><th>Score</th><th>Records</th><th>Clean</th><th>Errors</th><th>Warnings</th></tr></thead>
-<tbody><tr>
-<td><a href="suppliers/acme.html">ACME Supplies (CSV feed)</a></td>
-<td><span class="badge" style="background:#ff7b7222;color:#ff7b72">31.4</span></td>
-<td>7</td><td class="ok">1</td>
-<td class="err">5</td><td class="warn">6</td></tr><tr>
-<td><a href="suppliers/globex.html">Globex GmbH (Excel feed)</a></td>
-<td><span class="badge" style="background:#3fb95022;color:#3fb950">93.3</span></td>
-<td>6</td><td class="ok">5</td>
-<td class="err">0</td><td class="warn">1</td></tr><tr>
-<td><a href="suppliers/initech.html">Initech Ltd (XML feed)</a></td>
-<td><span class="badge" style="background:#ff7b7222;color:#ff7b72">52.0</span></td>
-<td>5</td><td class="ok">2</td>
-<td class="err">3</td><td class="warn">1</td></tr><tr>
-<td><a href="suppliers/umbrella.html">Umbrella Corp (REST API feed)</a></td>
-<td><span class="badge" style="background:#ff7b7222;color:#ff7b72">30.0</span></td>
-<td>4</td><td class="ok">0</td>
-<td class="err">3</td><td class="warn">6</td></tr></tbody></table></div>
-
-<div class="card"><h2>What changed this run (source-of-truth diff)</h2>
-<div class="diff"><span class='ok'>+14 added</span><span class='warn'>~0 changed</span><span class='err'>-0 removed</span><span class='mut'>= 14 products in source of truth</span></div>
-<p class="sub" style="margin-top:10px">Every run writes an immutable snapshot under <code>warehouse/versions/run_20260629_220619/</code> so any prior state is fully reproducible.</p></div>
-
-<div class="foot">Total across all suppliers: <span class="err">11 errors</span>, <span class="warn">14 warnings</span>.
-Only error-free records are promoted to the source of truth. This is a local simulation of the GCP pipeline — see <code>GCP_PRODUCTION_MAPPING.md</code>.</div>
-
-<script>
-new Chart(document.getElementById('c'),{type:'bar',
-data:{labels:["ACME Supplies", "Globex GmbH", "Initech Ltd", "Umbrella Corp"],datasets:[{label:'Quality score',data:[31.4, 93.3, 52.0, 30.0],
-backgroundColor:["#ff7b72", "#3fb950", "#ff7b72", "#ff7b72"],borderRadius:6}]},
-options:{plugins:{legend:{display:false}},scales:{y:{max:100,ticks:{color:'#8b97a7'},grid:{color:'#27303b'}},
-x:{ticks:{color:'#8b97a7'},grid:{display:false}}}}});
-</script></div></body></html>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

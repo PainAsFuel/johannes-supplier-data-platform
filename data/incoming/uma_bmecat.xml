@@ -1,0 +1,335 @@
+<?xml version="1.0" ?>
+<BMECAT version="1.2">
+  <T_NEW_CATALOG>
+    <ARTICLE>
+      <SUPPLIER_AID>0-9800</SUPPLIER_AID>
+      <ARTICLE_DETAILS>
+        <DESCRIPTION_SHORT>uma RECYCLED PET Pen</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Druckkugelschreiber aus recyceltem PET mit blauschreibender Großraummine.</DESCRIPTION_LONG>
+        <EAN>4250369812349</EAN>
+        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
+        <DELIVERY_TIME>10</DELIVERY_TIME>
+      </ARTICLE_DETAILS>
+      <ARTICLE_FEATURES>
+        <FEATURE>
+          <FNAME>Warengruppe</FNAME>
+          <FVALUE>pens</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Material</FNAME>
+          <FVALUE>rPET</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Farben</FNAME>
+          <FVALUE>blau, schwarz, rot</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Veredelung</FNAME>
+          <FVALUE>Tampondruck, Lasergravur</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Werbeflaeche</FNAME>
+          <FVALUE>40 x 6 mm</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Mindestmenge</FNAME>
+          <FVALUE>100</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Nachhaltig</FNAME>
+          <FVALUE>ja</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>GewichtG</FNAME>
+          <FVALUE>11</FVALUE>
+        </FEATURE>
+      </ARTICLE_FEATURES>
+      <ARTICLE_PRICE_DETAILS>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.59</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>100</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.49</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>500</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.42</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>1000</LOWER_BOUND>
+        </ARTICLE_PRICE>
+      </ARTICLE_PRICE_DETAILS>
+      <MIME_INFO>
+        <MIME>
+          <MIME_SOURCE>https://img.uma-pen.com/0-9800.jpg</MIME_SOURCE>
+          <MIME_PURPOSE>normal</MIME_PURPOSE>
+        </MIME>
+      </MIME_INFO>
+      <STOCK>84000</STOCK>
+    </ARTICLE>
+    <ARTICLE>
+      <SUPPLIER_AID>0-9801</SUPPLIER_AID>
+      <ARTICLE_DETAILS>
+        <DESCRIPTION_SHORT>uma STRAIGHT SI</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Klassischer Werbekugelschreiber mit großer Werbefläche und mattem Finish.</DESCRIPTION_LONG>
+        <EAN>4250369812356</EAN>
+        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
+        <DELIVERY_TIME>8</DELIVERY_TIME>
+      </ARTICLE_DETAILS>
+      <ARTICLE_FEATURES>
+        <FEATURE>
+          <FNAME>Warengruppe</FNAME>
+          <FVALUE>pens</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Material</FNAME>
+          <FVALUE>ABS</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Farben</FNAME>
+          <FVALUE>weiss, blau, grün, rot</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Veredelung</FNAME>
+          <FVALUE>Tampondruck</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Werbeflaeche</FNAME>
+          <FVALUE>45 x 6 mm</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Mindestmenge</FNAME>
+          <FVALUE>100</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Nachhaltig</FNAME>
+          <FVALUE>nein</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>GewichtG</FNAME>
+          <FVALUE>9</FVALUE>
+        </FEATURE>
+      </ARTICLE_FEATURES>
+      <ARTICLE_PRICE_DETAILS>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.45</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>100</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.37</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>500</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.31</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>1000</LOWER_BOUND>
+        </ARTICLE_PRICE>
+      </ARTICLE_PRICE_DETAILS>
+      <MIME_INFO>
+        <MIME>
+          <MIME_SOURCE>https://img.uma-pen.com/0-9801.jpg</MIME_SOURCE>
+          <MIME_PURPOSE>normal</MIME_PURPOSE>
+        </MIME>
+      </MIME_INFO>
+      <STOCK>152000</STOCK>
+    </ARTICLE>
+    <ARTICLE>
+      <SUPPLIER_AID>0-9803</SUPPLIER_AID>
+      <ARTICLE_DETAILS>
+        <DESCRIPTION_SHORT>uma FLEXI soft</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Soft-Touch Kugelschreiber mit angenehmer Griffzone.</DESCRIPTION_LONG>
+        <EAN/>
+        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
+        <DELIVERY_TIME>12</DELIVERY_TIME>
+      </ARTICLE_DETAILS>
+      <ARTICLE_FEATURES>
+        <FEATURE>
+          <FNAME>Warengruppe</FNAME>
+          <FVALUE>pens</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Material</FNAME>
+          <FVALUE>ABS</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Farben</FNAME>
+          <FVALUE>schwarz</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Veredelung</FNAME>
+          <FVALUE>Tampondruck</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Werbeflaeche</FNAME>
+          <FVALUE>40 x 5 mm</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Mindestmenge</FNAME>
+          <FVALUE>100</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Nachhaltig</FNAME>
+          <FVALUE>nein</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>GewichtG</FNAME>
+          <FVALUE>10</FVALUE>
+        </FEATURE>
+      </ARTICLE_FEATURES>
+      <ARTICLE_PRICE_DETAILS>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.69</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>100</LOWER_BOUND>
+        </ARTICLE_PRICE>
+      </ARTICLE_PRICE_DETAILS>
+      <MIME_INFO>
+        <MIME>
+          <MIME_SOURCE>https://img.uma-pen.com/0-9803.jpg</MIME_SOURCE>
+          <MIME_PURPOSE>normal</MIME_PURPOSE>
+        </MIME>
+      </MIME_INFO>
+      <STOCK>12000</STOCK>
+    </ARTICLE>
+    <ARTICLE>
+      <SUPPLIER_AID>0-9804</SUPPLIER_AID>
+      <ARTICLE_DETAILS>
+        <DESCRIPTION_SHORT>uma SLIM cosmo</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Eleganter Aluminium-Drehkugelschreiber, ideal für Lasergravur.</DESCRIPTION_LONG>
+        <EAN>4250369812370</EAN>
+        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
+        <DELIVERY_TIME>10</DELIVERY_TIME>
+      </ARTICLE_DETAILS>
+      <ARTICLE_FEATURES>
+        <FEATURE>
+          <FNAME>Warengruppe</FNAME>
+          <FVALUE>pens</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Material</FNAME>
+          <FVALUE>Aluminium</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Farben</FNAME>
+          <FVALUE>silber, blau, anthrazit</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Veredelung</FNAME>
+          <FVALUE>Lasergravur</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Werbeflaeche</FNAME>
+          <FVALUE>50 x 6 mm</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Mindestmenge</FNAME>
+          <FVALUE>100</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Nachhaltig</FNAME>
+          <FVALUE>nein</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>GewichtG</FNAME>
+          <FVALUE>14</FVALUE>
+        </FEATURE>
+      </ARTICLE_FEATURES>
+      <ARTICLE_PRICE_DETAILS>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.95</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>100</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.82</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>500</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.74</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>1000</LOWER_BOUND>
+        </ARTICLE_PRICE>
+      </ARTICLE_PRICE_DETAILS>
+      <MIME_INFO>
+        <MIME>
+          <MIME_SOURCE>https://img.uma-pen.com/0-9804.jpg</MIME_SOURCE>
+          <MIME_PURPOSE>normal</MIME_PURPOSE>
+        </MIME>
+      </MIME_INFO>
+      <STOCK>47000</STOCK>
+    </ARTICLE>
+    <ARTICLE>
+      <SUPPLIER_AID>0-9806</SUPPLIER_AID>
+      <ARTICLE_DETAILS>
+        <DESCRIPTION_SHORT>uma Pencil Set Holzbox</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Bleistift-Set in nachhaltiger Holzbox mit Schiebedeckel.</DESCRIPTION_LONG>
+        <EAN>4250369812394</EAN>
+        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
+        <DELIVERY_TIME>15</DELIVERY_TIME>
+      </ARTICLE_DETAILS>
+      <ARTICLE_FEATURES>
+        <FEATURE>
+          <FNAME>Warengruppe</FNAME>
+          <FVALUE>stationery</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Material</FNAME>
+          <FVALUE>Holz</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Farben</FNAME>
+          <FVALUE>natur</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Veredelung</FNAME>
+          <FVALUE>Lasergravur</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Werbeflaeche</FNAME>
+          <FVALUE>60 x 20 mm</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Mindestmenge</FNAME>
+          <FVALUE>50</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Nachhaltig</FNAME>
+          <FVALUE>ja</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>GewichtG</FNAME>
+          <FVALUE>120</FVALUE>
+        </FEATURE>
+      </ARTICLE_FEATURES>
+      <ARTICLE_PRICE_DETAILS>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>3.20</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>50</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>2.85</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>200</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>2.60</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>500</LOWER_BOUND>
+        </ARTICLE_PRICE>
+      </ARTICLE_PRICE_DETAILS>
+      <MIME_INFO>
+        <MIME>
+          <MIME_SOURCE>https://img.uma-pen.com/0-9806.jpg</MIME_SOURCE>
+          <MIME_PURPOSE>normal</MIME_PURPOSE>
+        </MIME>
+      </MIME_INFO>
+      <STOCK>6000</STOCK>
+    </ARTICLE>
+  </T_NEW_CATALOG>
+</BMECAT>
