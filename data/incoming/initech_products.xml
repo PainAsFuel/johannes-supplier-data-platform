@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<catalog>
+  <product>
+    <code>IN-700</code>
+    <ean13>5012345678900</ean13>
+    <name>Cotton T-Shirt</name>
+    <manufacturer>Fruit</manufacturer>
+    <type>home</type>
+    <price>9.99</price>
+    <currency>GBP</currency>
+    <available>500</available>
+    <weight_kg>0.2</weight_kg>
+    <img>https://cdn.initech.co.uk/700.jpg</img>
+    <desc>100% cotton crew-neck t-shirt, machine washable.</desc>
+  </product>
+  <product>
+    <code>IN-701</code>
+    <ean13>5012345678917</ean13>
+    <name/>
+    <manufacturer>Nike</manufacturer>
+    <type>home</type>
+    <price>59.99</price>
+    <currency>GBP</currency>
+    <available>120</available>
+    <weight_kg>0.8</weight_kg>
+    <img>https://cdn.initech.co.uk/701.jpg</img>
+    <desc>Running shoes, lightweight mesh upper.</desc>
+  </product>
+  <product>
+    <code>IN-702</code>
+    <ean13>5012345678924</ean13>
+    <name>Yoga Mat 6mm</name>
+    <manufacturer>Gaiam</manufacturer>
+    <type>outdoor</type>
+    <price>24.99</price>
+    <currency>GBP</currency>
+    <available/>
+    <img>https://cdn.initech.co.uk/702.jpg</img>
+    <weight_kg>1.1</weight_kg>
+    <desc>Non-slip 6mm yoga mat.</desc>
+  </product>
+  <product>
+    <code>IN-703</code>
+    <ean13>5012345678931</ean13>
+    <name>Water Bottle 1L</name>
+    <manufacturer>Chilly</manufacturer>
+    <type>outdoor</type>
+    <price>29.99</price>
+    <currency>GBP</currency>
+    <available>300</available>
+    <weight_kg>0.35</weight_kg>
+    <img>ftp://cdn.initech.co.uk/703</img>
+    <desc>Insulated stainless steel bottle keeps drinks cold 24h.</desc>
+  </product>
+  <product>
+    <code>IN-704</code>
+    <ean13>5012345678948</ean13>
+    <name>Building Blocks 500pc</name>
+    <manufacturer>LEGO</manufacturer>
+    <type>toys</type>
+    <price>49.99</price>
+    <currency>GBP</currency>
+    <available>90</available>
+    <weight_kg>1.4</weight_kg>
+    <img>https://cdn.initech.co.uk/704.jpg</img>
+    <desc>Creative building block set with 500 pieces.</desc>
+  </product>
+</catalog>

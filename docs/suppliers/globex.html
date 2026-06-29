@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Globex GmbH (Excel feed)</title><style>
+:root{--bg:#0d1117;--card:#161b22;--line:#27303b;--mut:#8b97a7;--fg:#e6edf3;--accent:#3b82f6}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--fg)}
+a{color:#7aa2ff;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
+.head{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
+.head h1{margin:0 0 4px;font-size:24px}.head .sub{color:var(--mut);font-size:13px}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .n{font-size:28px;font-weight:700}.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:18px 0}
+.card h2{margin:0 0 14px;font-size:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+tr:hover td{background:#1b222c}
+.err{color:#ff7b72}.warn{color:#e3b341}.ok{color:#3fb950}
+.pill{font-size:11px;padding:1px 7px;border-radius:6px;border:1px solid var(--line);margin:2px 4px 2px 0;display:inline-block}
+.pill.e{color:#ff7b72;border-color:#5a2a2a}.pill.w{color:#e3b341;border-color:#5a4a1a}
+.foot{color:var(--mut);font-size:12px;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
+.diff span{margin-right:16px}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script></head>
+<body><div class="wrap">
+<div class="head"><h1>Globex GmbH (Excel feed)</h1>
+<div class="sub"><a href="../index.html">&larr; back to dashboard</a> · run run_20260629_220619</div></div>
+
+<div class="kpis">
+<div class="kpi"><div class="n" style="color:#3fb950">93.3</div><div class="l">Quality score</div></div>
+<div class="kpi"><div class="n">6</div><div class="l">Records</div></div>
+<div class="kpi"><div class="n err">0</div><div class="l">Errors</div></div>
+<div class="kpi"><div class="n warn">1</div><div class="l">Warnings</div></div>
+</div>
+
+<div class="card"><h2>Action list for this supplier</h2>
+<table><thead><tr><th>Issue</th><th>Code</th><th>Count</th></tr></thead><tbody><tr><td>Missing product image</td><td><code>missing_image</code></td><td>1</td></tr></tbody></table></div>
+
+<div class="card"><h2>Record-level detail</h2>
+<table><thead><tr><th>SKU</th><th>Title</th><th>Price</th><th>Stock</th><th>Findings</th></tr></thead>
+<tbody><tr><td>GX-50</td><td>Stainless Steel Pan 28cm</td>
+<td>49.9 €</td><td>80</td><td><span class='ok'>OK</span></td></tr><tr><td>GX-51</td><td>Knife Block Set</td>
+<td>89.0 €</td><td>35</td><td><span class='pill w'>Product image URL missing</span></td></tr><tr><td>GX-52</td><td>Smart Thermostat E</td>
+<td>129.0 €</td><td>50</td><td><span class='ok'>OK</span></td></tr><tr><td>GX-53</td><td>Robot Vacuum X10</td>
+<td>399.0 €</td><td>25</td><td><span class='ok'>OK</span></td></tr><tr><td>GX-54</td><td>Cordless Drill 18V</td>
+<td>79.95 €</td><td>12</td><td><span class='ok'>OK</span></td></tr><tr><td>GX-55</td><td>Air Fryer 5L</td>
+<td>119.0 €</td><td>60</td><td><span class='ok'>OK</span></td></tr></tbody></table></div>
+
+<div class="foot">This report can be exported to PDF / emailed to the supplier automatically (see roadmap in README).</div></div></body></html>

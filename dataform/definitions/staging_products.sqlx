@@ -1,0 +1,28 @@
+-- Illustrative Dataform model (not run in the demo).
+-- Normalizes a supplier's raw feed into the canonical product model in SQL,
+-- mirroring src/normalize.py. One model per supplier, unioned in mart.products.
+
+config {
+  type: "table",
+  schema: "staging",
+  description: "Normalized products from the ACME raw feed",
+  assertions: {
+    nonNull: ["sku", "title", "price_eur", "stock_qty"],
+    uniqueKey: ["sku"]
+  }
+}
+
+SELECT
+  CAST(`Item No` AS STRING)                                   AS sku,
+  NULLIF(TRIM(Barcode), '')                                   AS gtin,
+  TRIM(Name)                                                  AS title,
+  TRIM(Maker)                                                 AS brand,
+  cm.internal_category                                        AS category,
+  ROUND(SAFE_CAST(Price AS FLOAT64) * fx.rate_to_eur, 2)      AS price_eur,
+  SAFE_CAST(Qty AS INT64)                                     AS stock_qty,
+  ROUND(SAFE_CAST(`Weight(lb)` AS FLOAT64) * 0.45359237, 3)   AS weight_kg,
+  Image                                                       AS image_url,
+  Desc                                                        AS description
+FROM ${ref("raw", "acme_products")} r
+LEFT JOIN ${ref("category_map")} cm ON LOWER(TRIM(r.Cat)) = cm.supplier_value
+LEFT JOIN ${ref("fx_rates")} fx     ON COALESCE(r.Curr, 'USD') = fx.currency

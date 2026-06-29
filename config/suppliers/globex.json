@@ -1,0 +1,19 @@
+{
+  "supplier_id": "globex",
+  "supplier_name": "Globex GmbH (Excel feed)",
+  "format": "excel",
+  "source": "data/incoming/globex_products.xlsx",
+  "options": { "sheet": "products" },
+  "field_map": {
+    "sku": "sku",
+    "gtin": "ean",
+    "title": "product_title",
+    "brand": "brand",
+    "category": "category",
+    "stock_qty": "quantity",
+    "image_url": "image_link",
+    "description": "long_description"
+  },
+  "price":  { "field": "unit_price", "currency_field": "currency", "currency_default": "EUR" },
+  "weight": { "field": "weight_g", "unit": "g" }
+}
