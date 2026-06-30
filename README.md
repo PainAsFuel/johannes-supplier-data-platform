@@ -9,8 +9,11 @@ Composer · Terraform).
 It runs end-to-end with **one command and no cloud setup**, and ships with an animated,
 SOURCE-branded dashboard.
 
-> **🔗 Live dashboard:** https://painasfuel.github.io/johannes-supplier-data-platform/
-> Or open `docs/index.html` after running the pipeline.
+> **🔗 Live dashboard:** https://source-data-platform.vercel.app
+> Docs on the same domain: [/system-design](https://source-data-platform.vercel.app/system-design) ·
+> [/algorithms](https://source-data-platform.vercel.app/algorithms) ·
+> [/data-model](https://source-data-platform.vercel.app/data-model)
+> Or open `docs/index.html` after running the pipeline. Deploy with `tools/deploy_vercel.ps1`.
 
 > Sample supplier/product names (uma, Halfar, mbw, REFLECTS) are illustrative demo data, not a real catalog.
 

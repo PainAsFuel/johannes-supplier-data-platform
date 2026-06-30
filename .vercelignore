@@ -1,9 +1,14 @@
-# only the static dashboard is needed at deploy
+# deploy only the static dashboard in docs/
 gcp/
 warehouse/
 data/
 tools/
 src/
 design/
+config/
 __pycache__/
 *.pyc
+*.py
+requirements.txt
+*.md
+.terraform/

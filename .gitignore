@@ -9,3 +9,5 @@ warehouse/
 gcp/terraform/.terraform/
 gcp/terraform/*.tfstate*
 gcp/_staging.ndjson
+
+.vercel
