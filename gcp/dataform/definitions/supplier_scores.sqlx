@@ -1,0 +1,28 @@
+-- Per-supplier quality score (row-based, same formula as src/quality.py),
+-- computed in BigQuery.
+config { type: "table", schema: "quality", name: "supplier_scores" }
+
+WITH pa AS (
+  SELECT supplier, supplier_name,
+    (SELECT COUNT(1) FROM UNNEST(issues) i WHERE i.severity = 'error') AS errs,
+    ARRAY_LENGTH(issues) AS n_iss
+  FROM ${ref("products_annotated")}
+),
+agg AS (
+  SELECT supplier, ANY_VALUE(supplier_name) AS supplier_name,
+    COUNT(*) AS records,
+    COUNTIF(n_iss = 0) AS rows_clean,
+    COUNTIF(n_iss > 0 AND errs = 0) AS rows_warn_only,
+    COUNTIF(errs > 0) AS rows_with_errors
+  FROM pa GROUP BY supplier
+),
+cnt AS (
+  SELECT supplier,
+    COUNTIF(severity = 'error') AS error_count,
+    COUNTIF(severity = 'warning') AS warning_count
+  FROM ${ref("findings")} GROUP BY supplier
+)
+SELECT a.supplier, a.supplier_name, a.records, a.rows_clean, a.rows_warn_only, a.rows_with_errors,
+  COALESCE(c.error_count, 0) AS error_count, COALESCE(c.warning_count, 0) AS warning_count,
+  ROUND(100 * (a.rows_clean + 0.6 * a.rows_warn_only) / a.records, 1) AS score
+FROM agg a LEFT JOIN cnt c USING (supplier)

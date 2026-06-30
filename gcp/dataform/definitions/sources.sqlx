@@ -1,0 +1,3 @@
+-- staging.products is loaded into BigQuery by gcp_pipeline.py (the ingestion +
+-- normalization step). Declared here so Dataform models can ref() it.
+config { type: "declaration", schema: "staging", name: "products" }

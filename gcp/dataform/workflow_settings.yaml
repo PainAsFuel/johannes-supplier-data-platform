@@ -1,0 +1,4 @@
+dataformCoreVersion: 3.0.0
+defaultProject: __PROJECT_ID__
+defaultLocation: EU
+defaultDataset: dataform

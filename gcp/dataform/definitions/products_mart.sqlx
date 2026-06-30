@@ -1,0 +1,20 @@
+-- The single source of truth: only error-free articles, de-duplicated by SKU.
+-- Assertions guarantee the contract consuming systems rely on.
+config {
+  type: "table",
+  schema: "mart",
+  name: "products",
+  assertions: {
+    uniqueKey: ["sku"],
+    nonNull: ["sku", "name", "price_from_eur", "min_order_qty", "stock_qty"]
+  }
+}
+
+WITH ok AS (
+  SELECT * FROM ${ref("products_annotated")}
+  WHERE (SELECT COUNT(1) FROM UNNEST(issues) i WHERE i.severity = 'error') = 0
+),
+ranked AS (
+  SELECT *, ROW_NUMBER() OVER (PARTITION BY sku ORDER BY supplier_sku) AS rn FROM ok
+)
+SELECT * EXCEPT (rn, issues) FROM ranked WHERE rn = 1

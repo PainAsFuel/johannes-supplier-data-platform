@@ -1,0 +1,12 @@
+-- Each staging product with its quality findings attached as a nested array.
+-- Powers the dashboard's per-article detail / supplier drill-down.
+config { type: "table", schema: "quality", name: "products_annotated" }
+
+SELECT
+  s.*,
+  ARRAY(
+    SELECT AS STRUCT f.field, f.code, f.severity, f.message
+    FROM ${ref("findings")} f
+    WHERE f.supplier = s.supplier AND f.supplier_sku = s.supplier_sku
+  ) AS issues
+FROM ${ref("products")} s

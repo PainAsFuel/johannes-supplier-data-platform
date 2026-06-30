@@ -169,7 +169,9 @@
 
   /* ---- footer ---- */
   $("#foot-meta").innerHTML = `<div>Generiert <b>${D.generated_at}</b></div><div>Lauf <b>${D.run_id}</b></div>
+    ${D.engine ? `<div>Engine: <b>${D.engine}</b></div>` : ""}
     <div>Source of Truth: <b>${D.diff.total}</b> Produkte · +${D.diff.added} / ~${D.diff.changed} / -${D.diff.removed}</div>`;
+  if (D.engine) { const p = $("#nav-run"); if (p) p.textContent = "BigQuery"; }
 
   /* ---- modal ---- */
   function openModal(idx) {

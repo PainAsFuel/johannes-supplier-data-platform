@@ -4,3 +4,8 @@ __pycache__/
 venv/
 warehouse/
 !warehouse/.gitkeep
+
+# terraform working dir & state
+gcp/terraform/.terraform/
+gcp/terraform/*.tfstate*
+gcp/_staging.ndjson
