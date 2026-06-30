@@ -1,9 +1,0 @@
-{
-  "supplier_id": "uma",
-  "supplier_name": "uma Schreibgeräte",
-  "category_hint": "Writing",
-  "format": "bmecat",
-  "source": "data/incoming/uma_bmecat.xml",
-  "currency_default": "EUR",
-  "note": "BMEcat 1.2 is the most common standard feed in the promotional-product industry; one adapter handles every BMEcat supplier."
-}

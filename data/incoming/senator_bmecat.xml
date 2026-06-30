@@ -2,26 +2,26 @@
 <BMECAT version="1.2">
   <T_NEW_CATALOG>
     <ARTICLE>
-      <SUPPLIER_AID>0-9800</SUPPLIER_AID>
+      <SUPPLIER_AID>SE-Lib-01</SUPPLIER_AID>
       <ARTICLE_DETAILS>
-        <DESCRIPTION_SHORT>uma RECYCLED PET Pen</DESCRIPTION_SHORT>
-        <DESCRIPTION_LONG>Druckkugelschreiber aus recyceltem PET mit blauschreibender Großraummine.</DESCRIPTION_LONG>
-        <EAN>4250369812349</EAN>
-        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
+        <DESCRIPTION_SHORT>senator® Liberty Soft Touch Kugelschreiber</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Soft-Touch Kunststoffkugelschreiber mit blauschreibender Großraummine und angenehmer Haptik.</DESCRIPTION_LONG>
+        <EAN>4045645010010</EAN>
+        <MANUFACTURER_NAME>senator</MANUFACTURER_NAME>
         <DELIVERY_TIME>10</DELIVERY_TIME>
       </ARTICLE_DETAILS>
       <ARTICLE_FEATURES>
         <FEATURE>
           <FNAME>Warengruppe</FNAME>
-          <FVALUE>pens</FVALUE>
+          <FVALUE>kugelschreiber</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Material</FNAME>
-          <FVALUE>rPET</FVALUE>
+          <FVALUE>ABS / Soft-Touch</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Farben</FNAME>
-          <FVALUE>blau, schwarz, rot</FVALUE>
+          <FVALUE>blau, schwarz, rot, weiss</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Veredelung</FNAME>
@@ -29,15 +29,15 @@
         </FEATURE>
         <FEATURE>
           <FNAME>Werbeflaeche</FNAME>
-          <FVALUE>40 x 6 mm</FVALUE>
+          <FVALUE>45 x 6 mm</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Mindestmenge</FNAME>
-          <FVALUE>100</FVALUE>
+          <FVALUE>250</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Nachhaltig</FNAME>
-          <FVALUE>ja</FVALUE>
+          <FVALUE>nein</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>GewichtG</FNAME>
@@ -46,42 +46,42 @@
       </ARTICLE_FEATURES>
       <ARTICLE_PRICE_DETAILS>
         <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.59</PRICE_AMOUNT>
+          <PRICE_AMOUNT>0.95</PRICE_AMOUNT>
           <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>100</LOWER_BOUND>
+          <LOWER_BOUND>250</LOWER_BOUND>
         </ARTICLE_PRICE>
         <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.49</PRICE_AMOUNT>
+          <PRICE_AMOUNT>0.84</PRICE_AMOUNT>
           <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
           <LOWER_BOUND>500</LOWER_BOUND>
         </ARTICLE_PRICE>
         <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.42</PRICE_AMOUNT>
+          <PRICE_AMOUNT>0.75</PRICE_AMOUNT>
           <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
           <LOWER_BOUND>1000</LOWER_BOUND>
         </ARTICLE_PRICE>
       </ARTICLE_PRICE_DETAILS>
       <MIME_INFO>
         <MIME>
-          <MIME_SOURCE>https://img.uma-pen.com/0-9800.jpg</MIME_SOURCE>
+          <MIME_SOURCE>https://img.source-werbeartikel.com/senator/liberty.jpg</MIME_SOURCE>
           <MIME_PURPOSE>normal</MIME_PURPOSE>
         </MIME>
       </MIME_INFO>
-      <STOCK>84000</STOCK>
+      <STOCK>184000</STOCK>
     </ARTICLE>
     <ARTICLE>
-      <SUPPLIER_AID>0-9801</SUPPLIER_AID>
+      <SUPPLIER_AID>SE-Hit-02</SUPPLIER_AID>
       <ARTICLE_DETAILS>
-        <DESCRIPTION_SHORT>uma STRAIGHT SI</DESCRIPTION_SHORT>
-        <DESCRIPTION_LONG>Klassischer Werbekugelschreiber mit großer Werbefläche und mattem Finish.</DESCRIPTION_LONG>
-        <EAN>4250369812356</EAN>
-        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
+        <DESCRIPTION_SHORT>senator® Super Hit Kugelschreiber</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Der Klassiker: meistverkaufter Werbekugelschreiber mit großer Werbefläche.</DESCRIPTION_LONG>
+        <EAN>4045645010027</EAN>
+        <MANUFACTURER_NAME>senator</MANUFACTURER_NAME>
         <DELIVERY_TIME>8</DELIVERY_TIME>
       </ARTICLE_DETAILS>
       <ARTICLE_FEATURES>
         <FEATURE>
           <FNAME>Warengruppe</FNAME>
-          <FVALUE>pens</FVALUE>
+          <FVALUE>kugelschreiber</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Material</FNAME>
@@ -89,7 +89,7 @@
         </FEATURE>
         <FEATURE>
           <FNAME>Farben</FNAME>
-          <FVALUE>weiss, blau, grün, rot</FVALUE>
+          <FVALUE>blau, schwarz, gelb, grün, rot</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Veredelung</FNAME>
@@ -97,11 +97,11 @@
         </FEATURE>
         <FEATURE>
           <FNAME>Werbeflaeche</FNAME>
-          <FVALUE>45 x 6 mm</FVALUE>
+          <FVALUE>45 x 7 mm</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Mindestmenge</FNAME>
-          <FVALUE>100</FVALUE>
+          <FVALUE>250</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Nachhaltig</FNAME>
@@ -114,62 +114,62 @@
       </ARTICLE_FEATURES>
       <ARTICLE_PRICE_DETAILS>
         <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.45</PRICE_AMOUNT>
+          <PRICE_AMOUNT>0.49</PRICE_AMOUNT>
           <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>100</LOWER_BOUND>
+          <LOWER_BOUND>250</LOWER_BOUND>
         </ARTICLE_PRICE>
         <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.37</PRICE_AMOUNT>
-          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>500</LOWER_BOUND>
-        </ARTICLE_PRICE>
-        <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.31</PRICE_AMOUNT>
+          <PRICE_AMOUNT>0.41</PRICE_AMOUNT>
           <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
           <LOWER_BOUND>1000</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.34</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>5000</LOWER_BOUND>
         </ARTICLE_PRICE>
       </ARTICLE_PRICE_DETAILS>
       <MIME_INFO>
         <MIME>
-          <MIME_SOURCE>https://img.uma-pen.com/0-9801.jpg</MIME_SOURCE>
+          <MIME_SOURCE>https://img.source-werbeartikel.com/senator/superhit.jpg</MIME_SOURCE>
           <MIME_PURPOSE>normal</MIME_PURPOSE>
         </MIME>
       </MIME_INFO>
-      <STOCK>152000</STOCK>
+      <STOCK>420000</STOCK>
     </ARTICLE>
     <ARTICLE>
-      <SUPPLIER_AID>0-9803</SUPPLIER_AID>
+      <SUPPLIER_AID>SE-Chl-03</SUPPLIER_AID>
       <ARTICLE_DETAILS>
-        <DESCRIPTION_SHORT>uma FLEXI soft</DESCRIPTION_SHORT>
-        <DESCRIPTION_LONG>Soft-Touch Kugelschreiber mit angenehmer Griffzone.</DESCRIPTION_LONG>
+        <DESCRIPTION_SHORT>senator® Challenger Soft Touch</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Eleganter Soft-Touch Kugelschreiber mit verchromten Applikationen.</DESCRIPTION_LONG>
         <EAN/>
-        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
-        <DELIVERY_TIME>12</DELIVERY_TIME>
+        <MANUFACTURER_NAME>senator</MANUFACTURER_NAME>
+        <DELIVERY_TIME>10</DELIVERY_TIME>
       </ARTICLE_DETAILS>
       <ARTICLE_FEATURES>
         <FEATURE>
           <FNAME>Warengruppe</FNAME>
-          <FVALUE>pens</FVALUE>
+          <FVALUE>kugelschreiber</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Material</FNAME>
-          <FVALUE>ABS</FVALUE>
+          <FVALUE>ABS / Soft-Touch</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Farben</FNAME>
-          <FVALUE>schwarz</FVALUE>
+          <FVALUE>schwarz, blau</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Veredelung</FNAME>
-          <FVALUE>Tampondruck</FVALUE>
+          <FVALUE>Tampondruck, Lasergravur</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Werbeflaeche</FNAME>
-          <FVALUE>40 x 5 mm</FVALUE>
+          <FVALUE>45 x 6 mm</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Mindestmenge</FNAME>
-          <FVALUE>100</FVALUE>
+          <FVALUE>250</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Nachhaltig</FNAME>
@@ -182,32 +182,110 @@
       </ARTICLE_FEATURES>
       <ARTICLE_PRICE_DETAILS>
         <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.69</PRICE_AMOUNT>
+          <PRICE_AMOUNT>0.62</PRICE_AMOUNT>
           <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>100</LOWER_BOUND>
+          <LOWER_BOUND>250</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.55</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>500</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.48</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>1000</LOWER_BOUND>
         </ARTICLE_PRICE>
       </ARTICLE_PRICE_DETAILS>
       <MIME_INFO>
         <MIME>
-          <MIME_SOURCE>https://img.uma-pen.com/0-9803.jpg</MIME_SOURCE>
+          <MIME_SOURCE>https://img.source-werbeartikel.com/senator/challenger.jpg</MIME_SOURCE>
           <MIME_PURPOSE>normal</MIME_PURPOSE>
         </MIME>
       </MIME_INFO>
-      <STOCK>12000</STOCK>
+      <STOCK>96000</STOCK>
     </ARTICLE>
     <ARTICLE>
-      <SUPPLIER_AID>0-9804</SUPPLIER_AID>
+      <SUPPLIER_AID>SE-Eco-04</SUPPLIER_AID>
       <ARTICLE_DETAILS>
-        <DESCRIPTION_SHORT>uma SLIM cosmo</DESCRIPTION_SHORT>
-        <DESCRIPTION_LONG>Eleganter Aluminium-Drehkugelschreiber, ideal für Lasergravur.</DESCRIPTION_LONG>
-        <EAN>4250369812370</EAN>
-        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
-        <DELIVERY_TIME>10</DELIVERY_TIME>
+        <DESCRIPTION_SHORT>Öko-Druckkugelschreiber recycelt</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Nachhaltiger Druckkugelschreiber aus recyceltem Kunststoff, klimafreundlich produziert.</DESCRIPTION_LONG>
+        <EAN>4045645010041</EAN>
+        <MANUFACTURER_NAME>senator</MANUFACTURER_NAME>
+        <DELIVERY_TIME>12</DELIVERY_TIME>
       </ARTICLE_DETAILS>
       <ARTICLE_FEATURES>
         <FEATURE>
           <FNAME>Warengruppe</FNAME>
-          <FVALUE>pens</FVALUE>
+          <FVALUE>kugelschreiber</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Material</FNAME>
+          <FVALUE>rABS (recycelt)</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Farben</FNAME>
+          <FVALUE>blau, natur, grün</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Veredelung</FNAME>
+          <FVALUE>Tampondruck</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Werbeflaeche</FNAME>
+          <FVALUE>40 x 6 mm</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Mindestmenge</FNAME>
+          <FVALUE>500</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>Nachhaltig</FNAME>
+          <FVALUE>ja</FVALUE>
+        </FEATURE>
+        <FEATURE>
+          <FNAME>GewichtG</FNAME>
+          <FVALUE>9</FVALUE>
+        </FEATURE>
+      </ARTICLE_FEATURES>
+      <ARTICLE_PRICE_DETAILS>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.21</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>500</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.18</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>1000</LOWER_BOUND>
+        </ARTICLE_PRICE>
+        <ARTICLE_PRICE price_type="net_list">
+          <PRICE_AMOUNT>0.17</PRICE_AMOUNT>
+          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
+          <LOWER_BOUND>5000</LOWER_BOUND>
+        </ARTICLE_PRICE>
+      </ARTICLE_PRICE_DETAILS>
+      <MIME_INFO>
+        <MIME>
+          <MIME_SOURCE>https://img.source-werbeartikel.com/senator/oeko.jpg</MIME_SOURCE>
+          <MIME_PURPOSE>normal</MIME_PURPOSE>
+        </MIME>
+      </MIME_INFO>
+      <STOCK>260000</STOCK>
+    </ARTICLE>
+    <ARTICLE>
+      <SUPPLIER_AID>SE-Mtl-05</SUPPLIER_AID>
+      <ARTICLE_DETAILS>
+        <DESCRIPTION_SHORT>Metallkugelschreiber Slim schwarz</DESCRIPTION_SHORT>
+        <DESCRIPTION_LONG>Hochwertiger Metallkugelschreiber mit mattem Finish, ideal für gravierte Logos.</DESCRIPTION_LONG>
+        <EAN>4045645010058</EAN>
+        <MANUFACTURER_NAME>senator</MANUFACTURER_NAME>
+        <DELIVERY_TIME>14</DELIVERY_TIME>
+      </ARTICLE_DETAILS>
+      <ARTICLE_FEATURES>
+        <FEATURE>
+          <FNAME>Warengruppe</FNAME>
+          <FVALUE>kugelschreiber</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Material</FNAME>
@@ -215,7 +293,7 @@
         </FEATURE>
         <FEATURE>
           <FNAME>Farben</FNAME>
-          <FVALUE>silber, blau, anthrazit</FVALUE>
+          <FVALUE>schwarz, silber, blau</FVALUE>
         </FEATURE>
         <FEATURE>
           <FNAME>Veredelung</FNAME>
@@ -235,101 +313,23 @@
         </FEATURE>
         <FEATURE>
           <FNAME>GewichtG</FNAME>
-          <FVALUE>14</FVALUE>
+          <FVALUE>18</FVALUE>
         </FEATURE>
       </ARTICLE_FEATURES>
       <ARTICLE_PRICE_DETAILS>
         <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.95</PRICE_AMOUNT>
+          <PRICE_AMOUNT>6.42</PRICE_AMOUNT>
           <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
           <LOWER_BOUND>100</LOWER_BOUND>
         </ARTICLE_PRICE>
-        <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.82</PRICE_AMOUNT>
-          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>500</LOWER_BOUND>
-        </ARTICLE_PRICE>
-        <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>0.74</PRICE_AMOUNT>
-          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>1000</LOWER_BOUND>
-        </ARTICLE_PRICE>
       </ARTICLE_PRICE_DETAILS>
       <MIME_INFO>
         <MIME>
-          <MIME_SOURCE>https://img.uma-pen.com/0-9804.jpg</MIME_SOURCE>
+          <MIME_SOURCE>https://img.source-werbeartikel.com/senator/metal.jpg</MIME_SOURCE>
           <MIME_PURPOSE>normal</MIME_PURPOSE>
         </MIME>
       </MIME_INFO>
-      <STOCK>47000</STOCK>
-    </ARTICLE>
-    <ARTICLE>
-      <SUPPLIER_AID>0-9806</SUPPLIER_AID>
-      <ARTICLE_DETAILS>
-        <DESCRIPTION_SHORT>uma Pencil Set Holzbox</DESCRIPTION_SHORT>
-        <DESCRIPTION_LONG>Bleistift-Set in nachhaltiger Holzbox mit Schiebedeckel.</DESCRIPTION_LONG>
-        <EAN>4250369812394</EAN>
-        <MANUFACTURER_NAME>uma</MANUFACTURER_NAME>
-        <DELIVERY_TIME>15</DELIVERY_TIME>
-      </ARTICLE_DETAILS>
-      <ARTICLE_FEATURES>
-        <FEATURE>
-          <FNAME>Warengruppe</FNAME>
-          <FVALUE>stationery</FVALUE>
-        </FEATURE>
-        <FEATURE>
-          <FNAME>Material</FNAME>
-          <FVALUE>Holz</FVALUE>
-        </FEATURE>
-        <FEATURE>
-          <FNAME>Farben</FNAME>
-          <FVALUE>natur</FVALUE>
-        </FEATURE>
-        <FEATURE>
-          <FNAME>Veredelung</FNAME>
-          <FVALUE>Lasergravur</FVALUE>
-        </FEATURE>
-        <FEATURE>
-          <FNAME>Werbeflaeche</FNAME>
-          <FVALUE>60 x 20 mm</FVALUE>
-        </FEATURE>
-        <FEATURE>
-          <FNAME>Mindestmenge</FNAME>
-          <FVALUE>50</FVALUE>
-        </FEATURE>
-        <FEATURE>
-          <FNAME>Nachhaltig</FNAME>
-          <FVALUE>ja</FVALUE>
-        </FEATURE>
-        <FEATURE>
-          <FNAME>GewichtG</FNAME>
-          <FVALUE>120</FVALUE>
-        </FEATURE>
-      </ARTICLE_FEATURES>
-      <ARTICLE_PRICE_DETAILS>
-        <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>3.20</PRICE_AMOUNT>
-          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>50</LOWER_BOUND>
-        </ARTICLE_PRICE>
-        <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>2.85</PRICE_AMOUNT>
-          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>200</LOWER_BOUND>
-        </ARTICLE_PRICE>
-        <ARTICLE_PRICE price_type="net_list">
-          <PRICE_AMOUNT>2.60</PRICE_AMOUNT>
-          <PRICE_CURRENCY>EUR</PRICE_CURRENCY>
-          <LOWER_BOUND>500</LOWER_BOUND>
-        </ARTICLE_PRICE>
-      </ARTICLE_PRICE_DETAILS>
-      <MIME_INFO>
-        <MIME>
-          <MIME_SOURCE>https://img.uma-pen.com/0-9806.jpg</MIME_SOURCE>
-          <MIME_PURPOSE>normal</MIME_PURPOSE>
-        </MIME>
-      </MIME_INFO>
-      <STOCK>6000</STOCK>
+      <STOCK>22000</STOCK>
     </ARTICLE>
   </T_NEW_CATALOG>
 </BMECAT>

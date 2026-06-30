@@ -24,11 +24,11 @@
   "_category_note": "Target taxonomy = SOURCE's real top-level categories (from their own category sheet). Supplier categories drift over time, so unmapped values are flagged for review.",
   "category_map": {
     "pen": "Büro & Schreibgeräte", "pens": "Büro & Schreibgeräte", "schreibgeraete": "Büro & Schreibgeräte", "kugelschreiber": "Büro & Schreibgeräte", "writing": "Büro & Schreibgeräte", "office": "Büro & Schreibgeräte",
-    "bag": "Taschen & Gepäck", "bags": "Taschen & Gepäck", "taschen": "Taschen & Gepäck", "rucksack": "Taschen & Gepäck", "gepaeck": "Taschen & Gepäck",
+    "bag": "Taschen & Gepäck", "bags": "Taschen & Gepäck", "taschen": "Taschen & Gepäck", "baumwolltaschen": "Taschen & Gepäck", "rucksack": "Taschen & Gepäck", "gepaeck": "Taschen & Gepäck",
     "drinkware": "Küche & Zuhause", "trinkflaschen": "Küche & Zuhause", "becher": "Küche & Zuhause", "tassen": "Küche & Zuhause", "bottle": "Küche & Zuhause", "kueche": "Küche & Zuhause", "home": "Küche & Zuhause",
     "tech": "Elektronik & Mechanik", "technik": "Elektronik & Mechanik", "usb": "Elektronik & Mechanik", "electronics": "Elektronik & Mechanik", "elektronik": "Elektronik & Mechanik",
     "giveaway": "Streuartikel", "giveaways": "Streuartikel", "streuartikel": "Streuartikel", "plush": "Streuartikel", "plueschtiere": "Streuartikel", "werbeartikel": "Streuartikel",
-    "textil": "Bekleidung", "textiles": "Bekleidung", "apparel": "Bekleidung", "kleidung": "Bekleidung", "bekleidung": "Bekleidung",
+    "textil": "Bekleidung", "textiles": "Bekleidung", "textilien": "Bekleidung", "t-shirts": "Bekleidung", "tshirts": "Bekleidung", "apparel": "Bekleidung", "kleidung": "Bekleidung", "bekleidung": "Bekleidung",
     "werkzeug": "Werkzeug", "tools": "Werkzeug",
     "auto": "Auto & Reisen", "reisen": "Auto & Reisen", "autozubehoer": "Auto & Reisen",
     "wellness": "Wellness & Kosmetik", "kosmetik": "Wellness & Kosmetik",

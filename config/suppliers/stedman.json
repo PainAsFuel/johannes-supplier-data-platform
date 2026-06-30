@@ -1,9 +1,9 @@
 {
-  "supplier_id": "mbw",
-  "supplier_name": "mbw (Giveaways & Plush)",
-  "category_hint": "Giveaways",
+  "supplier_id": "stedman",
+  "supplier_name": "Stedman (Textiles)",
+  "category_hint": "Bekleidung",
   "format": "excel",
-  "source": "data/incoming/mbw_products.xlsx",
+  "source": "data/incoming/stedman_products.xlsx",
   "options": { "sheet": "Artikel" },
   "currency_default": "EUR",
   "field_map": {

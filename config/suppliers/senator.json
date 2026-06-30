@@ -1,0 +1,9 @@
+{
+  "supplier_id": "senator",
+  "supplier_name": "senator",
+  "category_hint": "Büro & Schreibgeräte",
+  "format": "bmecat",
+  "source": "data/incoming/senator_bmecat.xml",
+  "currency_default": "EUR",
+  "note": "BMEcat 1.2 is the dominant catalog standard in the promotional-product industry; one adapter handles every BMEcat supplier."
+}

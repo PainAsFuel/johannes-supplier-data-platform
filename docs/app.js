@@ -1,258 +1,211 @@
-/* SOURCE Product Data Platform — dashboard renderer & animations */
+/* SOURCE Product Data Platform — renderer & animations */
 (function () {
   const D = window.SOURCE_DATA;
   const $ = (s, r = document) => r.querySelector(s);
   const el = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e; };
   const euro = n => n == null ? "—" : "€" + Number(n).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+  /* ---- icon set (clean line SVGs, no emoji) ---- */
+  const I = {
+    pen:    'M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z',
+    bag:    'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0',
+    bottle: 'M10 2h4M10 2v2.5L9 7v13a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V7l-1-2.5V2M9 12h6',
+    shirt:  'M20.4 3.5 16 2a4 4 0 0 1-8 0L3.6 3.5a2 2 0 0 0-1.3 2.2l.5 3.5a1 1 0 0 0 1 .8H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.2a1 1 0 0 0 1-.8l.5-3.5a2 2 0 0 0-1.3-2.2z',
+    plug:   'M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0zM12 17v5',
+    gift:   'M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z',
+    box:    'M21 8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.3 7 12 12l8.7-5M12 22V12',
+    car:    'M5 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM23 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM5 17h14M3 17v-5l3-5h9l4 5v5M3 12h17',
+    download:'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3',
+    shuffle:'M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5',
+    shield: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4',
+    db:     'M12 8c4.4 0 8-1.3 8-3s-3.6-3-8-3-8 1.3-8 3 3.6 3 8 3zM4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6',
+    clock:  'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2'
+  };
+  const svg = (d, cls) => `<svg class="${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d.split('|').map(p=>`<path d="${p}"/>`).join('')}</svg>`;
+
   const CAT = {
-    "Büro & Schreibgeräte":  { g: "linear-gradient(135deg,#0b3d91,#2f7bff)", i: "🖊️" },
-    "Taschen & Gepäck":      { g: "linear-gradient(135deg,#7c3aed,#a855f7)", i: "🎒" },
-    "Küche & Zuhause":       { g: "linear-gradient(135deg,#0891b2,#22d3ee)", i: "🍶" },
-    "Elektronik & Mechanik": { g: "linear-gradient(135deg,#1e293b,#475569)", i: "🔌" },
-    "Streuartikel":          { g: "linear-gradient(135deg,#ff6b1a,#ff9248)", i: "🧸" },
-    "Bekleidung":            { g: "linear-gradient(135deg,#db2777,#f472b6)", i: "👕" },
-    "Auto & Reisen":         { g: "linear-gradient(135deg,#0d9488,#2dd4bf)", i: "🚗" },
-    "Werkzeug":              { g: "linear-gradient(135deg,#475569,#94a3b8)", i: "🔧" },
-    "Wellness & Kosmetik":   { g: "linear-gradient(135deg,#e11d48,#fb7185)", i: "🧴" },
-    "Essen & Trinken":       { g: "linear-gradient(135deg,#d97706,#fbbf24)", i: "🍫" },
-    "Uncategorized":         { g: "linear-gradient(135deg,#64748b,#94a3b8)", i: "📦" }
+    "Büro & Schreibgeräte":  { fg: "#003D7A", bg: "#eef3fb", ic: I.pen },
+    "Taschen & Gepäck":      { fg: "#6d28d9", bg: "#f1ecfd", ic: I.bag },
+    "Küche & Zuhause":       { fg: "#0e7490", bg: "#e6f6fa", ic: I.bottle },
+    "Bekleidung":            { fg: "#be185d", bg: "#fce7f1", ic: I.shirt },
+    "Elektronik & Mechanik": { fg: "#334155", bg: "#eef1f5", ic: I.plug },
+    "Streuartikel":          { fg: "#d97f00", bg: "#fff4e3", ic: I.gift },
+    "Auto & Reisen":         { fg: "#0d7d6b", bg: "#e4f6f2", ic: I.car },
+    "Uncategorized":         { fg: "#64748b", bg: "#eef1f5", ic: I.box }
   };
   const catOf = c => CAT[c] || CAT["Uncategorized"];
-  const DONUT_COLORS = ["#0b3d91", "#ff6b1a", "#0891b2", "#7c3aed", "#16a34a", "#db2777", "#64748b", "#f59e0b"];
+  const DONUT = ["#003D7A", "#F39200", "#0e7490", "#be185d", "#6d28d9", "#2e9e5b", "#64748b"];
 
-  const COLOR_HEX = { blau: "#2f7bff", schwarz: "#1e293b", rot: "#ef4444", weiss: "#f1f5f9", "weiß": "#f1f5f9",
+  const COLOR_HEX = { blau: "#2f6fd0", schwarz: "#1f2937", rot: "#dc2626", weiss: "#f3f4f6", "weiß": "#f3f4f6",
     grün: "#16a34a", gruen: "#16a34a", silber: "#cbd5e1", anthrazit: "#374151", navy: "#1e3a8a", grau: "#9ca3af",
-    natur: "#e7d5b0", beige: "#e7d5b0", braun: "#92633b", gelb: "#facc15", transparent: "#e5edff", bunt: "#a855f7" };
+    natur: "#e7d5b0", beige: "#e7d5b0", braun: "#92633b", gelb: "#eab308", transparent: "#dbeafe", bunt: "#a855f7",
+    petrol: "#0e7490", khaki: "#a3a16b", rosa: "#f9a8d4", multicolour: "#a855f7" };
   const colHex = c => COLOR_HEX[(c || "").toLowerCase()] || "#cbd5e1";
 
-  const ISSUE_LABEL = {
-    missing_required: "Missing required field", missing_price: "No price scale", invalid_price: "Invalid price (≤ 0)",
-    single_price_scale: "Only one price tier", invalid_stock: "Negative stock", missing_gtin: "Missing EAN/GTIN",
-    invalid_gtin: "Invalid EAN-13", missing_image: "Missing product image", invalid_image: "Invalid image URL",
-    missing_print_method: "No print/decoration method", unmapped_category: "Unmapped category",
-    short_description: "Description too short", no_colors: "No colour variants", duplicate_sku: "Duplicate SKU"
-  };
-  const ERROR_CODES = new Set(["missing_required", "missing_price", "invalid_price", "invalid_stock", "duplicate_sku"]);
-  const scoreColor = s => s >= 80 ? "#16a34a" : s >= 60 ? "#f59e0b" : "#ef4444";
-  const scoreBar = s => s >= 80 ? "linear-gradient(90deg,#16a34a,#4ade80)" : s >= 60 ? "linear-gradient(90deg,#f59e0b,#fbbf68)" : "linear-gradient(90deg,#ef4444,#f87171)";
+  const ISSUE = { missing_required: "Pflichtfeld fehlt", missing_price: "Keine Preisstaffel", invalid_price: "Ungültiger Preis (≤ 0)",
+    single_price_scale: "Nur eine Preisstaffel", invalid_stock: "Negativer Bestand", missing_gtin: "EAN/GTIN fehlt",
+    invalid_gtin: "Ungültige EAN-13", missing_image: "Produktbild fehlt", invalid_image: "Ungültige Bild-URL",
+    missing_print_method: "Keine Veredelungsart", unmapped_category: "Kategorie nicht zugeordnet",
+    short_description: "Beschreibung zu kurz", no_colors: "Keine Farbvarianten", duplicate_sku: "Doppelte SKU" };
+  const ERR = new Set(["missing_required", "missing_price", "invalid_price", "invalid_stock", "duplicate_sku"]);
+  const scoreCol = s => s >= 80 ? "#2e9e5b" : s >= 60 ? "#F39200" : "#e0492f";
+  const scoreBar = s => s >= 80 ? "linear-gradient(90deg,#2e9e5b,#5cc385)" : s >= 60 ? "linear-gradient(90deg,#F39200,#ffba5a)" : "linear-gradient(90deg,#e0492f,#f0775f)";
 
-  /* ---------- count-up ---------- */
-  function countUp(node, target, dur = 1300, decimals = 0, suffix = "") {
+  function countUp(node, target, dur = 1300, dec = 0) {
     const start = performance.now();
-    function step(now) {
-      const p = Math.min(1, (now - start) / dur);
-      const e = 1 - Math.pow(1 - p, 3);
-      node.textContent = (target * e).toFixed(decimals) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-      else node.textContent = target.toFixed(decimals) + suffix;
-    }
-    requestAnimationFrame(step);
+    (function step(now) {
+      const p = Math.min(1, (now - start) / dur), e = 1 - Math.pow(1 - p, 3);
+      node.textContent = (target * e).toFixed(dec);
+      if (p < 1) requestAnimationFrame(step); else node.textContent = target.toFixed(dec);
+    })(performance.now());
   }
 
-  /* ---------- hero ---------- */
+  /* ---- hero ---- */
   $("#hero-run").textContent = D.run_id;
   $("#nav-run").textContent = D.run_id.replace("run_", "");
   const k = D.kpis;
-  const heroKpis = [
-    { n: k.suppliers, l: "Supplier feeds", d: 0 },
-    { n: k.incoming, l: "Records ingested", d: 0 },
-    { n: k.published, l: "Published to source of truth", d: 0 },
-    { n: k.avg_score, l: "Avg quality score", d: 0, score: true }
-  ];
-  const hk = $("#hero-kpis");
-  heroKpis.forEach(x => {
-    const c = el("div", "hk");
-    c.innerHTML = `<div class="n" data-n="${x.n}" data-d="${x.d}">0</div><div class="l">${x.l}</div>`;
-    hk.appendChild(c);
+  [["suppliers", "Lieferanten-Feeds", 0], ["incoming", "Datensätze eingelesen", 0],
+   ["published", "In Single Source of Truth", 0], ["avg_score", "Ø Qualitäts-Score", 0]].forEach(([key, lab, dec]) => {
+    const c = el("div", "hk"); c.innerHTML = `<div class="n cntH" data-n="${k[key]}" data-d="${dec}">0</div><div class="l">${lab}</div>`;
+    $("#hero-kpis").appendChild(c);
   });
-  // hero counts animate immediately
-  setTimeout(() => hk.querySelectorAll(".n").forEach(n => countUp(n, +n.dataset.n, 1400, +n.dataset.d)), 250);
+  setTimeout(() => document.querySelectorAll(".cntH").forEach(n => countUp(n, +n.dataset.n, 1400, +n.dataset.d)), 220);
 
-  /* ---------- suppliers ---------- */
-  const grid = $("#supplier-grid");
+  /* ---- suppliers ---- */
   D.suppliers.forEach((s, idx) => {
-    const sm = s.summary, col = scoreColor(sm.score);
-    const c = el("div", "supplier");
-    c.style.setProperty("--bar", scoreBar(sm.score));
+    const sm = s.summary, col = scoreCol(sm.score);
+    const c = el("div", "sup"); c.style.setProperty("--barcol", scoreBar(sm.score));
     c.innerHTML = `
-      <div class="s-top"><div class="s-name">${s.name}</div><div class="s-fmt">${s.format}</div></div>
-      <div class="s-score" style="color:${col}"><span class="cnt" data-n="${sm.score}" data-d="1">0</span><small>/100</small></div>
-      <div class="s-bar"><i data-w="${sm.score}"></i></div>
-      <div class="s-stats">
-        <span class="c">● <b>${sm.rows_clean}</b> clean</span>
-        <span class="e">● <b>${sm.error_count}</b> errors</span>
-        <span class="w">● <b>${sm.warning_count}</b> warnings</span>
-      </div>
-      <div class="s-cta">View supplier report
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </div>`;
+      <div class="sup-top"><div class="sup-name">${s.name}</div><div class="sup-fmt">${s.format}</div></div>
+      <div class="sup-score" style="color:${col}"><span class="v cnt" data-n="${sm.score}" data-d="1">0</span><small>/100</small></div>
+      <div class="sup-track"><i data-w="${sm.score}"></i></div>
+      <div class="sup-stats"><span class="dotc">● <b>${sm.rows_clean}</b> sauber</span>
+        <span class="dote">● <b>${sm.error_count}</b> Fehler</span>
+        <span class="dotw">● <b>${sm.warning_count}</b> Warnungen</span></div>
+      <div class="sup-cta">Lieferanten-Report ${svg('M5 12h14|M13 6l6 6-6 6')}</div>`;
     c.addEventListener("click", () => openModal(idx));
-    grid.appendChild(c);
+    $("#sup-grid").appendChild(c);
   });
 
-  /* ---------- pipeline flow ---------- */
-  const STAGES = [
-    { i: "📥", h: "Ingest", p: "BMEcat, Promidata, CSV & Excel adapters pull every supplier feed.", g: "Cloud Storage + Functions" },
-    { i: "🧬", h: "Normalize", p: "Map to one product model: currency→EUR, units→kg, supplier categories → SOURCE taxonomy (Auto&nbsp;&amp;&nbsp;Reisen, Büro&nbsp;&amp;&nbsp;Schreibgeräte …).", g: "Dataform (staging)" },
-    { i: "🔎", h: "Quality", p: "Score each feed; flag errors & warnings to report back to suppliers.", g: "Dataform assertions" },
-    { i: "✅", h: "Source of truth", p: "Only error-free articles promoted to the governed catalog.", g: "BigQuery mart" },
-    { i: "🕒", h: "Version", p: "Immutable snapshot + diff per run, so any state is reproducible.", g: "BigQuery snapshots" }
-  ];
-  const flow = $("#flow");
-  STAGES.forEach((st, i) => {
-    const s = el("div", "stage reveal");
-    s.style.transitionDelay = (i * 80) + "ms";
-    s.innerHTML = `<div class="ic">${st.i}</div><h4>${st.h}</h4><p>${st.p}</p><span class="gcp">${st.g}</span>` +
-      (i < STAGES.length - 1 ? `<span class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>` : "");
-    flow.appendChild(s);
+  /* ---- pipeline ---- */
+  [["Ingest", I.download, "BMEcat-, Promidata-, CSV- & Excel-Adapter lesen jeden Lieferanten-Feed.", "Cloud Storage + Functions"],
+   ["Normalize", I.shuffle, "Ein Produktmodell: Währung→EUR, Einheiten→kg, Lieferantenkategorien → SOURCE-Taxonomie.", "Dataform (staging)"],
+   ["Quality", I.shield, "Jeder Feed wird bewertet; Fehler & Warnungen werden an Lieferanten zurückgemeldet.", "Dataform assertions"],
+   ["Source of Truth", I.db, "Nur fehlerfreie Artikel werden in den geprüften Katalog übernommen.", "BigQuery mart"],
+   ["Version", I.clock, "Unveränderliche Snapshots + Diff je Lauf — jeder Stand ist reproduzierbar.", "BigQuery snapshots"]
+  ].forEach(([h, ic, p, g], i, arr) => {
+    const st = el("div", "stage reveal"); st.style.transitionDelay = (i * 70) + "ms";
+    st.innerHTML = `<div class="ic">${svg(ic)}</div><h4>${h}</h4><p>${p}</p><span class="gcp">${g}</span>` +
+      (i < arr.length - 1 ? `<span class="arr">${svg('M5 12h14|M13 6l6 6-6 6')}</span>` : "");
+    $("#flow").appendChild(st);
   });
 
-  /* ---------- catalog ---------- */
-  $("#catalog-count").textContent = D.catalog.length + " products";
-  const cats = ["All", ...Object.keys(D.category_breakdown)];
-  let activeCat = "All", q = "";
-  const chips = $("#cat-chips");
-  cats.forEach(cat => {
-    const ch = el("div", "chip" + (cat === "All" ? " active" : ""), cat);
-    ch.addEventListener("click", () => { activeCat = cat; chips.querySelectorAll(".chip").forEach(x => x.classList.toggle("active", x === ch)); drawCatalog(); });
+  /* ---- catalog ---- */
+  $("#cat-count").textContent = D.catalog.length + " Produkte";
+  let activeCat = "Alle", q = "";
+  const chips = $("#chips");
+  ["Alle", ...Object.keys(D.category_breakdown)].forEach(cat => {
+    const ch = el("div", "chip" + (cat === "Alle" ? " active" : ""), cat);
+    ch.addEventListener("click", () => { activeCat = cat; chips.querySelectorAll(".chip").forEach(x => x.classList.toggle("active", x === ch)); draw(); });
     chips.appendChild(ch);
   });
-  $("#search").addEventListener("input", e => { q = e.target.value.toLowerCase().trim(); drawCatalog(); });
+  $("#search").addEventListener("input", e => { q = e.target.value.toLowerCase().trim(); draw(); });
 
-  function prodCard(p, i) {
+  function card(p, i) {
     const c = catOf(p.category);
     const dots = (p.colors || []).slice(0, 5).map(col => `<i title="${col}" style="background:${colHex(col)}"></i>`).join("");
-    const tags = (p.print_methods || []).slice(0, 3).map(t => `<span class="tag">${t}</span>`).join("");
-    const card = el("div", "prod");
-    card.style.animationDelay = Math.min(i * 35, 500) + "ms";
-    card.innerHTML = `
-      <div class="prod-img" style="background:${c.g}">${c.i}${p.eco ? '<span class="prod-eco">ECO</span>' : ""}</div>
-      <div class="prod-body">
-        <div class="prod-cat">${p.category || "Uncategorized"}</div>
-        <div class="prod-name">${p.name}</div>
-        <div class="prod-sup">${p._supplier_name}</div>
-        <div class="prod-meta">
-          <div class="prod-price">from<b>${euro(p.price_from_eur)}</b></div>
-          <div class="prod-dots">${dots}</div>
-        </div>
-        <div class="prod-tags">${tags}</div>
+    const tags = (p.print_methods || []).slice(0, 2).map(t => `<span class="tg">${t}</span>`).join("");
+    const d = el("div", "prod"); d.style.animationDelay = Math.min(i * 30, 450) + "ms";
+    d.innerHTML = `
+      <div class="ph" style="background:${c.bg};color:${c.fg}">${svg(c.ic)}${p.eco ? '<span class="eco">ECO</span>' : ""}</div>
+      <div class="body">
+        <div class="cat">${p.category || "Uncategorized"}</div>
+        <div class="nm">${p.name}</div>
+        <div class="brand">${p.manufacturer || p._supplier_name}</div>
+        <div class="meta"><div class="price"><small>ab</small><b>${euro(p.price_from_eur)}</b></div><div class="dots">${dots}</div></div>
+        <div class="tags">${tags}</div>
       </div>`;
-    return card;
+    return d;
   }
-  function drawCatalog() {
-    const g = $("#catalog-grid"); g.innerHTML = "";
+  function draw() {
+    const g = $("#cat-grid"); g.innerHTML = "";
     const list = D.catalog.filter(p => {
-      if (activeCat !== "All" && (p.category || "Uncategorized") !== activeCat) return false;
+      if (activeCat !== "Alle" && (p.category || "Uncategorized") !== activeCat) return false;
       if (!q) return true;
-      return (p.name + " " + p._supplier_name + " " + (p.material || "") + " " + (p.colors || []).join(" ")).toLowerCase().includes(q);
+      return (p.name + " " + (p.manufacturer || "") + " " + p._supplier_name + " " + (p.material || "") + " " + (p.colors || []).join(" ")).toLowerCase().includes(q);
     });
-    if (!list.length) { g.appendChild(el("div", "empty", "No products match your search.")); return; }
-    list.forEach((p, i) => g.appendChild(prodCard(p, i)));
+    if (!list.length) { g.appendChild(el("div", "empty", "Keine Produkte gefunden.")); return; }
+    list.forEach((p, i) => g.appendChild(card(p, i)));
   }
-  drawCatalog();
+  draw();
 
-  /* ---------- donut ---------- */
-  function drawDonut() {
-    const svg = $("#donut"), entries = Object.entries(D.category_breakdown);
-    const total = entries.reduce((a, [, n]) => a + n, 0);
-    const R = 80, C = 2 * Math.PI * R; let acc = 0;
+  /* ---- donut ---- */
+  (function () {
+    const s = $("#donut"), entries = Object.entries(D.category_breakdown);
+    const total = entries.reduce((a, [, n]) => a + n, 0), R = 80, C = 2 * Math.PI * R; let acc = 0;
     $("#donut-total").dataset.n = total;
-    const legend = $("#donut-legend");
     entries.forEach(([cat, n], i) => {
-      const frac = n / total, len = frac * C, color = DONUT_COLORS[i % DONUT_COLORS.length];
-      const circ = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      circ.setAttribute("cx", 100); circ.setAttribute("cy", 100); circ.setAttribute("r", R);
-      circ.setAttribute("fill", "none"); circ.setAttribute("stroke", color); circ.setAttribute("stroke-width", 26);
-      circ.setAttribute("stroke-dasharray", `${len} ${C}`);
-      circ.setAttribute("stroke-dashoffset", len);
-      circ.setAttribute("transform", `rotate(${-90 + acc / C * 360} 100 100)`);
-      svg.appendChild(circ);
-      requestAnimationFrame(() => requestAnimationFrame(() => circ.setAttribute("stroke-dashoffset", 0)));
+      const len = n / total * C, color = DONUT[i % DONUT.length];
+      const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      c.setAttribute("cx", 100); c.setAttribute("cy", 100); c.setAttribute("r", R);
+      c.setAttribute("fill", "none"); c.setAttribute("stroke", color); c.setAttribute("stroke-width", 24);
+      c.setAttribute("stroke-dasharray", `${len} ${C}`); c.setAttribute("stroke-dashoffset", len);
+      c.setAttribute("transform", `rotate(${-90 + acc / C * 360} 100 100)`);
+      s.appendChild(c); requestAnimationFrame(() => requestAnimationFrame(() => c.setAttribute("stroke-dashoffset", 0)));
       acc += len;
-      legend.appendChild(el("div", "li", `<i style="background:${color}"></i>${cat}<span>${n}</span>`));
+      $("#legend").appendChild(el("div", "li", `<i style="background:${color}"></i>${cat}<span>${n}</span>`));
     });
-  }
-  drawDonut();
+  })();
 
-  /* ---------- issue bars ---------- */
-  function drawIssues() {
-    const wrap = $("#issue-bars"), entries = Object.entries(D.issue_totals);
-    const max = Math.max(...entries.map(([, n]) => n), 1);
+  /* ---- issue bars ---- */
+  (function () {
+    const entries = Object.entries(D.issue_totals), max = Math.max(...entries.map(([, n]) => n), 1);
     entries.forEach(([code, n]) => {
-      const sev = ERROR_CODES.has(code) ? "error" : "warning";
-      const row = el("div", "ib sev-" + sev);
-      row.innerHTML = `<span>${ISSUE_LABEL[code] || code}</span><div class="track"><i data-w="${(n / max * 100)}"></i></div><span class="n">${n}</span>`;
-      wrap.appendChild(row);
+      const row = el("div", "ib " + (ERR.has(code) ? "e" : "w"));
+      row.innerHTML = `<span>${ISSUE[code] || code}</span><div class="track"><i data-w="${n / max * 100}"></i></div><span class="n">${n}</span>`;
+      $("#issues").appendChild(row);
     });
-  }
-  drawIssues();
+  })();
 
-  /* ---------- footer ---------- */
-  $("#foot-meta").innerHTML =
-    `<div>Generated <b>${D.generated_at}</b></div>
-     <div>Run <b>${D.run_id}</b></div>
-     <div>Source of truth: <b>${D.diff.total}</b> products · +${D.diff.added} / ~${D.diff.changed} / -${D.diff.removed} vs previous</div>`;
+  /* ---- footer ---- */
+  $("#foot-meta").innerHTML = `<div>Generiert <b>${D.generated_at}</b></div><div>Lauf <b>${D.run_id}</b></div>
+    <div>Source of Truth: <b>${D.diff.total}</b> Produkte · +${D.diff.added} / ~${D.diff.changed} / -${D.diff.removed}</div>`;
 
-  /* ---------- modal ---------- */
+  /* ---- modal ---- */
   function openModal(idx) {
-    const s = D.suppliers[idx], sm = s.summary, col = scoreColor(sm.score);
+    const s = D.suppliers[idx], sm = s.summary;
     const fixes = Object.entries(sm.code_tally).map(([code, n]) => {
-      const sev = ERROR_CODES.has(code) ? "error" : "warning";
-      return `<div class="fix ${sev}"><span class="cnt" style="color:${sev === "error" ? "var(--bad)" : "var(--warn)"}">${n}</span>
-        <span class="lab">${ISSUE_LABEL[code] || code}</span><span class="code">${code}</span></div>`;
-    }).join("") || `<div class="fix clean"><span class="cnt" style="color:var(--ok)">✓</span><span class="lab">No issues — feed is clean</span></div>`;
-
+      const sev = ERR.has(code) ? "error" : "warning";
+      return `<div class="fix ${sev}"><span class="c" style="color:${sev === "error" ? "var(--bad)" : "var(--warn)"}">${n}</span>
+        <span class="l">${ISSUE[code] || code}</span><span class="code">${code}</span></div>`;
+    }).join("") || `<div class="fix clean"><span class="c" style="color:var(--ok)">✓</span><span class="l">Keine Probleme — Feed ist sauber</span></div>`;
     const rows = s.products.map(p => {
-      const badges = (p._issues || []).map(i =>
-        `<span class="b-pill ${i.severity === "error" ? "e" : "w"}">${i.message}</span>`).join("") || '<span class="b-ok">OK</span>';
-      return `<tr><td><b>${p.supplier_sku || "—"}</b></td><td>${p.name || "—"}</td>
-        <td>${euro(p.price_from_eur)}</td><td>${p.stock_qty != null ? p.stock_qty.toLocaleString("de-DE") : "—"}</td>
-        <td><div class="badges">${badges}</div></td></tr>`;
+      const bd = (p._issues || []).map(i => `<span class="bp ${i.severity === "error" ? "e" : "w"}">${i.message}</span>`).join("") || '<span class="bok">OK</span>';
+      return `<tr><td><b>${p.supplier_sku || "—"}</b></td><td>${p.name || "—"}</td><td>${euro(p.price_from_eur)}</td>
+        <td>${p.stock_qty != null ? p.stock_qty.toLocaleString("de-DE") : "—"}</td><td><div class="bd">${bd}</div></td></tr>`;
     }).join("");
-
     $("#modal-card").innerHTML = `
-      <div class="m-head">
-        <button class="x" aria-label="Close">✕</button>
-        <h3>${s.name}</h3>
-        <div class="sub">${s.format} feed · ${sm.records} articles</div>
-        <div class="m-score">
-          <div class="b"><div class="n" style="color:#fff">${sm.score}</div><div class="l">Quality score</div></div>
-          <div class="b"><div class="n">${sm.rows_clean}</div><div class="l">Clean</div></div>
-          <div class="b"><div class="n">${sm.error_count}</div><div class="l">Errors</div></div>
-          <div class="b"><div class="n">${sm.warning_count}</div><div class="l">Warnings</div></div>
-        </div>
-      </div>
-      <div class="m-body">
-        <h4>Action list for this supplier</h4>
-        <div class="fixlist">${fixes}</div>
-        <h4>Article-level detail</h4>
-        <table class="m-table"><thead><tr><th>Art. no</th><th>Name</th><th>From</th><th>Stock</th><th>Findings</th></tr></thead>
-        <tbody>${rows}</tbody></table>
-      </div>`;
-    const m = $("#modal");
-    m.classList.add("open"); m.setAttribute("aria-hidden", "false");
+      <div class="mh"><button class="x">✕</button><h3>${s.name}</h3><div class="sub">${s.format}-Feed · ${sm.records} Artikel</div>
+        <div class="row"><div class="b"><div class="n">${sm.score}</div><div class="l">Score</div></div>
+          <div class="b"><div class="n">${sm.rows_clean}</div><div class="l">Sauber</div></div>
+          <div class="b"><div class="n">${sm.error_count}</div><div class="l">Fehler</div></div>
+          <div class="b"><div class="n">${sm.warning_count}</div><div class="l">Warnungen</div></div></div></div>
+      <div class="mb"><h4>Aktionsliste für diesen Lieferanten</h4><div class="fixlist">${fixes}</div>
+        <h4>Artikel-Details</h4><table class="mt"><thead><tr><th>Art.-Nr.</th><th>Name</th><th>ab</th><th>Bestand</th><th>Befunde</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    const m = $("#modal"); m.classList.add("open"); m.setAttribute("aria-hidden", "false");
     $("#modal-card .x").addEventListener("click", closeModal);
   }
   function closeModal() { const m = $("#modal"); m.classList.remove("open"); m.setAttribute("aria-hidden", "true"); }
   $("#modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
-  /* ---------- nav scroll ---------- */
-  const nav = $("#nav");
-  addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 10), { passive: true });
-
-  /* ---------- reveal + triggered animations ---------- */
-  const io = new IntersectionObserver((ents) => {
-    ents.forEach(e => {
-      if (!e.isIntersecting) return;
-      const t = e.target; t.classList.add("in");
-      t.querySelectorAll(".cnt").forEach(n => countUp(n, +n.dataset.n, 1200, +(n.dataset.d || 0)));
-      t.querySelectorAll(".s-bar i,.track i").forEach(b => { b.style.width = b.dataset.w + "%"; });
-      io.unobserve(t);
-    });
-  }, { threshold: .15 });
-  document.querySelectorAll(".reveal").forEach(x => io.observe(x));
-  // observe supplier cards & issue rows individually for their counters/bars
-  document.querySelectorAll(".supplier,.ib").forEach(x => io.observe(x));
+  /* ---- scroll + reveal ---- */
+  addEventListener("scroll", () => $("#hdr").classList.toggle("scrolled", scrollY > 6), { passive: true });
+  const io = new IntersectionObserver(ents => ents.forEach(e => {
+    if (!e.isIntersecting) return; const t = e.target; t.classList.add("in");
+    t.querySelectorAll(".cnt").forEach(n => countUp(n, +n.dataset.n, 1200, +(n.dataset.d || 0)));
+    t.querySelectorAll(".sup-track i,.track i").forEach(b => b.style.width = b.dataset.w + "%");
+    io.unobserve(t);
+  }), { threshold: .14 });
+  document.querySelectorAll(".reveal,.sup,.ib").forEach(x => io.observe(x));
 })();

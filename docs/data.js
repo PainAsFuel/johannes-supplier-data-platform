@@ -1,15 +1,15 @@
 window.SOURCE_DATA = {
-  "generated_at": "30 Jun 2026, 00:06 UTC",
-  "run_id": "run_20260630_000624",
+  "generated_at": "30 Jun 2026, 00:42 UTC",
+  "run_id": "run_20260630_004216",
   "kpis": {
     "suppliers": 4,
     "incoming": 20,
     "published": 17,
-    "avg_score": 71.0,
+    "avg_score": 73.0,
     "errors": 3,
-    "warnings": 10,
-    "eco": 4,
-    "categories": 5
+    "warnings": 8,
+    "eco": 2,
+    "categories": 4
   },
   "suppliers": [
     {
@@ -32,134 +32,134 @@ window.SOURCE_DATA = {
       },
       "products": [
         {
-          "sku": "SRC-HALFAR-1816",
-          "supplier_sku": "1816",
+          "sku": "SRC-HALFAR-HF-COT-01",
+          "supplier_sku": "HF-COT-01",
           "_supplier": "halfar",
           "_supplier_name": "Halfar System (Bags)",
-          "ean": "4040375018169",
-          "name": "Rucksack EVENT",
+          "ean": "4040375200014",
+          "name": "Baumwoll-Einkaufstasche 140 g/m²",
           "manufacturer": "Halfar",
           "category": "Taschen & Gepäck",
-          "_raw_category": "rucksack",
-          "material": "Polyester 600D",
+          "_raw_category": "baumwolltaschen",
+          "material": "Baumwolle 140g",
           "colors": [
+            "natur",
             "schwarz",
-            "navy",
-            "rot"
+            "navy"
           ],
-          "price_from_eur": 7.2,
+          "price_from_eur": 0.76,
           "price_tiers": [
             {
               "qty": 100,
-              "eur": 8.9
+              "eur": 0.96
             },
             {
               "qty": 250,
-              "eur": 7.95
+              "eur": 0.84
             },
             {
               "qty": 500,
-              "eur": 7.2
+              "eur": 0.76
             }
           ],
-          "min_order_qty": 25,
+          "min_order_qty": 100,
           "print_methods": [
             "Siebdruck",
             "Transferdruck"
           ],
-          "print_area": "200 x 200 mm",
-          "weight_kg": 0.42,
+          "print_area": "250 x 250 mm",
+          "weight_kg": 0.09,
           "eco": false,
-          "image_url": "https://img.halfar.com/1816.jpg",
-          "stock_qty": 3200,
-          "lead_time_days": 14,
-          "description": "Geräumiger Eventrucksack mit gepolstertem Rückenteil und Fronttasche.",
+          "image_url": "https://img.source-werbeartikel.com/halfar/cotton140.jpg",
+          "stock_qty": 64000,
+          "lead_time_days": 12,
+          "description": "Klassische Baumwolltasche mit langen Henkeln, vielseitig bedruckbar.",
           "_issues": []
         },
         {
-          "sku": "SRC-HALFAR-1820",
-          "supplier_sku": "1820",
+          "sku": "SRC-HALFAR-HF-GIO-02",
+          "supplier_sku": "HF-GIO-02",
           "_supplier": "halfar",
           "_supplier_name": "Halfar System (Bags)",
-          "ean": "4040375018206",
-          "name": "Citybag GROOVE",
+          "ean": "4040375200021",
+          "name": "Baumwolltasche GIOVANNI weiss",
           "manufacturer": "Halfar",
           "category": "Taschen & Gepäck",
-          "_raw_category": "taschen",
-          "material": "rPET",
+          "_raw_category": "baumwolltaschen",
+          "material": "Baumwolle 105g",
           "colors": [
-            "schwarz",
-            "grau"
+            "weiss"
           ],
-          "price_from_eur": 5.3,
+          "price_from_eur": 0.48,
           "price_tiers": [
             {
               "qty": 100,
-              "eur": 6.4
+              "eur": 0.62
             },
             {
               "qty": 250,
-              "eur": 5.8
+              "eur": 0.54
             },
             {
               "qty": 500,
-              "eur": 5.3
+              "eur": 0.48
             }
           ],
-          "min_order_qty": 25,
+          "min_order_qty": 250,
           "print_methods": [
             "Siebdruck"
           ],
-          "print_area": "150 x 150 mm",
-          "weight_kg": 0.3,
+          "print_area": "220 x 220 mm",
+          "weight_kg": 0.07,
           "eco": false,
-          "image_url": "https://img.halfar.com/1820.jpg",
-          "stock_qty": 1800,
-          "lead_time_days": 14,
-          "description": "Nachhaltige Umhängetasche aus recyceltem Polyester.",
+          "image_url": "https://img.source-werbeartikel.com/halfar/giovanni.jpg",
+          "stock_qty": 120000,
+          "lead_time_days": 10,
+          "description": "Leichte Baumwolltasche mit langen Henkeln, ideal als günstiger Streuartikel.",
           "_issues": []
         },
         {
-          "sku": "SRC-HALFAR-1822",
-          "supplier_sku": "1822",
+          "sku": "SRC-HALFAR-HF-IMP-03",
+          "supplier_sku": "HF-IMP-03",
           "_supplier": "halfar",
           "_supplier_name": "Halfar System (Bags)",
-          "ean": "4040375018220",
-          "name": "Sportsbag MOVE",
+          "ean": "4040375200038",
+          "name": "Impact AWARE™ recycelte Baumwolltasche 145 g",
           "manufacturer": "Halfar",
           "category": "Taschen & Gepäck",
-          "_raw_category": "taschen",
-          "material": "Polyester",
+          "_raw_category": "baumwolltaschen",
+          "material": "rec. Baumwolle 145g",
           "colors": [
-            "blau",
-            "schwarz"
+            "natur",
+            "grau"
           ],
-          "price_from_eur": 8.1,
+          "price_from_eur": 3.79,
           "price_tiers": [
             {
               "qty": 100,
-              "eur": 9.5
+              "eur": 4.2
             },
             {
               "qty": 250,
-              "eur": 8.7
+              "eur": 3.95
             },
             {
               "qty": 500,
-              "eur": 8.1
+              "eur": 3.79
             }
           ],
-          "min_order_qty": 25,
+          "min_order_qty": 100,
           "print_methods": [
+            "Siebdruck",
             "Transferdruck"
           ],
-          "print_area": "180 x 120 mm",
-          "weight_kg": 0.55,
+          "print_area": "240 x 240 mm",
+          "weight_kg": 0.12,
           "eco": false,
           "image_url": "",
-          "stock_qty": 950,
-          "lead_time_days": 21,
-          "description": "Robuste Sporttasche mit separatem Schuhfach und Tragegurt.",
+          "stock_qty": 22000,
+          "lead_time_days": 14,
+          "description": "Nachhaltige Tasche aus zertifiziert recycelter Baumwolle mit AWARE™ Tracer.",
           "_issues": [
             {
               "field": "image_url",
@@ -170,44 +170,89 @@ window.SOURCE_DATA = {
           ]
         },
         {
-          "sku": "SRC-HALFAR-1825",
-          "supplier_sku": "1825",
+          "sku": "SRC-HALFAR-HF-CAN-04",
+          "supplier_sku": "HF-CAN-04",
           "_supplier": "halfar",
           "_supplier_name": "Halfar System (Bags)",
-          "ean": "4040375018251",
-          "name": "Shopper BASIC",
+          "ean": "4040375200045",
+          "name": "Canvas Shopper 270 g/m² beige",
           "manufacturer": "Halfar",
           "category": "Taschen & Gepäck",
-          "_raw_category": "taschen",
-          "material": "Baumwolle",
+          "_raw_category": "baumwolltaschen",
+          "material": "Canvas 270g",
           "colors": [
-            "natur",
+            "beige",
             "schwarz"
           ],
-          "price_from_eur": 1.45,
+          "price_from_eur": 2.25,
           "price_tiers": [
             {
               "qty": 100,
-              "eur": 1.95
+              "eur": 2.65
             },
             {
               "qty": 250,
-              "eur": 1.7
+              "eur": 2.4
             },
             {
               "qty": 500,
-              "eur": 1.45
+              "eur": 2.25
             }
           ],
-          "min_order_qty": 50,
-          "print_methods": [],
-          "print_area": "250 x 250 mm",
-          "weight_kg": 0.12,
+          "min_order_qty": 100,
+          "print_methods": [
+            "Siebdruck",
+            "Stickerei"
+          ],
+          "print_area": "260 x 300 mm",
+          "weight_kg": 0.21,
           "eco": false,
-          "image_url": "https://img.halfar.com/1825.jpg",
-          "stock_qty": 12000,
-          "lead_time_days": 10,
-          "description": "Baumwolltasche.",
+          "image_url": "https://img.source-werbeartikel.com/halfar/canvas.jpg",
+          "stock_qty": 14000,
+          "lead_time_days": 16,
+          "description": "Robuster Canvas-Shopper mit Innentasche und verstärkten Henkeln.",
+          "_issues": []
+        },
+        {
+          "sku": "SRC-HALFAR-HF-GYM-05",
+          "supplier_sku": "HF-GYM-05",
+          "_supplier": "halfar",
+          "_supplier_name": "Halfar System (Bags)",
+          "ean": "4040375200052",
+          "name": "Gymbag ANTON Oeko-Tex Baumwolle",
+          "manufacturer": "Halfar",
+          "category": "Taschen & Gepäck",
+          "_raw_category": "baumwolltaschen",
+          "material": "Baumwolle",
+          "colors": [
+            "natur",
+            "schwarz",
+            "rot"
+          ],
+          "price_from_eur": 0.77,
+          "price_tiers": [
+            {
+              "qty": 100,
+              "eur": 0.95
+            },
+            {
+              "qty": 250,
+              "eur": 0.85
+            },
+            {
+              "qty": 500,
+              "eur": 0.77
+            }
+          ],
+          "min_order_qty": 100,
+          "print_methods": [],
+          "print_area": "200 x 250 mm",
+          "weight_kg": 0.06,
+          "eco": false,
+          "image_url": "https://img.source-werbeartikel.com/halfar/anton.jpg",
+          "stock_qty": 88000,
+          "lead_time_days": 12,
+          "description": "Turnbeutel.",
           "_issues": [
             {
               "field": "print_methods",
@@ -222,51 +267,518 @@ window.SOURCE_DATA = {
               "message": "Description shorter than 30 chars"
             }
           ]
-        },
-        {
-          "sku": "SRC-HALFAR-1830",
-          "supplier_sku": "1830",
-          "_supplier": "halfar",
-          "_supplier_name": "Halfar System (Bags)",
-          "ean": "4040375018305",
-          "name": "Laptop-Rucksack PRO",
-          "manufacturer": "Halfar",
-          "category": "Taschen & Gepäck",
-          "_raw_category": "rucksack",
-          "material": "Polyester 900D",
-          "colors": [
-            "schwarz"
-          ],
-          "price_from_eur": 22.5,
-          "price_tiers": [
-            {
-              "qty": 100,
-              "eur": 24.9
-            },
-            {
-              "qty": 250,
-              "eur": 22.5
-            }
-          ],
-          "min_order_qty": 10,
-          "print_methods": [
-            "Siebdruck",
-            "Lasergravur"
-          ],
-          "print_area": "160 x 160 mm",
-          "weight_kg": 0.78,
-          "eco": false,
-          "image_url": "https://img.halfar.com/1830.jpg",
-          "stock_qty": 0,
-          "lead_time_days": 21,
-          "description": "Business-Rucksack mit gepolstertem 15\" Laptopfach und USB-Durchführung.",
-          "_issues": []
         }
       ]
     },
     {
-      "id": "mbw",
-      "name": "mbw (Giveaways & Plush)",
+      "id": "reflects",
+      "name": "REFLECTS (Promidata feed)",
+      "format": "Promidata JSON",
+      "summary": {
+        "records": 5,
+        "rows_clean": 3,
+        "rows_warn_only": 1,
+        "rows_with_errors": 1,
+        "error_count": 1,
+        "warning_count": 2,
+        "score": 72.0,
+        "code_tally": {
+          "invalid_price": 1,
+          "single_price_scale": 1,
+          "missing_image": 1
+        }
+      },
+      "products": [
+        {
+          "sku": "SRC-REFLECTS-RF-RPET-01",
+          "supplier_sku": "RF-RPET-01",
+          "_supplier": "reflects",
+          "_supplier_name": "REFLECTS (Promidata feed)",
+          "ean": "4034127020012",
+          "name": "RPET-Trinkflasche 500 ml",
+          "manufacturer": "REFLECTS",
+          "category": "Küche & Zuhause",
+          "_raw_category": "trinkflaschen",
+          "material": "RPET",
+          "colors": [
+            "transparent",
+            "blau",
+            "grün"
+          ],
+          "price_from_eur": 1.04,
+          "price_tiers": [
+            {
+              "qty": 100,
+              "eur": 1.34
+            },
+            {
+              "qty": 500,
+              "eur": 1.15
+            },
+            {
+              "qty": 1000,
+              "eur": 1.04
+            }
+          ],
+          "min_order_qty": 100,
+          "print_methods": [
+            "Tampondruck",
+            "Digitaldruck"
+          ],
+          "print_area": "50 x 80 mm",
+          "weight_kg": 0.06,
+          "eco": true,
+          "image_url": "https://img.source-werbeartikel.com/reflects/rpet500.jpg",
+          "stock_qty": 41000,
+          "lead_time_days": 12,
+          "description": "Nachhaltige Trinkflasche aus recyceltem PET, BPA-frei mit auslaufsicherem Verschluss.",
+          "_issues": []
+        },
+        {
+          "sku": "SRC-REFLECTS-RF-ISO-02",
+          "supplier_sku": "RF-ISO-02",
+          "_supplier": "reflects",
+          "_supplier_name": "REFLECTS (Promidata feed)",
+          "ean": "4034127020029",
+          "name": "Isolierflasche Edelstahl 500 ml",
+          "manufacturer": "REFLECTS",
+          "category": "Küche & Zuhause",
+          "_raw_category": "trinkflaschen",
+          "material": "Edelstahl",
+          "colors": [
+            "silber",
+            "schwarz",
+            "weiss"
+          ],
+          "price_from_eur": 3.93,
+          "price_tiers": [
+            {
+              "qty": 48,
+              "eur": 4.6
+            },
+            {
+              "qty": 144,
+              "eur": 4.2
+            },
+            {
+              "qty": 504,
+              "eur": 3.93
+            }
+          ],
+          "min_order_qty": 48,
+          "print_methods": [
+            "Lasergravur",
+            "Digitaldruck"
+          ],
+          "print_area": "40 x 60 mm",
+          "weight_kg": 0.3,
+          "eco": false,
+          "image_url": "https://img.source-werbeartikel.com/reflects/iso500.jpg",
+          "stock_qty": 18500,
+          "lead_time_days": 14,
+          "description": "Doppelwandige vakuumisolierte Edelstahlflasche, hält Getränke bis zu 12 Stunden warm.",
+          "_issues": []
+        },
+        {
+          "sku": "SRC-REFLECTS-RF-TRI-03",
+          "supplier_sku": "RF-TRI-03",
+          "_supplier": "reflects",
+          "_supplier_name": "REFLECTS (Promidata feed)",
+          "ean": "4034127020036",
+          "name": "Trinkflasche Tritan 650 ml",
+          "manufacturer": "REFLECTS",
+          "category": "Küche & Zuhause",
+          "_raw_category": "trinkflaschen",
+          "material": "Tritan",
+          "colors": [
+            "transparent",
+            "blau",
+            "rot"
+          ],
+          "price_from_eur": 0.0,
+          "price_tiers": [
+            {
+              "qty": 100,
+              "eur": 0.0
+            },
+            {
+              "qty": 500,
+              "eur": 2.85
+            },
+            {
+              "qty": 1000,
+              "eur": 2.62
+            }
+          ],
+          "min_order_qty": 100,
+          "print_methods": [
+            "Tampondruck",
+            "Lasergravur",
+            "Digitaldruck"
+          ],
+          "print_area": "50 x 90 mm",
+          "weight_kg": 0.11,
+          "eco": false,
+          "image_url": "https://img.source-werbeartikel.com/reflects/tritan650.jpg",
+          "stock_qty": 27000,
+          "lead_time_days": 12,
+          "description": "Bruchfeste Tritan-Trinkflasche mit großer Öffnung, spülmaschinengeeignet.",
+          "_issues": [
+            {
+              "field": "price_tiers",
+              "code": "invalid_price",
+              "severity": "error",
+              "message": "A price scale has a value ≤ 0"
+            }
+          ]
+        },
+        {
+          "sku": "SRC-REFLECTS-RF-DW-04",
+          "supplier_sku": "RF-DW-04",
+          "_supplier": "reflects",
+          "_supplier_name": "REFLECTS (Promidata feed)",
+          "ean": "4034127020043",
+          "name": "Doppelwandige Trinkflasche 400 ml",
+          "manufacturer": "REFLECTS",
+          "category": "Küche & Zuhause",
+          "_raw_category": "trinkflaschen",
+          "material": "Edelstahl",
+          "colors": [
+            "weiss",
+            "schwarz",
+            "petrol"
+          ],
+          "price_from_eur": 10.18,
+          "price_tiers": [
+            {
+              "qty": 48,
+              "eur": 11.2
+            },
+            {
+              "qty": 144,
+              "eur": 10.6
+            },
+            {
+              "qty": 504,
+              "eur": 10.18
+            }
+          ],
+          "min_order_qty": 48,
+          "print_methods": [
+            "Lasergravur"
+          ],
+          "print_area": "35 x 55 mm",
+          "weight_kg": 0.26,
+          "eco": false,
+          "image_url": "https://img.source-werbeartikel.com/reflects/dw400.jpg",
+          "stock_qty": 7400,
+          "lead_time_days": 16,
+          "description": "Elegante doppelwandige Flasche mit pulverbeschichteter Oberfläche und Bambusdeckel.",
+          "_issues": []
+        },
+        {
+          "sku": "SRC-REFLECTS-RF-VAK-05",
+          "supplier_sku": "RF-VAK-05",
+          "_supplier": "reflects",
+          "_supplier_name": "REFLECTS (Promidata feed)",
+          "ean": "4034127020050",
+          "name": "Vakuum-Isolierkanne 1 L",
+          "manufacturer": "REFLECTS",
+          "category": "Küche & Zuhause",
+          "_raw_category": "trinkflaschen",
+          "material": "Edelstahl",
+          "colors": [
+            "silber",
+            "schwarz"
+          ],
+          "price_from_eur": 7.44,
+          "price_tiers": [
+            {
+              "qty": 50,
+              "eur": 7.44
+            }
+          ],
+          "min_order_qty": 50,
+          "print_methods": [
+            "Lasergravur"
+          ],
+          "print_area": "60 x 80 mm",
+          "weight_kg": 0.52,
+          "eco": false,
+          "image_url": "",
+          "stock_qty": 5200,
+          "lead_time_days": 18,
+          "description": "Robuste Vakuum-Isolierkanne mit Einhand-Ausgießmechanik für Büro und Outdoor.",
+          "_issues": [
+            {
+              "field": "price_tiers",
+              "code": "single_price_scale",
+              "severity": "warning",
+              "message": "Only one price scale — promotional pricing needs quantity tiers"
+            },
+            {
+              "field": "image_url",
+              "code": "missing_image",
+              "severity": "warning",
+              "message": "Product image missing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "senator",
+      "name": "senator",
+      "format": "BMEcat 1.2 XML",
+      "summary": {
+        "records": 5,
+        "rows_clean": 3,
+        "rows_warn_only": 2,
+        "rows_with_errors": 0,
+        "error_count": 0,
+        "warning_count": 2,
+        "score": 84.0,
+        "code_tally": {
+          "missing_gtin": 1,
+          "single_price_scale": 1
+        }
+      },
+      "products": [
+        {
+          "sku": "SRC-SENATOR-SE-Lib-01",
+          "supplier_sku": "SE-Lib-01",
+          "_supplier": "senator",
+          "_supplier_name": "senator",
+          "ean": "4045645010010",
+          "name": "senator® Liberty Soft Touch Kugelschreiber",
+          "manufacturer": "senator",
+          "category": "Büro & Schreibgeräte",
+          "_raw_category": "kugelschreiber",
+          "material": "ABS / Soft-Touch",
+          "colors": [
+            "blau",
+            "schwarz",
+            "rot",
+            "weiss"
+          ],
+          "price_from_eur": 0.75,
+          "price_tiers": [
+            {
+              "qty": 250,
+              "eur": 0.95
+            },
+            {
+              "qty": 500,
+              "eur": 0.84
+            },
+            {
+              "qty": 1000,
+              "eur": 0.75
+            }
+          ],
+          "min_order_qty": 250,
+          "print_methods": [
+            "Tampondruck",
+            "Lasergravur"
+          ],
+          "print_area": "45 x 6 mm",
+          "weight_kg": 0.011,
+          "eco": false,
+          "image_url": "https://img.source-werbeartikel.com/senator/liberty.jpg",
+          "stock_qty": 184000,
+          "lead_time_days": 10,
+          "description": "Soft-Touch Kunststoffkugelschreiber mit blauschreibender Großraummine und angenehmer Haptik.",
+          "_issues": []
+        },
+        {
+          "sku": "SRC-SENATOR-SE-Hit-02",
+          "supplier_sku": "SE-Hit-02",
+          "_supplier": "senator",
+          "_supplier_name": "senator",
+          "ean": "4045645010027",
+          "name": "senator® Super Hit Kugelschreiber",
+          "manufacturer": "senator",
+          "category": "Büro & Schreibgeräte",
+          "_raw_category": "kugelschreiber",
+          "material": "ABS",
+          "colors": [
+            "blau",
+            "schwarz",
+            "gelb",
+            "grün",
+            "rot"
+          ],
+          "price_from_eur": 0.34,
+          "price_tiers": [
+            {
+              "qty": 250,
+              "eur": 0.49
+            },
+            {
+              "qty": 1000,
+              "eur": 0.41
+            },
+            {
+              "qty": 5000,
+              "eur": 0.34
+            }
+          ],
+          "min_order_qty": 250,
+          "print_methods": [
+            "Tampondruck"
+          ],
+          "print_area": "45 x 7 mm",
+          "weight_kg": 0.009,
+          "eco": false,
+          "image_url": "https://img.source-werbeartikel.com/senator/superhit.jpg",
+          "stock_qty": 420000,
+          "lead_time_days": 8,
+          "description": "Der Klassiker: meistverkaufter Werbekugelschreiber mit großer Werbefläche.",
+          "_issues": []
+        },
+        {
+          "sku": "SRC-SENATOR-SE-Chl-03",
+          "supplier_sku": "SE-Chl-03",
+          "_supplier": "senator",
+          "_supplier_name": "senator",
+          "ean": "",
+          "name": "senator® Challenger Soft Touch",
+          "manufacturer": "senator",
+          "category": "Büro & Schreibgeräte",
+          "_raw_category": "kugelschreiber",
+          "material": "ABS / Soft-Touch",
+          "colors": [
+            "schwarz",
+            "blau"
+          ],
+          "price_from_eur": 0.48,
+          "price_tiers": [
+            {
+              "qty": 250,
+              "eur": 0.62
+            },
+            {
+              "qty": 500,
+              "eur": 0.55
+            },
+            {
+              "qty": 1000,
+              "eur": 0.48
+            }
+          ],
+          "min_order_qty": 250,
+          "print_methods": [
+            "Tampondruck",
+            "Lasergravur"
+          ],
+          "print_area": "45 x 6 mm",
+          "weight_kg": 0.01,
+          "eco": false,
+          "image_url": "https://img.source-werbeartikel.com/senator/challenger.jpg",
+          "stock_qty": 96000,
+          "lead_time_days": 10,
+          "description": "Eleganter Soft-Touch Kugelschreiber mit verchromten Applikationen.",
+          "_issues": [
+            {
+              "field": "ean",
+              "code": "missing_gtin",
+              "severity": "warning",
+              "message": "EAN/GTIN missing"
+            }
+          ]
+        },
+        {
+          "sku": "SRC-SENATOR-SE-Eco-04",
+          "supplier_sku": "SE-Eco-04",
+          "_supplier": "senator",
+          "_supplier_name": "senator",
+          "ean": "4045645010041",
+          "name": "Öko-Druckkugelschreiber recycelt",
+          "manufacturer": "senator",
+          "category": "Büro & Schreibgeräte",
+          "_raw_category": "kugelschreiber",
+          "material": "rABS (recycelt)",
+          "colors": [
+            "blau",
+            "natur",
+            "grün"
+          ],
+          "price_from_eur": 0.17,
+          "price_tiers": [
+            {
+              "qty": 500,
+              "eur": 0.21
+            },
+            {
+              "qty": 1000,
+              "eur": 0.18
+            },
+            {
+              "qty": 5000,
+              "eur": 0.17
+            }
+          ],
+          "min_order_qty": 500,
+          "print_methods": [
+            "Tampondruck"
+          ],
+          "print_area": "40 x 6 mm",
+          "weight_kg": 0.009,
+          "eco": true,
+          "image_url": "https://img.source-werbeartikel.com/senator/oeko.jpg",
+          "stock_qty": 260000,
+          "lead_time_days": 12,
+          "description": "Nachhaltiger Druckkugelschreiber aus recyceltem Kunststoff, klimafreundlich produziert.",
+          "_issues": []
+        },
+        {
+          "sku": "SRC-SENATOR-SE-Mtl-05",
+          "supplier_sku": "SE-Mtl-05",
+          "_supplier": "senator",
+          "_supplier_name": "senator",
+          "ean": "4045645010058",
+          "name": "Metallkugelschreiber Slim schwarz",
+          "manufacturer": "senator",
+          "category": "Büro & Schreibgeräte",
+          "_raw_category": "kugelschreiber",
+          "material": "Aluminium",
+          "colors": [
+            "schwarz",
+            "silber",
+            "blau"
+          ],
+          "price_from_eur": 6.42,
+          "price_tiers": [
+            {
+              "qty": 100,
+              "eur": 6.42
+            }
+          ],
+          "min_order_qty": 100,
+          "print_methods": [
+            "Lasergravur"
+          ],
+          "print_area": "50 x 6 mm",
+          "weight_kg": 0.018,
+          "eco": false,
+          "image_url": "https://img.source-werbeartikel.com/senator/metal.jpg",
+          "stock_qty": 22000,
+          "lead_time_days": 14,
+          "description": "Hochwertiger Metallkugelschreiber mit mattem Finish, ideal für gravierte Logos.",
+          "_issues": [
+            {
+              "field": "price_tiers",
+              "code": "single_price_scale",
+              "severity": "warning",
+              "message": "Only one price scale — promotional pricing needs quantity tiers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stedman",
+      "name": "Stedman (Textiles)",
       "format": "Excel (.xlsx)",
       "summary": {
         "records": 5,
@@ -284,132 +796,140 @@ window.SOURCE_DATA = {
       },
       "products": [
         {
-          "sku": "SRC-MBW-MB-75",
-          "supplier_sku": "MB-75",
-          "_supplier": "mbw",
-          "_supplier_name": "mbw (Giveaways & Plush)",
-          "ean": "4055835007508",
-          "name": "Schmoozies® Bär",
-          "manufacturer": "mbw",
-          "category": "Streuartikel",
-          "_raw_category": "plush",
-          "material": "Mikrofaser",
+          "sku": "SRC-STEDMAN-ST-CRU-01",
+          "supplier_sku": "ST-CRU-01",
+          "_supplier": "stedman",
+          "_supplier_name": "Stedman (Textiles)",
+          "ean": "4055835100018",
+          "name": "CRUSADER MEN T-Shirt 150g",
+          "manufacturer": "Stedman",
+          "category": "Bekleidung",
+          "_raw_category": "t-shirts",
+          "material": "100% Baumwolle",
           "colors": [
-            "braun",
-            "beige"
+            "weiss",
+            "schwarz",
+            "navy",
+            "rot"
           ],
-          "price_from_eur": 1.4,
+          "price_from_eur": 3.76,
           "price_tiers": [
             {
               "qty": 250,
-              "eur": 1.95
+              "eur": 4.2
             },
             {
               "qty": 1000,
-              "eur": 1.65
+              "eur": 3.95
             },
             {
               "qty": 5000,
-              "eur": 1.4
+              "eur": 3.76
             }
           ],
           "min_order_qty": 250,
           "print_methods": [
-            "Digitaldruck"
+            "Siebdruck",
+            "Transferdruck",
+            "Stickerei"
           ],
-          "print_area": "30 x 20 mm",
-          "weight_kg": 0.045,
+          "print_area": "250 x 350 mm",
+          "weight_kg": 0.165,
           "eco": false,
-          "image_url": "https://img.mbw.de/MB-75.jpg",
-          "stock_qty": 60000,
-          "lead_time_days": 18,
-          "description": "Plüsch-Bär als Displayreiniger, ideal als sympathisches Werbegeschenk.",
+          "image_url": "https://img.source-werbeartikel.com/stedman/crusader.jpg",
+          "stock_qty": 54000,
+          "lead_time_days": 7,
+          "description": "Klassisches Rundhals-T-Shirt für Herren aus ringgesponnener Baumwolle, 150 g/m².",
           "_issues": []
         },
         {
-          "sku": "SRC-MBW-MB-76",
-          "supplier_sku": "MB-76",
-          "_supplier": "mbw",
-          "_supplier_name": "mbw (Giveaways & Plush)",
-          "ean": "4055835007607",
-          "name": "MiniFeet® Schlüsselanhänger",
-          "manufacturer": "mbw",
-          "category": "Streuartikel",
-          "_raw_category": "giveaway",
-          "material": "Plüsch",
+          "sku": "SRC-STEDMAN-ST-IQO-02",
+          "supplier_sku": "ST-IQO-02",
+          "_supplier": "stedman",
+          "_supplier_name": "Stedman (Textiles)",
+          "ean": "4055835100025",
+          "name": "IQONIQ Bryce T-Shirt recycelte Baumwolle",
+          "manufacturer": "Stedman",
+          "category": "Bekleidung",
+          "_raw_category": "t-shirts",
+          "material": "rec. Baumwolle",
           "colors": [
-            "bunt"
+            "schwarz",
+            "weiss",
+            "khaki"
           ],
-          "price_from_eur": 0.79,
+          "price_from_eur": 2.65,
           "price_tiers": [
             {
               "qty": 250,
-              "eur": 1.2
+              "eur": 2.95
             },
             {
               "qty": 1000,
-              "eur": 0.98
+              "eur": 2.78
             },
             {
               "qty": 5000,
-              "eur": 0.79
+              "eur": 2.65
             }
           ],
-          "min_order_qty": 500,
+          "min_order_qty": 250,
           "print_methods": [
-            "Doming"
+            "Siebdruck",
+            "Transferdruck"
           ],
-          "print_area": "25 x 15 mm",
-          "weight_kg": 0.022,
+          "print_area": "240 x 320 mm",
+          "weight_kg": 0.15,
           "eco": false,
-          "image_url": "https://img.mbw.de/MB-76.jpg",
-          "stock_qty": 90000,
-          "lead_time_days": 15,
-          "description": "Kleiner Plüsch-Schlüsselanhänger, vielseitig als Streuartikel einsetzbar.",
+          "image_url": "https://img.source-werbeartikel.com/stedman/iqoniq.jpg",
+          "stock_qty": 38000,
+          "lead_time_days": 10,
+          "description": "Nachhaltiges T-Shirt aus recycelter Baumwolle, GRS-zertifiziert.",
           "_issues": []
         },
         {
-          "sku": "SRC-MBW-MB-77",
-          "supplier_sku": "MB-77",
-          "_supplier": "mbw",
-          "_supplier_name": "mbw (Giveaways & Plush)",
-          "ean": "4055835007706",
-          "name": "Squeezies® Stressball",
-          "manufacturer": "mbw",
-          "category": "Streuartikel",
-          "_raw_category": "giveaway",
-          "material": "PU-Schaum",
+          "sku": "SRC-STEDMAN-ST-MON-03",
+          "supplier_sku": "ST-MON-03",
+          "_supplier": "stedman",
+          "_supplier_name": "Stedman (Textiles)",
+          "ean": "4055835100032",
+          "name": "MONARCH DAMEN T-Shirt 150g",
+          "manufacturer": "Stedman",
+          "category": "Bekleidung",
+          "_raw_category": "t-shirts",
+          "material": "100% Baumwolle",
           "colors": [
-            "rot",
-            "blau",
-            "grün"
+            "weiss",
+            "rosa",
+            "navy"
           ],
-          "price_from_eur": -0.5,
+          "price_from_eur": -1.0,
           "price_tiers": [
             {
               "qty": 250,
-              "eur": -0.5
+              "eur": -1.0
             },
             {
               "qty": 1000,
-              "eur": 0.42
+              "eur": 4.9
             },
             {
               "qty": 5000,
-              "eur": 0.35
+              "eur": 4.72
             }
           ],
-          "min_order_qty": 500,
+          "min_order_qty": 250,
           "print_methods": [
-            "Tampondruck"
+            "Siebdruck",
+            "Stickerei"
           ],
-          "print_area": "Ø 30 mm",
-          "weight_kg": 0.028,
+          "print_area": "220 x 300 mm",
+          "weight_kg": 0.15,
           "eco": false,
-          "image_url": "https://img.mbw.de/MB-77.jpg",
-          "stock_qty": 120000,
-          "lead_time_days": 12,
-          "description": "Anti-Stressball zum Kneten, klassischer Messe-Giveaway.",
+          "image_url": "https://img.source-werbeartikel.com/stedman/monarch.jpg",
+          "stock_qty": 41000,
+          "lead_time_days": 7,
+          "description": "Tailliertes Damen-Rundhals-T-Shirt mit seitlichen Nähten, weicher Tragekomfort.",
           "_issues": [
             {
               "field": "price_tiers",
@@ -420,45 +940,48 @@ window.SOURCE_DATA = {
           ]
         },
         {
-          "sku": "SRC-MBW-MB-78",
-          "supplier_sku": "MB-78",
-          "_supplier": "mbw",
-          "_supplier_name": "mbw (Giveaways & Plush)",
-          "ean": "4055835007805",
-          "name": "Schmoozies® Smiley",
-          "manufacturer": "mbw",
-          "category": "Streuartikel",
-          "_raw_category": "plush",
-          "material": "Mikrofaser",
+          "sku": "SRC-STEDMAN-ST-LEG-04",
+          "supplier_sku": "ST-LEG-04",
+          "_supplier": "stedman",
+          "_supplier_name": "Stedman (Textiles)",
+          "ean": "4055835100049",
+          "name": "LEGEND Heavy T-Shirt",
+          "manufacturer": "Stedman",
+          "category": "Bekleidung",
+          "_raw_category": "t-shirts",
+          "material": "Baumwolle 180g",
           "colors": [
-            "gelb"
+            "schwarz",
+            "weiss"
           ],
-          "price_from_eur": 1.55,
+          "price_from_eur": 5.41,
           "price_tiers": [
             {
               "qty": 250,
-              "eur": 2.1
+              "eur": 5.8
             },
             {
               "qty": 1000,
-              "eur": 1.8
+              "eur": 5.55
             },
             {
               "qty": 5000,
-              "eur": 1.55
+              "eur": 5.41
             }
           ],
           "min_order_qty": null,
           "print_methods": [
-            "Digitaldruck"
+            "Siebdruck",
+            "Transferdruck",
+            "Stickerei"
           ],
-          "print_area": "30 x 20 mm",
-          "weight_kg": 0.04,
+          "print_area": "260 x 360 mm",
+          "weight_kg": 0.18,
           "eco": false,
-          "image_url": "https://img.mbw.de/MB-78.jpg",
-          "stock_qty": 35000,
-          "lead_time_days": 18,
-          "description": "Lächelnder Schmoozie als Bildschirmreiniger und Glücksbringer.",
+          "image_url": "https://img.source-werbeartikel.com/stedman/legend.jpg",
+          "stock_qty": 26000,
+          "lead_time_days": 9,
+          "description": "Schweres Premium-T-Shirt, 180 g/m², formstabil und langlebig für hochwertige Veredelung.",
           "_issues": [
             {
               "field": "min_order_qty",
@@ -469,563 +992,54 @@ window.SOURCE_DATA = {
           ]
         },
         {
-          "sku": "SRC-MBW-MB-80",
-          "supplier_sku": "MB-80",
-          "_supplier": "mbw",
-          "_supplier_name": "mbw (Giveaways & Plush)",
-          "ean": "405583500",
-          "name": "Plüsch-Elefant MAXI",
-          "manufacturer": "mbw",
-          "category": "Streuartikel",
-          "_raw_category": "plueschtiere",
-          "material": "Plüsch",
+          "sku": "SRC-STEDMAN-ST-TUN-05",
+          "supplier_sku": "ST-TUN-05",
+          "_supplier": "stedman",
+          "_supplier_name": "Stedman (Textiles)",
+          "ean": "405583510",
+          "name": "TUNER T-Shirt",
+          "manufacturer": "Stedman",
+          "category": "Bekleidung",
+          "_raw_category": "t-shirts",
+          "material": "Baumwolle 160g",
           "colors": [
-            "grau"
+            "navy",
+            "grau",
+            "rot"
           ],
-          "price_from_eur": 5.6,
+          "price_from_eur": 4.68,
           "price_tiers": [
             {
               "qty": 250,
-              "eur": 6.9
+              "eur": 4.95
             },
             {
               "qty": 1000,
-              "eur": 6.2
+              "eur": 4.8
             },
             {
               "qty": 5000,
-              "eur": 5.6
+              "eur": 4.68
             }
           ],
-          "min_order_qty": 100,
+          "min_order_qty": 250,
           "print_methods": [
-            "Stickerei"
+            "Siebdruck",
+            "Transferdruck"
           ],
-          "print_area": "40 x 30 mm",
-          "weight_kg": 0.18,
+          "print_area": "250 x 350 mm",
+          "weight_kg": 0.16,
           "eco": false,
-          "image_url": "https://img.mbw.de/MB-80.jpg",
-          "stock_qty": 4000,
-          "lead_time_days": 25,
-          "description": "Großes Plüschtier mit individuell besticktem Halstuch.",
+          "image_url": "https://img.source-werbeartikel.com/stedman/tuner.jpg",
+          "stock_qty": 33000,
+          "lead_time_days": 8,
+          "description": "Sportliches Rundhals-T-Shirt mit moderner Passform, vielseitig veredelbar.",
           "_issues": [
             {
               "field": "ean",
               "code": "invalid_gtin",
               "severity": "warning",
-              "message": "EAN '405583500' is not a valid EAN-13"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reflects",
-      "name": "REFLECTS (Promidata feed)",
-      "format": "Promidata JSON",
-      "summary": {
-        "records": 5,
-        "rows_clean": 2,
-        "rows_warn_only": 2,
-        "rows_with_errors": 1,
-        "error_count": 1,
-        "warning_count": 3,
-        "score": 64.0,
-        "code_tally": {
-          "invalid_price": 1,
-          "missing_image": 1,
-          "unmapped_category": 1,
-          "single_price_scale": 1
-        }
-      },
-      "products": [
-        {
-          "sku": "SRC-REFLECTS-RF-10",
-          "supplier_sku": "RF-10",
-          "_supplier": "reflects",
-          "_supplier_name": "REFLECTS (Promidata feed)",
-          "ean": "4034127001004",
-          "name": "REEVES drinking bottle",
-          "manufacturer": "REFLECTS",
-          "category": "Küche & Zuhause",
-          "_raw_category": "drinkware",
-          "material": "Tritan",
-          "colors": [
-            "transparent",
-            "blau",
-            "rot"
-          ],
-          "price_from_eur": 2.55,
-          "price_tiers": [
-            {
-              "qty": 72,
-              "eur": 3.4
-            },
-            {
-              "qty": 288,
-              "eur": 2.95
-            },
-            {
-              "qty": 1008,
-              "eur": 2.55
-            }
-          ],
-          "min_order_qty": 72,
-          "print_methods": [
-            "Tampondruck",
-            "Lasergravur",
-            "Digitaldruck"
-          ],
-          "print_area": "50 x 80 mm",
-          "weight_kg": 0.095,
-          "eco": true,
-          "image_url": "https://img.reflects.com/RF-10.jpg",
-          "stock_qty": 22000,
-          "lead_time_days": 14,
-          "description": "BPA-freie Trinkflasche aus Tritan mit auslaufsicherem Schraubverschluss.",
-          "_issues": []
-        },
-        {
-          "sku": "SRC-REFLECTS-RF-11",
-          "supplier_sku": "RF-11",
-          "_supplier": "reflects",
-          "_supplier_name": "REFLECTS (Promidata feed)",
-          "ean": "4034127001103",
-          "name": "ABERDEEN thermo mug",
-          "manufacturer": "REFLECTS",
-          "category": "Küche & Zuhause",
-          "_raw_category": "drinkware",
-          "material": "Edelstahl",
-          "colors": [
-            "silber",
-            "schwarz",
-            "weiss"
-          ],
-          "price_from_eur": 5.4,
-          "price_tiers": [
-            {
-              "qty": 48,
-              "eur": 6.9
-            },
-            {
-              "qty": 144,
-              "eur": 6.1
-            },
-            {
-              "qty": 504,
-              "eur": 5.4
-            }
-          ],
-          "min_order_qty": 48,
-          "print_methods": [
-            "Lasergravur",
-            "Digitaldruck"
-          ],
-          "print_area": "40 x 60 mm",
-          "weight_kg": 0.28,
-          "eco": false,
-          "image_url": "https://img.reflects.com/RF-11.jpg",
-          "stock_qty": 9000,
-          "lead_time_days": 16,
-          "description": "Doppelwandiger Edelstahl-Thermobecher, hält Getränke bis zu 6 Stunden warm.",
-          "_issues": []
-        },
-        {
-          "sku": "SRC-REFLECTS-RF-12",
-          "supplier_sku": "RF-12",
-          "_supplier": "reflects",
-          "_supplier_name": "REFLECTS (Promidata feed)",
-          "ean": "4034127001202",
-          "name": "DAKAR power bank 5000",
-          "manufacturer": "REFLECTS",
-          "category": "Elektronik & Mechanik",
-          "_raw_category": "tech",
-          "material": "ABS / Aluminium",
-          "colors": [
-            "schwarz",
-            "weiss"
-          ],
-          "price_from_eur": 0.0,
-          "price_tiers": [
-            {
-              "qty": 50,
-              "eur": 0.0
-            },
-            {
-              "qty": 200,
-              "eur": 8.2
-            },
-            {
-              "qty": 500,
-              "eur": 7.4
-            }
-          ],
-          "min_order_qty": 50,
-          "print_methods": [
-            "Lasergravur",
-            "Digitaldruck"
-          ],
-          "print_area": "40 x 40 mm",
-          "weight_kg": 0.12,
-          "eco": false,
-          "image_url": "https://img.reflects.com/RF-12.jpg",
-          "stock_qty": 5000,
-          "lead_time_days": 20,
-          "description": "Kompakte 5000 mAh Powerbank mit USB-C Eingang und LED-Statusanzeige.",
-          "_issues": [
-            {
-              "field": "price_tiers",
-              "code": "invalid_price",
-              "severity": "error",
-              "message": "A price scale has a value ≤ 0"
-            }
-          ]
-        },
-        {
-          "sku": "SRC-REFLECTS-RF-13",
-          "supplier_sku": "RF-13",
-          "_supplier": "reflects",
-          "_supplier_name": "REFLECTS (Promidata feed)",
-          "ean": "4034127001301",
-          "name": "MONTERREY USB-C cable",
-          "manufacturer": "REFLECTS",
-          "category": "",
-          "_raw_category": "accessories",
-          "material": "Nylon",
-          "colors": [
-            "schwarz"
-          ],
-          "price_from_eur": 1.3,
-          "price_tiers": [
-            {
-              "qty": 100,
-              "eur": 1.9
-            },
-            {
-              "qty": 500,
-              "eur": 1.55
-            },
-            {
-              "qty": 1000,
-              "eur": 1.3
-            }
-          ],
-          "min_order_qty": 100,
-          "print_methods": [
-            "Doming"
-          ],
-          "print_area": "20 x 10 mm",
-          "weight_kg": 0.035,
-          "eco": false,
-          "image_url": "",
-          "stock_qty": 30000,
-          "lead_time_days": 12,
-          "description": "3-in-1 Ladekabel mit Nylonummantelung und individuellem Doming-Label.",
-          "_issues": [
-            {
-              "field": "image_url",
-              "code": "missing_image",
-              "severity": "warning",
-              "message": "Product image missing"
-            },
-            {
-              "field": "category",
-              "code": "unmapped_category",
-              "severity": "warning",
-              "message": "Category 'accessories' not mapped to SOURCE taxonomy"
-            }
-          ]
-        },
-        {
-          "sku": "SRC-REFLECTS-RF-14",
-          "supplier_sku": "RF-14",
-          "_supplier": "reflects",
-          "_supplier_name": "REFLECTS (Promidata feed)",
-          "ean": "4034127001400",
-          "name": "SANTOS coffee-to-go cup",
-          "manufacturer": "REFLECTS",
-          "category": "Küche & Zuhause",
-          "_raw_category": "drinkware",
-          "material": "Bambusfaser",
-          "colors": [
-            "natur",
-            "grün"
-          ],
-          "price_from_eur": 2.8,
-          "price_tiers": [
-            {
-              "qty": 100,
-              "eur": 2.8
-            }
-          ],
-          "min_order_qty": 100,
-          "print_methods": [
-            "Tampondruck"
-          ],
-          "print_area": "45 x 60 mm",
-          "weight_kg": 0.11,
-          "eco": true,
-          "image_url": "https://img.reflects.com/RF-14.jpg",
-          "stock_qty": 14000,
-          "lead_time_days": 14,
-          "description": "Nachhaltiger Coffee-to-go Becher aus Bambusfaser mit Silikondeckel und -manschette.",
-          "_issues": [
-            {
-              "field": "price_tiers",
-              "code": "single_price_scale",
-              "severity": "warning",
-              "message": "Only one price scale — promotional pricing needs quantity tiers"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "uma",
-      "name": "uma Schreibgeräte",
-      "format": "BMEcat 1.2 XML",
-      "summary": {
-        "records": 5,
-        "rows_clean": 3,
-        "rows_warn_only": 2,
-        "rows_with_errors": 0,
-        "error_count": 0,
-        "warning_count": 3,
-        "score": 84.0,
-        "code_tally": {
-          "single_price_scale": 1,
-          "missing_gtin": 1,
-          "unmapped_category": 1
-        }
-      },
-      "products": [
-        {
-          "sku": "SRC-UMA-0-9800",
-          "supplier_sku": "0-9800",
-          "_supplier": "uma",
-          "_supplier_name": "uma Schreibgeräte",
-          "ean": "4250369812349",
-          "name": "uma RECYCLED PET Pen",
-          "manufacturer": "uma",
-          "category": "Büro & Schreibgeräte",
-          "_raw_category": "pens",
-          "material": "rPET",
-          "colors": [
-            "blau",
-            "schwarz",
-            "rot"
-          ],
-          "price_from_eur": 0.42,
-          "price_tiers": [
-            {
-              "qty": 100,
-              "eur": 0.59
-            },
-            {
-              "qty": 500,
-              "eur": 0.49
-            },
-            {
-              "qty": 1000,
-              "eur": 0.42
-            }
-          ],
-          "min_order_qty": 100,
-          "print_methods": [
-            "Tampondruck",
-            "Lasergravur"
-          ],
-          "print_area": "40 x 6 mm",
-          "weight_kg": 0.011,
-          "eco": true,
-          "image_url": "https://img.uma-pen.com/0-9800.jpg",
-          "stock_qty": 84000,
-          "lead_time_days": 10,
-          "description": "Druckkugelschreiber aus recyceltem PET mit blauschreibender Großraummine.",
-          "_issues": []
-        },
-        {
-          "sku": "SRC-UMA-0-9801",
-          "supplier_sku": "0-9801",
-          "_supplier": "uma",
-          "_supplier_name": "uma Schreibgeräte",
-          "ean": "4250369812356",
-          "name": "uma STRAIGHT SI",
-          "manufacturer": "uma",
-          "category": "Büro & Schreibgeräte",
-          "_raw_category": "pens",
-          "material": "ABS",
-          "colors": [
-            "weiss",
-            "blau",
-            "grün",
-            "rot"
-          ],
-          "price_from_eur": 0.31,
-          "price_tiers": [
-            {
-              "qty": 100,
-              "eur": 0.45
-            },
-            {
-              "qty": 500,
-              "eur": 0.37
-            },
-            {
-              "qty": 1000,
-              "eur": 0.31
-            }
-          ],
-          "min_order_qty": 100,
-          "print_methods": [
-            "Tampondruck"
-          ],
-          "print_area": "45 x 6 mm",
-          "weight_kg": 0.009,
-          "eco": false,
-          "image_url": "https://img.uma-pen.com/0-9801.jpg",
-          "stock_qty": 152000,
-          "lead_time_days": 8,
-          "description": "Klassischer Werbekugelschreiber mit großer Werbefläche und mattem Finish.",
-          "_issues": []
-        },
-        {
-          "sku": "SRC-UMA-0-9803",
-          "supplier_sku": "0-9803",
-          "_supplier": "uma",
-          "_supplier_name": "uma Schreibgeräte",
-          "ean": "",
-          "name": "uma FLEXI soft",
-          "manufacturer": "uma",
-          "category": "Büro & Schreibgeräte",
-          "_raw_category": "pens",
-          "material": "ABS",
-          "colors": [
-            "schwarz"
-          ],
-          "price_from_eur": 0.69,
-          "price_tiers": [
-            {
-              "qty": 100,
-              "eur": 0.69
-            }
-          ],
-          "min_order_qty": 100,
-          "print_methods": [
-            "Tampondruck"
-          ],
-          "print_area": "40 x 5 mm",
-          "weight_kg": 0.01,
-          "eco": false,
-          "image_url": "https://img.uma-pen.com/0-9803.jpg",
-          "stock_qty": 12000,
-          "lead_time_days": 12,
-          "description": "Soft-Touch Kugelschreiber mit angenehmer Griffzone.",
-          "_issues": [
-            {
-              "field": "price_tiers",
-              "code": "single_price_scale",
-              "severity": "warning",
-              "message": "Only one price scale — promotional pricing needs quantity tiers"
-            },
-            {
-              "field": "ean",
-              "code": "missing_gtin",
-              "severity": "warning",
-              "message": "EAN/GTIN missing"
-            }
-          ]
-        },
-        {
-          "sku": "SRC-UMA-0-9804",
-          "supplier_sku": "0-9804",
-          "_supplier": "uma",
-          "_supplier_name": "uma Schreibgeräte",
-          "ean": "4250369812370",
-          "name": "uma SLIM cosmo",
-          "manufacturer": "uma",
-          "category": "Büro & Schreibgeräte",
-          "_raw_category": "pens",
-          "material": "Aluminium",
-          "colors": [
-            "silber",
-            "blau",
-            "anthrazit"
-          ],
-          "price_from_eur": 0.74,
-          "price_tiers": [
-            {
-              "qty": 100,
-              "eur": 0.95
-            },
-            {
-              "qty": 500,
-              "eur": 0.82
-            },
-            {
-              "qty": 1000,
-              "eur": 0.74
-            }
-          ],
-          "min_order_qty": 100,
-          "print_methods": [
-            "Lasergravur"
-          ],
-          "print_area": "50 x 6 mm",
-          "weight_kg": 0.014,
-          "eco": false,
-          "image_url": "https://img.uma-pen.com/0-9804.jpg",
-          "stock_qty": 47000,
-          "lead_time_days": 10,
-          "description": "Eleganter Aluminium-Drehkugelschreiber, ideal für Lasergravur.",
-          "_issues": []
-        },
-        {
-          "sku": "SRC-UMA-0-9806",
-          "supplier_sku": "0-9806",
-          "_supplier": "uma",
-          "_supplier_name": "uma Schreibgeräte",
-          "ean": "4250369812394",
-          "name": "uma Pencil Set Holzbox",
-          "manufacturer": "uma",
-          "category": "",
-          "_raw_category": "stationery",
-          "material": "Holz",
-          "colors": [
-            "natur"
-          ],
-          "price_from_eur": 2.6,
-          "price_tiers": [
-            {
-              "qty": 50,
-              "eur": 3.2
-            },
-            {
-              "qty": 200,
-              "eur": 2.85
-            },
-            {
-              "qty": 500,
-              "eur": 2.6
-            }
-          ],
-          "min_order_qty": 50,
-          "print_methods": [
-            "Lasergravur"
-          ],
-          "print_area": "60 x 20 mm",
-          "weight_kg": 0.12,
-          "eco": true,
-          "image_url": "https://img.uma-pen.com/0-9806.jpg",
-          "stock_qty": 6000,
-          "lead_time_days": 15,
-          "description": "Bleistift-Set in nachhaltiger Holzbox mit Schiebedeckel.",
-          "_issues": [
-            {
-              "field": "category",
-              "code": "unmapped_category",
-              "severity": "warning",
-              "message": "Category 'stationery' not mapped to SOURCE taxonomy"
+              "message": "EAN '405583510' is not a valid EAN-13"
             }
           ]
         }
@@ -1034,378 +1048,262 @@ window.SOURCE_DATA = {
   ],
   "catalog": [
     {
-      "sku": "SRC-HALFAR-1816",
-      "supplier_sku": "1816",
+      "sku": "SRC-HALFAR-HF-COT-01",
+      "supplier_sku": "HF-COT-01",
       "_supplier": "halfar",
       "_supplier_name": "Halfar System (Bags)",
-      "ean": "4040375018169",
-      "name": "Rucksack EVENT",
+      "ean": "4040375200014",
+      "name": "Baumwoll-Einkaufstasche 140 g/m²",
       "manufacturer": "Halfar",
       "category": "Taschen & Gepäck",
-      "material": "Polyester 600D",
+      "material": "Baumwolle 140g",
       "colors": [
+        "natur",
         "schwarz",
-        "navy",
-        "rot"
+        "navy"
       ],
-      "price_from_eur": 7.2,
+      "price_from_eur": 0.76,
       "price_tiers": [
         {
           "qty": 100,
-          "eur": 8.9
+          "eur": 0.96
         },
         {
           "qty": 250,
-          "eur": 7.95
+          "eur": 0.84
         },
         {
           "qty": 500,
-          "eur": 7.2
+          "eur": 0.76
         }
       ],
-      "min_order_qty": 25,
+      "min_order_qty": 100,
       "print_methods": [
         "Siebdruck",
         "Transferdruck"
       ],
-      "print_area": "200 x 200 mm",
-      "weight_kg": 0.42,
+      "print_area": "250 x 250 mm",
+      "weight_kg": 0.09,
       "eco": false,
-      "image_url": "https://img.halfar.com/1816.jpg",
-      "stock_qty": 3200,
-      "lead_time_days": 14,
-      "description": "Geräumiger Eventrucksack mit gepolstertem Rückenteil und Fronttasche."
+      "image_url": "https://img.source-werbeartikel.com/halfar/cotton140.jpg",
+      "stock_qty": 64000,
+      "lead_time_days": 12,
+      "description": "Klassische Baumwolltasche mit langen Henkeln, vielseitig bedruckbar."
     },
     {
-      "sku": "SRC-HALFAR-1820",
-      "supplier_sku": "1820",
+      "sku": "SRC-HALFAR-HF-GIO-02",
+      "supplier_sku": "HF-GIO-02",
       "_supplier": "halfar",
       "_supplier_name": "Halfar System (Bags)",
-      "ean": "4040375018206",
-      "name": "Citybag GROOVE",
+      "ean": "4040375200021",
+      "name": "Baumwolltasche GIOVANNI weiss",
       "manufacturer": "Halfar",
       "category": "Taschen & Gepäck",
-      "material": "rPET",
+      "material": "Baumwolle 105g",
       "colors": [
-        "schwarz",
-        "grau"
+        "weiss"
       ],
-      "price_from_eur": 5.3,
+      "price_from_eur": 0.48,
       "price_tiers": [
         {
           "qty": 100,
-          "eur": 6.4
+          "eur": 0.62
         },
         {
           "qty": 250,
-          "eur": 5.8
+          "eur": 0.54
         },
         {
           "qty": 500,
-          "eur": 5.3
+          "eur": 0.48
         }
       ],
-      "min_order_qty": 25,
+      "min_order_qty": 250,
       "print_methods": [
         "Siebdruck"
       ],
-      "print_area": "150 x 150 mm",
-      "weight_kg": 0.3,
+      "print_area": "220 x 220 mm",
+      "weight_kg": 0.07,
       "eco": false,
-      "image_url": "https://img.halfar.com/1820.jpg",
-      "stock_qty": 1800,
-      "lead_time_days": 14,
-      "description": "Nachhaltige Umhängetasche aus recyceltem Polyester."
+      "image_url": "https://img.source-werbeartikel.com/halfar/giovanni.jpg",
+      "stock_qty": 120000,
+      "lead_time_days": 10,
+      "description": "Leichte Baumwolltasche mit langen Henkeln, ideal als günstiger Streuartikel."
     },
     {
-      "sku": "SRC-HALFAR-1822",
-      "supplier_sku": "1822",
+      "sku": "SRC-HALFAR-HF-IMP-03",
+      "supplier_sku": "HF-IMP-03",
       "_supplier": "halfar",
       "_supplier_name": "Halfar System (Bags)",
-      "ean": "4040375018220",
-      "name": "Sportsbag MOVE",
+      "ean": "4040375200038",
+      "name": "Impact AWARE™ recycelte Baumwolltasche 145 g",
       "manufacturer": "Halfar",
       "category": "Taschen & Gepäck",
-      "material": "Polyester",
+      "material": "rec. Baumwolle 145g",
       "colors": [
-        "blau",
-        "schwarz"
+        "natur",
+        "grau"
       ],
-      "price_from_eur": 8.1,
+      "price_from_eur": 3.79,
       "price_tiers": [
         {
           "qty": 100,
-          "eur": 9.5
+          "eur": 4.2
         },
         {
           "qty": 250,
-          "eur": 8.7
+          "eur": 3.95
         },
         {
           "qty": 500,
-          "eur": 8.1
+          "eur": 3.79
         }
       ],
-      "min_order_qty": 25,
+      "min_order_qty": 100,
       "print_methods": [
+        "Siebdruck",
         "Transferdruck"
       ],
-      "print_area": "180 x 120 mm",
-      "weight_kg": 0.55,
+      "print_area": "240 x 240 mm",
+      "weight_kg": 0.12,
       "eco": false,
       "image_url": "",
-      "stock_qty": 950,
-      "lead_time_days": 21,
-      "description": "Robuste Sporttasche mit separatem Schuhfach und Tragegurt."
+      "stock_qty": 22000,
+      "lead_time_days": 14,
+      "description": "Nachhaltige Tasche aus zertifiziert recycelter Baumwolle mit AWARE™ Tracer."
     },
     {
-      "sku": "SRC-HALFAR-1825",
-      "supplier_sku": "1825",
+      "sku": "SRC-HALFAR-HF-CAN-04",
+      "supplier_sku": "HF-CAN-04",
       "_supplier": "halfar",
       "_supplier_name": "Halfar System (Bags)",
-      "ean": "4040375018251",
-      "name": "Shopper BASIC",
+      "ean": "4040375200045",
+      "name": "Canvas Shopper 270 g/m² beige",
+      "manufacturer": "Halfar",
+      "category": "Taschen & Gepäck",
+      "material": "Canvas 270g",
+      "colors": [
+        "beige",
+        "schwarz"
+      ],
+      "price_from_eur": 2.25,
+      "price_tiers": [
+        {
+          "qty": 100,
+          "eur": 2.65
+        },
+        {
+          "qty": 250,
+          "eur": 2.4
+        },
+        {
+          "qty": 500,
+          "eur": 2.25
+        }
+      ],
+      "min_order_qty": 100,
+      "print_methods": [
+        "Siebdruck",
+        "Stickerei"
+      ],
+      "print_area": "260 x 300 mm",
+      "weight_kg": 0.21,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/halfar/canvas.jpg",
+      "stock_qty": 14000,
+      "lead_time_days": 16,
+      "description": "Robuster Canvas-Shopper mit Innentasche und verstärkten Henkeln."
+    },
+    {
+      "sku": "SRC-HALFAR-HF-GYM-05",
+      "supplier_sku": "HF-GYM-05",
+      "_supplier": "halfar",
+      "_supplier_name": "Halfar System (Bags)",
+      "ean": "4040375200052",
+      "name": "Gymbag ANTON Oeko-Tex Baumwolle",
       "manufacturer": "Halfar",
       "category": "Taschen & Gepäck",
       "material": "Baumwolle",
       "colors": [
         "natur",
-        "schwarz"
+        "schwarz",
+        "rot"
       ],
-      "price_from_eur": 1.45,
+      "price_from_eur": 0.77,
       "price_tiers": [
         {
           "qty": 100,
-          "eur": 1.95
+          "eur": 0.95
         },
         {
           "qty": 250,
-          "eur": 1.7
+          "eur": 0.85
         },
         {
           "qty": 500,
-          "eur": 1.45
+          "eur": 0.77
         }
       ],
-      "min_order_qty": 50,
+      "min_order_qty": 100,
       "print_methods": [],
-      "print_area": "250 x 250 mm",
-      "weight_kg": 0.12,
+      "print_area": "200 x 250 mm",
+      "weight_kg": 0.06,
       "eco": false,
-      "image_url": "https://img.halfar.com/1825.jpg",
-      "stock_qty": 12000,
-      "lead_time_days": 10,
-      "description": "Baumwolltasche."
+      "image_url": "https://img.source-werbeartikel.com/halfar/anton.jpg",
+      "stock_qty": 88000,
+      "lead_time_days": 12,
+      "description": "Turnbeutel."
     },
     {
-      "sku": "SRC-HALFAR-1830",
-      "supplier_sku": "1830",
-      "_supplier": "halfar",
-      "_supplier_name": "Halfar System (Bags)",
-      "ean": "4040375018305",
-      "name": "Laptop-Rucksack PRO",
-      "manufacturer": "Halfar",
-      "category": "Taschen & Gepäck",
-      "material": "Polyester 900D",
+      "sku": "SRC-REFLECTS-RF-RPET-01",
+      "supplier_sku": "RF-RPET-01",
+      "_supplier": "reflects",
+      "_supplier_name": "REFLECTS (Promidata feed)",
+      "ean": "4034127020012",
+      "name": "RPET-Trinkflasche 500 ml",
+      "manufacturer": "REFLECTS",
+      "category": "Küche & Zuhause",
+      "material": "RPET",
       "colors": [
-        "schwarz"
+        "transparent",
+        "blau",
+        "grün"
       ],
-      "price_from_eur": 22.5,
+      "price_from_eur": 1.04,
       "price_tiers": [
         {
           "qty": 100,
-          "eur": 24.9
+          "eur": 1.34
         },
         {
-          "qty": 250,
-          "eur": 22.5
-        }
-      ],
-      "min_order_qty": 10,
-      "print_methods": [
-        "Siebdruck",
-        "Lasergravur"
-      ],
-      "print_area": "160 x 160 mm",
-      "weight_kg": 0.78,
-      "eco": false,
-      "image_url": "https://img.halfar.com/1830.jpg",
-      "stock_qty": 0,
-      "lead_time_days": 21,
-      "description": "Business-Rucksack mit gepolstertem 15\" Laptopfach und USB-Durchführung."
-    },
-    {
-      "sku": "SRC-MBW-MB-75",
-      "supplier_sku": "MB-75",
-      "_supplier": "mbw",
-      "_supplier_name": "mbw (Giveaways & Plush)",
-      "ean": "4055835007508",
-      "name": "Schmoozies® Bär",
-      "manufacturer": "mbw",
-      "category": "Streuartikel",
-      "material": "Mikrofaser",
-      "colors": [
-        "braun",
-        "beige"
-      ],
-      "price_from_eur": 1.4,
-      "price_tiers": [
-        {
-          "qty": 250,
-          "eur": 1.95
+          "qty": 500,
+          "eur": 1.15
         },
         {
           "qty": 1000,
-          "eur": 1.65
-        },
-        {
-          "qty": 5000,
-          "eur": 1.4
-        }
-      ],
-      "min_order_qty": 250,
-      "print_methods": [
-        "Digitaldruck"
-      ],
-      "print_area": "30 x 20 mm",
-      "weight_kg": 0.045,
-      "eco": false,
-      "image_url": "https://img.mbw.de/MB-75.jpg",
-      "stock_qty": 60000,
-      "lead_time_days": 18,
-      "description": "Plüsch-Bär als Displayreiniger, ideal als sympathisches Werbegeschenk."
-    },
-    {
-      "sku": "SRC-MBW-MB-76",
-      "supplier_sku": "MB-76",
-      "_supplier": "mbw",
-      "_supplier_name": "mbw (Giveaways & Plush)",
-      "ean": "4055835007607",
-      "name": "MiniFeet® Schlüsselanhänger",
-      "manufacturer": "mbw",
-      "category": "Streuartikel",
-      "material": "Plüsch",
-      "colors": [
-        "bunt"
-      ],
-      "price_from_eur": 0.79,
-      "price_tiers": [
-        {
-          "qty": 250,
-          "eur": 1.2
-        },
-        {
-          "qty": 1000,
-          "eur": 0.98
-        },
-        {
-          "qty": 5000,
-          "eur": 0.79
-        }
-      ],
-      "min_order_qty": 500,
-      "print_methods": [
-        "Doming"
-      ],
-      "print_area": "25 x 15 mm",
-      "weight_kg": 0.022,
-      "eco": false,
-      "image_url": "https://img.mbw.de/MB-76.jpg",
-      "stock_qty": 90000,
-      "lead_time_days": 15,
-      "description": "Kleiner Plüsch-Schlüsselanhänger, vielseitig als Streuartikel einsetzbar."
-    },
-    {
-      "sku": "SRC-MBW-MB-80",
-      "supplier_sku": "MB-80",
-      "_supplier": "mbw",
-      "_supplier_name": "mbw (Giveaways & Plush)",
-      "ean": "405583500",
-      "name": "Plüsch-Elefant MAXI",
-      "manufacturer": "mbw",
-      "category": "Streuartikel",
-      "material": "Plüsch",
-      "colors": [
-        "grau"
-      ],
-      "price_from_eur": 5.6,
-      "price_tiers": [
-        {
-          "qty": 250,
-          "eur": 6.9
-        },
-        {
-          "qty": 1000,
-          "eur": 6.2
-        },
-        {
-          "qty": 5000,
-          "eur": 5.6
+          "eur": 1.04
         }
       ],
       "min_order_qty": 100,
       "print_methods": [
-        "Stickerei"
-      ],
-      "print_area": "40 x 30 mm",
-      "weight_kg": 0.18,
-      "eco": false,
-      "image_url": "https://img.mbw.de/MB-80.jpg",
-      "stock_qty": 4000,
-      "lead_time_days": 25,
-      "description": "Großes Plüschtier mit individuell besticktem Halstuch."
-    },
-    {
-      "sku": "SRC-REFLECTS-RF-10",
-      "supplier_sku": "RF-10",
-      "_supplier": "reflects",
-      "_supplier_name": "REFLECTS (Promidata feed)",
-      "ean": "4034127001004",
-      "name": "REEVES drinking bottle",
-      "manufacturer": "REFLECTS",
-      "category": "Küche & Zuhause",
-      "material": "Tritan",
-      "colors": [
-        "transparent",
-        "blau",
-        "rot"
-      ],
-      "price_from_eur": 2.55,
-      "price_tiers": [
-        {
-          "qty": 72,
-          "eur": 3.4
-        },
-        {
-          "qty": 288,
-          "eur": 2.95
-        },
-        {
-          "qty": 1008,
-          "eur": 2.55
-        }
-      ],
-      "min_order_qty": 72,
-      "print_methods": [
         "Tampondruck",
-        "Lasergravur",
         "Digitaldruck"
       ],
       "print_area": "50 x 80 mm",
-      "weight_kg": 0.095,
+      "weight_kg": 0.06,
       "eco": true,
-      "image_url": "https://img.reflects.com/RF-10.jpg",
-      "stock_qty": 22000,
-      "lead_time_days": 14,
-      "description": "BPA-freie Trinkflasche aus Tritan mit auslaufsicherem Schraubverschluss."
+      "image_url": "https://img.source-werbeartikel.com/reflects/rpet500.jpg",
+      "stock_qty": 41000,
+      "lead_time_days": 12,
+      "description": "Nachhaltige Trinkflasche aus recyceltem PET, BPA-frei mit auslaufsicherem Verschluss."
     },
     {
-      "sku": "SRC-REFLECTS-RF-11",
-      "supplier_sku": "RF-11",
+      "sku": "SRC-REFLECTS-RF-ISO-02",
+      "supplier_sku": "RF-ISO-02",
       "_supplier": "reflects",
       "_supplier_name": "REFLECTS (Promidata feed)",
-      "ean": "4034127001103",
-      "name": "ABERDEEN thermo mug",
+      "ean": "4034127020029",
+      "name": "Isolierflasche Edelstahl 500 ml",
       "manufacturer": "REFLECTS",
       "category": "Küche & Zuhause",
       "material": "Edelstahl",
@@ -1414,19 +1312,19 @@ window.SOURCE_DATA = {
         "schwarz",
         "weiss"
       ],
-      "price_from_eur": 5.4,
+      "price_from_eur": 3.93,
       "price_tiers": [
         {
           "qty": 48,
-          "eur": 6.9
+          "eur": 4.6
         },
         {
           "qty": 144,
-          "eur": 6.1
+          "eur": 4.2
         },
         {
           "qty": 504,
-          "eur": 5.4
+          "eur": 3.93
         }
       ],
       "min_order_qty": 48,
@@ -1435,232 +1333,280 @@ window.SOURCE_DATA = {
         "Digitaldruck"
       ],
       "print_area": "40 x 60 mm",
-      "weight_kg": 0.28,
+      "weight_kg": 0.3,
       "eco": false,
-      "image_url": "https://img.reflects.com/RF-11.jpg",
-      "stock_qty": 9000,
-      "lead_time_days": 16,
-      "description": "Doppelwandiger Edelstahl-Thermobecher, hält Getränke bis zu 6 Stunden warm."
+      "image_url": "https://img.source-werbeartikel.com/reflects/iso500.jpg",
+      "stock_qty": 18500,
+      "lead_time_days": 14,
+      "description": "Doppelwandige vakuumisolierte Edelstahlflasche, hält Getränke bis zu 12 Stunden warm."
     },
     {
-      "sku": "SRC-REFLECTS-RF-13",
-      "supplier_sku": "RF-13",
+      "sku": "SRC-REFLECTS-RF-DW-04",
+      "supplier_sku": "RF-DW-04",
       "_supplier": "reflects",
       "_supplier_name": "REFLECTS (Promidata feed)",
-      "ean": "4034127001301",
-      "name": "MONTERREY USB-C cable",
-      "manufacturer": "REFLECTS",
-      "category": "",
-      "material": "Nylon",
-      "colors": [
-        "schwarz"
-      ],
-      "price_from_eur": 1.3,
-      "price_tiers": [
-        {
-          "qty": 100,
-          "eur": 1.9
-        },
-        {
-          "qty": 500,
-          "eur": 1.55
-        },
-        {
-          "qty": 1000,
-          "eur": 1.3
-        }
-      ],
-      "min_order_qty": 100,
-      "print_methods": [
-        "Doming"
-      ],
-      "print_area": "20 x 10 mm",
-      "weight_kg": 0.035,
-      "eco": false,
-      "image_url": "",
-      "stock_qty": 30000,
-      "lead_time_days": 12,
-      "description": "3-in-1 Ladekabel mit Nylonummantelung und individuellem Doming-Label."
-    },
-    {
-      "sku": "SRC-REFLECTS-RF-14",
-      "supplier_sku": "RF-14",
-      "_supplier": "reflects",
-      "_supplier_name": "REFLECTS (Promidata feed)",
-      "ean": "4034127001400",
-      "name": "SANTOS coffee-to-go cup",
+      "ean": "4034127020043",
+      "name": "Doppelwandige Trinkflasche 400 ml",
       "manufacturer": "REFLECTS",
       "category": "Küche & Zuhause",
-      "material": "Bambusfaser",
+      "material": "Edelstahl",
       "colors": [
-        "natur",
-        "grün"
+        "weiss",
+        "schwarz",
+        "petrol"
       ],
-      "price_from_eur": 2.8,
+      "price_from_eur": 10.18,
       "price_tiers": [
         {
-          "qty": 100,
-          "eur": 2.8
+          "qty": 48,
+          "eur": 11.2
+        },
+        {
+          "qty": 144,
+          "eur": 10.6
+        },
+        {
+          "qty": 504,
+          "eur": 10.18
         }
       ],
-      "min_order_qty": 100,
+      "min_order_qty": 48,
       "print_methods": [
-        "Tampondruck"
+        "Lasergravur"
       ],
-      "print_area": "45 x 60 mm",
-      "weight_kg": 0.11,
-      "eco": true,
-      "image_url": "https://img.reflects.com/RF-14.jpg",
-      "stock_qty": 14000,
-      "lead_time_days": 14,
-      "description": "Nachhaltiger Coffee-to-go Becher aus Bambusfaser mit Silikondeckel und -manschette."
+      "print_area": "35 x 55 mm",
+      "weight_kg": 0.26,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/reflects/dw400.jpg",
+      "stock_qty": 7400,
+      "lead_time_days": 16,
+      "description": "Elegante doppelwandige Flasche mit pulverbeschichteter Oberfläche und Bambusdeckel."
     },
     {
-      "sku": "SRC-UMA-0-9800",
-      "supplier_sku": "0-9800",
-      "_supplier": "uma",
-      "_supplier_name": "uma Schreibgeräte",
-      "ean": "4250369812349",
-      "name": "uma RECYCLED PET Pen",
-      "manufacturer": "uma",
+      "sku": "SRC-REFLECTS-RF-VAK-05",
+      "supplier_sku": "RF-VAK-05",
+      "_supplier": "reflects",
+      "_supplier_name": "REFLECTS (Promidata feed)",
+      "ean": "4034127020050",
+      "name": "Vakuum-Isolierkanne 1 L",
+      "manufacturer": "REFLECTS",
+      "category": "Küche & Zuhause",
+      "material": "Edelstahl",
+      "colors": [
+        "silber",
+        "schwarz"
+      ],
+      "price_from_eur": 7.44,
+      "price_tiers": [
+        {
+          "qty": 50,
+          "eur": 7.44
+        }
+      ],
+      "min_order_qty": 50,
+      "print_methods": [
+        "Lasergravur"
+      ],
+      "print_area": "60 x 80 mm",
+      "weight_kg": 0.52,
+      "eco": false,
+      "image_url": "",
+      "stock_qty": 5200,
+      "lead_time_days": 18,
+      "description": "Robuste Vakuum-Isolierkanne mit Einhand-Ausgießmechanik für Büro und Outdoor."
+    },
+    {
+      "sku": "SRC-SENATOR-SE-Lib-01",
+      "supplier_sku": "SE-Lib-01",
+      "_supplier": "senator",
+      "_supplier_name": "senator",
+      "ean": "4045645010010",
+      "name": "senator® Liberty Soft Touch Kugelschreiber",
+      "manufacturer": "senator",
       "category": "Büro & Schreibgeräte",
-      "material": "rPET",
+      "material": "ABS / Soft-Touch",
       "colors": [
         "blau",
         "schwarz",
-        "rot"
+        "rot",
+        "weiss"
       ],
-      "price_from_eur": 0.42,
+      "price_from_eur": 0.75,
       "price_tiers": [
         {
-          "qty": 100,
-          "eur": 0.59
-        },
-        {
-          "qty": 500,
-          "eur": 0.49
-        },
-        {
-          "qty": 1000,
-          "eur": 0.42
-        }
-      ],
-      "min_order_qty": 100,
-      "print_methods": [
-        "Tampondruck",
-        "Lasergravur"
-      ],
-      "print_area": "40 x 6 mm",
-      "weight_kg": 0.011,
-      "eco": true,
-      "image_url": "https://img.uma-pen.com/0-9800.jpg",
-      "stock_qty": 84000,
-      "lead_time_days": 10,
-      "description": "Druckkugelschreiber aus recyceltem PET mit blauschreibender Großraummine."
-    },
-    {
-      "sku": "SRC-UMA-0-9801",
-      "supplier_sku": "0-9801",
-      "_supplier": "uma",
-      "_supplier_name": "uma Schreibgeräte",
-      "ean": "4250369812356",
-      "name": "uma STRAIGHT SI",
-      "manufacturer": "uma",
-      "category": "Büro & Schreibgeräte",
-      "material": "ABS",
-      "colors": [
-        "weiss",
-        "blau",
-        "grün",
-        "rot"
-      ],
-      "price_from_eur": 0.31,
-      "price_tiers": [
-        {
-          "qty": 100,
-          "eur": 0.45
-        },
-        {
-          "qty": 500,
-          "eur": 0.37
-        },
-        {
-          "qty": 1000,
-          "eur": 0.31
-        }
-      ],
-      "min_order_qty": 100,
-      "print_methods": [
-        "Tampondruck"
-      ],
-      "print_area": "45 x 6 mm",
-      "weight_kg": 0.009,
-      "eco": false,
-      "image_url": "https://img.uma-pen.com/0-9801.jpg",
-      "stock_qty": 152000,
-      "lead_time_days": 8,
-      "description": "Klassischer Werbekugelschreiber mit großer Werbefläche und mattem Finish."
-    },
-    {
-      "sku": "SRC-UMA-0-9803",
-      "supplier_sku": "0-9803",
-      "_supplier": "uma",
-      "_supplier_name": "uma Schreibgeräte",
-      "ean": "",
-      "name": "uma FLEXI soft",
-      "manufacturer": "uma",
-      "category": "Büro & Schreibgeräte",
-      "material": "ABS",
-      "colors": [
-        "schwarz"
-      ],
-      "price_from_eur": 0.69,
-      "price_tiers": [
-        {
-          "qty": 100,
-          "eur": 0.69
-        }
-      ],
-      "min_order_qty": 100,
-      "print_methods": [
-        "Tampondruck"
-      ],
-      "print_area": "40 x 5 mm",
-      "weight_kg": 0.01,
-      "eco": false,
-      "image_url": "https://img.uma-pen.com/0-9803.jpg",
-      "stock_qty": 12000,
-      "lead_time_days": 12,
-      "description": "Soft-Touch Kugelschreiber mit angenehmer Griffzone."
-    },
-    {
-      "sku": "SRC-UMA-0-9804",
-      "supplier_sku": "0-9804",
-      "_supplier": "uma",
-      "_supplier_name": "uma Schreibgeräte",
-      "ean": "4250369812370",
-      "name": "uma SLIM cosmo",
-      "manufacturer": "uma",
-      "category": "Büro & Schreibgeräte",
-      "material": "Aluminium",
-      "colors": [
-        "silber",
-        "blau",
-        "anthrazit"
-      ],
-      "price_from_eur": 0.74,
-      "price_tiers": [
-        {
-          "qty": 100,
+          "qty": 250,
           "eur": 0.95
         },
         {
           "qty": 500,
-          "eur": 0.82
+          "eur": 0.84
         },
         {
           "qty": 1000,
-          "eur": 0.74
+          "eur": 0.75
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Tampondruck",
+        "Lasergravur"
+      ],
+      "print_area": "45 x 6 mm",
+      "weight_kg": 0.011,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/senator/liberty.jpg",
+      "stock_qty": 184000,
+      "lead_time_days": 10,
+      "description": "Soft-Touch Kunststoffkugelschreiber mit blauschreibender Großraummine und angenehmer Haptik."
+    },
+    {
+      "sku": "SRC-SENATOR-SE-Hit-02",
+      "supplier_sku": "SE-Hit-02",
+      "_supplier": "senator",
+      "_supplier_name": "senator",
+      "ean": "4045645010027",
+      "name": "senator® Super Hit Kugelschreiber",
+      "manufacturer": "senator",
+      "category": "Büro & Schreibgeräte",
+      "material": "ABS",
+      "colors": [
+        "blau",
+        "schwarz",
+        "gelb",
+        "grün",
+        "rot"
+      ],
+      "price_from_eur": 0.34,
+      "price_tiers": [
+        {
+          "qty": 250,
+          "eur": 0.49
+        },
+        {
+          "qty": 1000,
+          "eur": 0.41
+        },
+        {
+          "qty": 5000,
+          "eur": 0.34
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Tampondruck"
+      ],
+      "print_area": "45 x 7 mm",
+      "weight_kg": 0.009,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/senator/superhit.jpg",
+      "stock_qty": 420000,
+      "lead_time_days": 8,
+      "description": "Der Klassiker: meistverkaufter Werbekugelschreiber mit großer Werbefläche."
+    },
+    {
+      "sku": "SRC-SENATOR-SE-Chl-03",
+      "supplier_sku": "SE-Chl-03",
+      "_supplier": "senator",
+      "_supplier_name": "senator",
+      "ean": "",
+      "name": "senator® Challenger Soft Touch",
+      "manufacturer": "senator",
+      "category": "Büro & Schreibgeräte",
+      "material": "ABS / Soft-Touch",
+      "colors": [
+        "schwarz",
+        "blau"
+      ],
+      "price_from_eur": 0.48,
+      "price_tiers": [
+        {
+          "qty": 250,
+          "eur": 0.62
+        },
+        {
+          "qty": 500,
+          "eur": 0.55
+        },
+        {
+          "qty": 1000,
+          "eur": 0.48
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Tampondruck",
+        "Lasergravur"
+      ],
+      "print_area": "45 x 6 mm",
+      "weight_kg": 0.01,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/senator/challenger.jpg",
+      "stock_qty": 96000,
+      "lead_time_days": 10,
+      "description": "Eleganter Soft-Touch Kugelschreiber mit verchromten Applikationen."
+    },
+    {
+      "sku": "SRC-SENATOR-SE-Eco-04",
+      "supplier_sku": "SE-Eco-04",
+      "_supplier": "senator",
+      "_supplier_name": "senator",
+      "ean": "4045645010041",
+      "name": "Öko-Druckkugelschreiber recycelt",
+      "manufacturer": "senator",
+      "category": "Büro & Schreibgeräte",
+      "material": "rABS (recycelt)",
+      "colors": [
+        "blau",
+        "natur",
+        "grün"
+      ],
+      "price_from_eur": 0.17,
+      "price_tiers": [
+        {
+          "qty": 500,
+          "eur": 0.21
+        },
+        {
+          "qty": 1000,
+          "eur": 0.18
+        },
+        {
+          "qty": 5000,
+          "eur": 0.17
+        }
+      ],
+      "min_order_qty": 500,
+      "print_methods": [
+        "Tampondruck"
+      ],
+      "print_area": "40 x 6 mm",
+      "weight_kg": 0.009,
+      "eco": true,
+      "image_url": "https://img.source-werbeartikel.com/senator/oeko.jpg",
+      "stock_qty": 260000,
+      "lead_time_days": 12,
+      "description": "Nachhaltiger Druckkugelschreiber aus recyceltem Kunststoff, klimafreundlich produziert."
+    },
+    {
+      "sku": "SRC-SENATOR-SE-Mtl-05",
+      "supplier_sku": "SE-Mtl-05",
+      "_supplier": "senator",
+      "_supplier_name": "senator",
+      "ean": "4045645010058",
+      "name": "Metallkugelschreiber Slim schwarz",
+      "manufacturer": "senator",
+      "category": "Büro & Schreibgeräte",
+      "material": "Aluminium",
+      "colors": [
+        "schwarz",
+        "silber",
+        "blau"
+      ],
+      "price_from_eur": 6.42,
+      "price_tiers": [
+        {
+          "qty": 100,
+          "eur": 6.42
         }
       ],
       "min_order_qty": 100,
@@ -1668,71 +1614,160 @@ window.SOURCE_DATA = {
         "Lasergravur"
       ],
       "print_area": "50 x 6 mm",
-      "weight_kg": 0.014,
+      "weight_kg": 0.018,
       "eco": false,
-      "image_url": "https://img.uma-pen.com/0-9804.jpg",
-      "stock_qty": 47000,
-      "lead_time_days": 10,
-      "description": "Eleganter Aluminium-Drehkugelschreiber, ideal für Lasergravur."
+      "image_url": "https://img.source-werbeartikel.com/senator/metal.jpg",
+      "stock_qty": 22000,
+      "lead_time_days": 14,
+      "description": "Hochwertiger Metallkugelschreiber mit mattem Finish, ideal für gravierte Logos."
     },
     {
-      "sku": "SRC-UMA-0-9806",
-      "supplier_sku": "0-9806",
-      "_supplier": "uma",
-      "_supplier_name": "uma Schreibgeräte",
-      "ean": "4250369812394",
-      "name": "uma Pencil Set Holzbox",
-      "manufacturer": "uma",
-      "category": "",
-      "material": "Holz",
+      "sku": "SRC-STEDMAN-ST-CRU-01",
+      "supplier_sku": "ST-CRU-01",
+      "_supplier": "stedman",
+      "_supplier_name": "Stedman (Textiles)",
+      "ean": "4055835100018",
+      "name": "CRUSADER MEN T-Shirt 150g",
+      "manufacturer": "Stedman",
+      "category": "Bekleidung",
+      "material": "100% Baumwolle",
       "colors": [
-        "natur"
+        "weiss",
+        "schwarz",
+        "navy",
+        "rot"
       ],
-      "price_from_eur": 2.6,
+      "price_from_eur": 3.76,
       "price_tiers": [
         {
-          "qty": 50,
-          "eur": 3.2
+          "qty": 250,
+          "eur": 4.2
         },
         {
-          "qty": 200,
-          "eur": 2.85
+          "qty": 1000,
+          "eur": 3.95
         },
         {
-          "qty": 500,
-          "eur": 2.6
+          "qty": 5000,
+          "eur": 3.76
         }
       ],
-      "min_order_qty": 50,
+      "min_order_qty": 250,
       "print_methods": [
-        "Lasergravur"
+        "Siebdruck",
+        "Transferdruck",
+        "Stickerei"
       ],
-      "print_area": "60 x 20 mm",
-      "weight_kg": 0.12,
-      "eco": true,
-      "image_url": "https://img.uma-pen.com/0-9806.jpg",
-      "stock_qty": 6000,
-      "lead_time_days": 15,
-      "description": "Bleistift-Set in nachhaltiger Holzbox mit Schiebedeckel."
+      "print_area": "250 x 350 mm",
+      "weight_kg": 0.165,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/stedman/crusader.jpg",
+      "stock_qty": 54000,
+      "lead_time_days": 7,
+      "description": "Klassisches Rundhals-T-Shirt für Herren aus ringgesponnener Baumwolle, 150 g/m²."
+    },
+    {
+      "sku": "SRC-STEDMAN-ST-IQO-02",
+      "supplier_sku": "ST-IQO-02",
+      "_supplier": "stedman",
+      "_supplier_name": "Stedman (Textiles)",
+      "ean": "4055835100025",
+      "name": "IQONIQ Bryce T-Shirt recycelte Baumwolle",
+      "manufacturer": "Stedman",
+      "category": "Bekleidung",
+      "material": "rec. Baumwolle",
+      "colors": [
+        "schwarz",
+        "weiss",
+        "khaki"
+      ],
+      "price_from_eur": 2.65,
+      "price_tiers": [
+        {
+          "qty": 250,
+          "eur": 2.95
+        },
+        {
+          "qty": 1000,
+          "eur": 2.78
+        },
+        {
+          "qty": 5000,
+          "eur": 2.65
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Siebdruck",
+        "Transferdruck"
+      ],
+      "print_area": "240 x 320 mm",
+      "weight_kg": 0.15,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/stedman/iqoniq.jpg",
+      "stock_qty": 38000,
+      "lead_time_days": 10,
+      "description": "Nachhaltiges T-Shirt aus recycelter Baumwolle, GRS-zertifiziert."
+    },
+    {
+      "sku": "SRC-STEDMAN-ST-TUN-05",
+      "supplier_sku": "ST-TUN-05",
+      "_supplier": "stedman",
+      "_supplier_name": "Stedman (Textiles)",
+      "ean": "405583510",
+      "name": "TUNER T-Shirt",
+      "manufacturer": "Stedman",
+      "category": "Bekleidung",
+      "material": "Baumwolle 160g",
+      "colors": [
+        "navy",
+        "grau",
+        "rot"
+      ],
+      "price_from_eur": 4.68,
+      "price_tiers": [
+        {
+          "qty": 250,
+          "eur": 4.95
+        },
+        {
+          "qty": 1000,
+          "eur": 4.8
+        },
+        {
+          "qty": 5000,
+          "eur": 4.68
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Siebdruck",
+        "Transferdruck"
+      ],
+      "print_area": "250 x 350 mm",
+      "weight_kg": 0.16,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/stedman/tuner.jpg",
+      "stock_qty": 33000,
+      "lead_time_days": 8,
+      "description": "Sportliches Rundhals-T-Shirt mit moderner Passform, vielseitig veredelbar."
     }
   ],
   "category_breakdown": {
     "Taschen & Gepäck": 5,
-    "Büro & Schreibgeräte": 4,
-    "Streuartikel": 3,
-    "Küche & Zuhause": 3,
-    "Uncategorized": 2
+    "Büro & Schreibgeräte": 5,
+    "Küche & Zuhause": 4,
+    "Bekleidung": 3
   },
   "issue_totals": {
     "missing_image": 2,
     "invalid_price": 2,
-    "unmapped_category": 2,
     "single_price_scale": 2,
     "missing_print_method": 1,
     "short_description": 1,
+    "missing_gtin": 1,
     "missing_required": 1,
-    "invalid_gtin": 1,
-    "missing_gtin": 1
+    "invalid_gtin": 1
   },
   "diff": {
     "added": 17,

@@ -45,15 +45,20 @@ python run_pipeline.py         # runs the pipeline, writes docs/data.js
 # open docs/index.html
 ```
 
-Sample run:
+Sample run (real products from source-werbeartikel.com across 4 real suppliers/formats):
 
 ```
+senator                     BMEcat 1.2 XML  score= 84.0  recs= 5  err= 0  warn= 2
+REFLECTS (Promidata feed)   Promidata JSON  score= 72.0  recs= 5  err= 1  warn= 2
 Halfar System (Bags)        CSV             score= 84.0  recs= 5  err= 0  warn= 3
-mbw (Giveaways & Plush)     Excel (.xlsx)   score= 52.0  recs= 5  err= 2  warn= 1
-REFLECTS (Promidata feed)   Promidata JSON  score= 64.0  recs= 5  err= 1  warn= 3
-uma Schreibgeräte           BMEcat 1.2 XML  score= 84.0  recs= 5  err= 0  warn= 3
-Published to source of truth: 17 products across 5 categories
+Stedman (Textiles)          Excel (.xlsx)   score= 52.0  recs= 5  err= 2  warn= 1
+Published to source of truth: 17 products across 4 categories
 ```
+
+## Documentation
+- [design/SYSTEM_DESIGN.md](design/SYSTEM_DESIGN.md) — architecture, components, GCP mapping, scaling, Talend migration
+- [design/ALGORITHMS.md](design/ALGORITHMS.md) — parsing, normalization, category mapping, EAN-13, quality scoring, CDC diff (with complexity)
+- [design/DATA_MODEL.md](design/DATA_MODEL.md) — canonical model, medallion layers, quality rules, versioning
 
 ## Architecture
 

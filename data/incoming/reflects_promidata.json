@@ -4,28 +4,27 @@
   "Products": [
     {
       "ProductDetails": {
-        "SupplierAID": "RF-10",
-        "EAN": "4034127001004",
+        "SupplierAID": "RF-RPET-01",
+        "EAN": "4034127020012",
         "Name": {
-          "de": "REEVES drinking bottle"
+          "de": "RPET-Trinkflasche 500 ml"
         },
-        "Category": "drinkware",
+        "Category": "trinkflaschen",
         "Material": {
-          "de": "Tritan"
+          "de": "RPET"
         },
         "Manufacturer": "REFLECTS",
-        "MinimumOrderQuantity": 72,
-        "Weight": 95,
+        "MinimumOrderQuantity": 100,
+        "Weight": 60,
         "WeightUnit": "g",
-        "DeliveryTime": 14,
+        "DeliveryTime": 12,
         "Sustainable": true,
         "Description": {
-          "de": "BPA-freie Trinkflasche aus Tritan mit auslaufsicherem Schraubverschluss."
+          "de": "Nachhaltige Trinkflasche aus recyceltem PET, BPA-frei mit auslaufsicherem Verschluss."
         },
         "PrintingDimensions": "50 x 80 mm",
         "PrintingTechniques": [
           "Tampondruck",
-          "Lasergravur",
           "Digitaldruck"
         ]
       },
@@ -42,56 +41,56 @@
         },
         {
           "Color": {
-            "de": "rot"
+            "de": "grün"
           }
         }
       ],
       "ImageList": [
         {
-          "Url": "https://img.reflects.com/RF-10.jpg",
+          "Url": "https://img.source-werbeartikel.com/reflects/rpet500.jpg",
           "Type": "Main"
         }
       ],
       "PriceList": [
         {
-          "Scale": 72,
-          "Price": 3.4,
+          "Scale": 100,
+          "Price": 1.34,
           "Currency": "EUR"
         },
         {
-          "Scale": 288,
-          "Price": 2.95,
+          "Scale": 500,
+          "Price": 1.15,
           "Currency": "EUR"
         },
         {
-          "Scale": 1008,
-          "Price": 2.55,
+          "Scale": 1000,
+          "Price": 1.04,
           "Currency": "EUR"
         }
       ],
       "Stock": {
-        "Quantity": 22000
+        "Quantity": 41000
       }
     },
     {
       "ProductDetails": {
-        "SupplierAID": "RF-11",
-        "EAN": "4034127001103",
+        "SupplierAID": "RF-ISO-02",
+        "EAN": "4034127020029",
         "Name": {
-          "de": "ABERDEEN thermo mug"
+          "de": "Isolierflasche Edelstahl 500 ml"
         },
-        "Category": "drinkware",
+        "Category": "trinkflaschen",
         "Material": {
           "de": "Edelstahl"
         },
         "Manufacturer": "REFLECTS",
         "MinimumOrderQuantity": 48,
-        "Weight": 280,
+        "Weight": 300,
         "WeightUnit": "g",
-        "DeliveryTime": 16,
+        "DeliveryTime": 14,
         "Sustainable": false,
         "Description": {
-          "de": "Doppelwandiger Edelstahl-Thermobecher, hält Getränke bis zu 6 Stunden warm."
+          "de": "Doppelwandige vakuumisolierte Edelstahlflasche, hält Getränke bis zu 12 Stunden warm."
         },
         "PrintingDimensions": "40 x 60 mm",
         "PrintingTechniques": [
@@ -118,53 +117,54 @@
       ],
       "ImageList": [
         {
-          "Url": "https://img.reflects.com/RF-11.jpg",
+          "Url": "https://img.source-werbeartikel.com/reflects/iso500.jpg",
           "Type": "Main"
         }
       ],
       "PriceList": [
         {
           "Scale": 48,
-          "Price": 6.9,
+          "Price": 4.6,
           "Currency": "EUR"
         },
         {
           "Scale": 144,
-          "Price": 6.1,
+          "Price": 4.2,
           "Currency": "EUR"
         },
         {
           "Scale": 504,
-          "Price": 5.4,
+          "Price": 3.93,
           "Currency": "EUR"
         }
       ],
       "Stock": {
-        "Quantity": 9000
+        "Quantity": 18500
       }
     },
     {
       "ProductDetails": {
-        "SupplierAID": "RF-12",
-        "EAN": "4034127001202",
+        "SupplierAID": "RF-TRI-03",
+        "EAN": "4034127020036",
         "Name": {
-          "de": "DAKAR power bank 5000"
+          "de": "Trinkflasche Tritan 650 ml"
         },
-        "Category": "tech",
+        "Category": "trinkflaschen",
         "Material": {
-          "de": "ABS / Aluminium"
+          "de": "Tritan"
         },
         "Manufacturer": "REFLECTS",
-        "MinimumOrderQuantity": 50,
-        "Weight": 120,
+        "MinimumOrderQuantity": 100,
+        "Weight": 110,
         "WeightUnit": "g",
-        "DeliveryTime": 20,
+        "DeliveryTime": 12,
         "Sustainable": false,
         "Description": {
-          "de": "Kompakte 5000 mAh Powerbank mit USB-C Eingang und LED-Statusanzeige."
+          "de": "Bruchfeste Tritan-Trinkflasche mit großer Öffnung, spülmaschinengeeignet."
         },
-        "PrintingDimensions": "40 x 40 mm",
+        "PrintingDimensions": "50 x 90 mm",
         "PrintingTechniques": [
+          "Tampondruck",
           "Lasergravur",
           "Digitaldruck"
         ]
@@ -172,68 +172,147 @@
       "ChildProducts": [
         {
           "Color": {
-            "de": "schwarz"
+            "de": "transparent"
           }
         },
         {
           "Color": {
-            "de": "weiss"
+            "de": "blau"
+          }
+        },
+        {
+          "Color": {
+            "de": "rot"
           }
         }
       ],
       "ImageList": [
         {
-          "Url": "https://img.reflects.com/RF-12.jpg",
+          "Url": "https://img.source-werbeartikel.com/reflects/tritan650.jpg",
           "Type": "Main"
         }
       ],
       "PriceList": [
         {
-          "Scale": 50,
+          "Scale": 100,
           "Price": 0.0,
           "Currency": "EUR"
         },
         {
-          "Scale": 200,
-          "Price": 8.2,
+          "Scale": 500,
+          "Price": 2.85,
           "Currency": "EUR"
         },
         {
-          "Scale": 500,
-          "Price": 7.4,
+          "Scale": 1000,
+          "Price": 2.62,
           "Currency": "EUR"
         }
       ],
       "Stock": {
-        "Quantity": 5000
+        "Quantity": 27000
       }
     },
     {
       "ProductDetails": {
-        "SupplierAID": "RF-13",
-        "EAN": "4034127001301",
+        "SupplierAID": "RF-DW-04",
+        "EAN": "4034127020043",
         "Name": {
-          "de": "MONTERREY USB-C cable"
+          "de": "Doppelwandige Trinkflasche 400 ml"
         },
-        "Category": "accessories",
+        "Category": "trinkflaschen",
         "Material": {
-          "de": "Nylon"
+          "de": "Edelstahl"
         },
         "Manufacturer": "REFLECTS",
-        "MinimumOrderQuantity": 100,
-        "Weight": 35,
+        "MinimumOrderQuantity": 48,
+        "Weight": 260,
         "WeightUnit": "g",
-        "DeliveryTime": 12,
+        "DeliveryTime": 16,
         "Sustainable": false,
         "Description": {
-          "de": "3-in-1 Ladekabel mit Nylonummantelung und individuellem Doming-Label."
+          "de": "Elegante doppelwandige Flasche mit pulverbeschichteter Oberfläche und Bambusdeckel."
         },
-        "PrintingDimensions": "20 x 10 mm",
+        "PrintingDimensions": "35 x 55 mm",
         "PrintingTechniques": [
-          "Doming"
+          "Lasergravur"
         ]
       },
       "ChildProducts": [
+        {
+          "Color": {
+            "de": "weiss"
+          }
+        },
+        {
+          "Color": {
+            "de": "schwarz"
+          }
+        },
+        {
+          "Color": {
+            "de": "petrol"
+          }
+        }
+      ],
+      "ImageList": [
+        {
+          "Url": "https://img.source-werbeartikel.com/reflects/dw400.jpg",
+          "Type": "Main"
+        }
+      ],
+      "PriceList": [
+        {
+          "Scale": 48,
+          "Price": 11.2,
+          "Currency": "EUR"
+        },
+        {
+          "Scale": 144,
+          "Price": 10.6,
+          "Currency": "EUR"
+        },
+        {
+          "Scale": 504,
+          "Price": 10.18,
+          "Currency": "EUR"
+        }
+      ],
+      "Stock": {
+        "Quantity": 7400
+      }
+    },
+    {
+      "ProductDetails": {
+        "SupplierAID": "RF-VAK-05",
+        "EAN": "4034127020050",
+        "Name": {
+          "de": "Vakuum-Isolierkanne 1 L"
+        },
+        "Category": "trinkflaschen",
+        "Material": {
+          "de": "Edelstahl"
+        },
+        "Manufacturer": "REFLECTS",
+        "MinimumOrderQuantity": 50,
+        "Weight": 520,
+        "WeightUnit": "g",
+        "DeliveryTime": 18,
+        "Sustainable": false,
+        "Description": {
+          "de": "Robuste Vakuum-Isolierkanne mit Einhand-Ausgießmechanik für Büro und Outdoor."
+        },
+        "PrintingDimensions": "60 x 80 mm",
+        "PrintingTechniques": [
+          "Lasergravur"
+        ]
+      },
+      "ChildProducts": [
+        {
+          "Color": {
+            "de": "silber"
+          }
+        },
         {
           "Color": {
             "de": "schwarz"
@@ -243,77 +322,13 @@
       "ImageList": [],
       "PriceList": [
         {
-          "Scale": 100,
-          "Price": 1.9,
-          "Currency": "EUR"
-        },
-        {
-          "Scale": 500,
-          "Price": 1.55,
-          "Currency": "EUR"
-        },
-        {
-          "Scale": 1000,
-          "Price": 1.3,
+          "Scale": 50,
+          "Price": 7.44,
           "Currency": "EUR"
         }
       ],
       "Stock": {
-        "Quantity": 30000
-      }
-    },
-    {
-      "ProductDetails": {
-        "SupplierAID": "RF-14",
-        "EAN": "4034127001400",
-        "Name": {
-          "de": "SANTOS coffee-to-go cup"
-        },
-        "Category": "drinkware",
-        "Material": {
-          "de": "Bambusfaser"
-        },
-        "Manufacturer": "REFLECTS",
-        "MinimumOrderQuantity": 100,
-        "Weight": 110,
-        "WeightUnit": "g",
-        "DeliveryTime": 14,
-        "Sustainable": true,
-        "Description": {
-          "de": "Nachhaltiger Coffee-to-go Becher aus Bambusfaser mit Silikondeckel und -manschette."
-        },
-        "PrintingDimensions": "45 x 60 mm",
-        "PrintingTechniques": [
-          "Tampondruck"
-        ]
-      },
-      "ChildProducts": [
-        {
-          "Color": {
-            "de": "natur"
-          }
-        },
-        {
-          "Color": {
-            "de": "grün"
-          }
-        }
-      ],
-      "ImageList": [
-        {
-          "Url": "https://img.reflects.com/RF-14.jpg",
-          "Type": "Main"
-        }
-      ],
-      "PriceList": [
-        {
-          "Scale": 100,
-          "Price": 2.8,
-          "Currency": "EUR"
-        }
-      ],
-      "Stock": {
-        "Quantity": 14000
+        "Quantity": 5200
       }
     }
   ]
