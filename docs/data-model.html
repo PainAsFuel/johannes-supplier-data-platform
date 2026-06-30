@@ -1,0 +1,340 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>SOURCE · Datenmodell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#003D7A;--orange:#F39200;--ink:#2b2f36;--muted:#6b7280;--bg:#f4f6f9;--surface:#fff;--line:#e6eaf0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Open Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+.bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:920px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.wm{font-weight:800;letter-spacing:.16em;color:var(--blue);font-size:20px}.wm::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--orange);margin-left:3px}
+.bar a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}.bar a:hover{color:var(--blue)}
+.bar .nav{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}
+.doc{max-width:920px;margin:0 auto;padding:40px 22px 80px}
+.doc h1{color:var(--blue);font-size:32px;font-weight:800;margin:8px 0 20px;letter-spacing:-.01em}
+.doc h2{color:var(--blue);font-size:23px;font-weight:800;margin:34px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.doc h3{color:var(--blue);font-size:17px;font-weight:700;margin:22px 0 8px}
+.doc h4{font-size:15px;font-weight:700;margin:16px 0 6px}
+.doc p{margin:10px 0}.doc ul,.doc ol{margin:10px 0 10px 22px}.doc li{margin:4px 0}
+.doc a{color:#0066CC}.doc strong{color:var(--ink)}
+.doc code{background:#eef1f6;padding:2px 6px;border-radius:4px;font-family:ui-monospace,"Cascadia Code",monospace;font-size:13px;color:#b5410f}
+.doc pre{background:#0b2545;color:#e6eefb;padding:16px 18px;border-radius:10px;overflow:auto;margin:14px 0;font-size:13px;line-height:1.5}
+.doc pre code{background:none;color:inherit;padding:0}
+.doc table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.doc th{background:var(--blue);color:#fff;text-align:left;padding:10px 12px;font-weight:700;font-size:13px}
+.doc td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+.doc tr:nth-child(even) td{background:#fafbfd}
+.doc blockquote{border-left:4px solid var(--orange);background:#fff7ec;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;color:#5b4a2e}
+.doc hr{border:none;border-top:1px solid var(--line);margin:26px 0}
+</style></head>
+<body>
+<div class="bar"><div class="in"><a href="index.html" class="wm">SOURCE</a><div class="nav"><a href="index.html">← Dashboard</a>
+<a href="system-design.html">System Design</a>
+<a href="algorithms.html">Algorithmen</a>
+<a href="data-model.html">Datenmodell</a></div></div></div>
+<div class="doc"><h1 id="data-model-source-product-data-platform">Data Model — SOURCE Product Data Platform</h1>
+<hr />
+<h2 id="1-canonical-product-model-martproducts">1. Canonical product model (<code>mart.products</code>)</h2>
+<p>Every supplier feed is normalized into this one schema — the contract consuming systems rely on.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th style="text-align: center;">Req</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sku</code></td>
+<td>string</td>
+<td style="text-align: center;">✓</td>
+<td>SOURCE internal key, <code>SRC-&lt;SUPPLIER&gt;-&lt;aid&gt;</code></td>
+</tr>
+<tr>
+<td><code>supplier_sku</code></td>
+<td>string</td>
+<td style="text-align: center;">✓</td>
+<td>Supplier's own article id</td>
+</tr>
+<tr>
+<td><code>ean</code></td>
+<td>string</td>
+<td style="text-align: center;"></td>
+<td>EAN-13, checksum-validated</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td style="text-align: center;">✓</td>
+<td>Product name</td>
+</tr>
+<tr>
+<td><code>manufacturer</code></td>
+<td>string</td>
+<td style="text-align: center;"></td>
+<td>Brand (senator, REFLECTS, Halfar, Stedman …)</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>string</td>
+<td style="text-align: center;"></td>
+<td>SOURCE taxonomy; empty ⇒ flagged unmapped</td>
+</tr>
+<tr>
+<td><code>material</code></td>
+<td>string</td>
+<td style="text-align: center;"></td>
+<td>Primary material</td>
+</tr>
+<tr>
+<td><code>colors</code></td>
+<td>string[]</td>
+<td style="text-align: center;"></td>
+<td>Colour variants</td>
+</tr>
+<tr>
+<td><code>price_from_eur</code></td>
+<td>number</td>
+<td style="text-align: center;">✓</td>
+<td>Cheapest scale price in EUR</td>
+</tr>
+<tr>
+<td><code>price_tiers</code></td>
+<td>array</td>
+<td style="text-align: center;">✓</td>
+<td><code>[{qty, eur}]</code> ascending — quantity scale pricing</td>
+</tr>
+<tr>
+<td><code>min_order_qty</code></td>
+<td>int</td>
+<td style="text-align: center;">✓</td>
+<td>Minimum order quantity</td>
+</tr>
+<tr>
+<td><code>print_methods</code></td>
+<td>string[]</td>
+<td style="text-align: center;"></td>
+<td>Decoration (Tampondruck, Lasergravur, Siebdruck …)</td>
+</tr>
+<tr>
+<td><code>print_area</code></td>
+<td>string</td>
+<td style="text-align: center;"></td>
+<td>Max print dimensions</td>
+</tr>
+<tr>
+<td><code>weight_kg</code></td>
+<td>number</td>
+<td style="text-align: center;"></td>
+<td>Normalized to kg</td>
+</tr>
+<tr>
+<td><code>eco</code></td>
+<td>bool</td>
+<td style="text-align: center;"></td>
+<td>Sustainable flag (RPET, Organic, recycelt …)</td>
+</tr>
+<tr>
+<td><code>image_url</code></td>
+<td>string</td>
+<td style="text-align: center;"></td>
+<td>https + image file</td>
+</tr>
+<tr>
+<td><code>stock_qty</code></td>
+<td>int</td>
+<td style="text-align: center;">✓</td>
+<td>Available stock</td>
+</tr>
+<tr>
+<td><code>lead_time_days</code></td>
+<td>int</td>
+<td style="text-align: center;"></td>
+<td>Production / delivery lead time</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td style="text-align: center;"></td>
+<td>Marketing copy</td>
+</tr>
+</tbody>
+</table>
+<p>Promotional-specific fields (<code>price_tiers</code>, <code>min_order_qty</code>, <code>print_methods</code>, <code>print_area</code>, <code>eco</code>)
+are first-class — generic product schemas miss exactly what matters for SOURCE's business.</p>
+<hr />
+<h2 id="2-medallion-layers">2. Medallion layers</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Table(s)</th>
+<th>Grain</th>
+<th>Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>raw</td>
+<td><code>raw.&lt;supplier&gt;</code></td>
+<td>one row per source record, per run</td>
+<td>append-only, TTL 90d</td>
+</tr>
+<tr>
+<td>staging</td>
+<td><code>staging.products_&lt;supplier&gt;</code></td>
+<td>normalized record</td>
+<td>rebuilt per run</td>
+</tr>
+<tr>
+<td>quality</td>
+<td><code>quality.findings</code>, <code>quality.supplier_scores</code></td>
+<td>one row per finding / per supplier·run</td>
+<td>kept (trend)</td>
+</tr>
+<tr>
+<td>mart</td>
+<td><code>mart.products</code></td>
+<td>one row per published SKU</td>
+<td>current</td>
+</tr>
+<tr>
+<td>versions</td>
+<td><code>versions.products_&lt;run_id&gt;</code>, <code>versions.diff_&lt;run_id&gt;</code></td>
+<td>snapshot + diff</td>
+<td>kept</td>
+</tr>
+</tbody>
+</table>
+<p>Partition by <code>run_id</code>/date; cluster by <code>supplier</code>, <code>category</code>.</p>
+<hr />
+<h2 id="3-quality-findings-schema-qualityfindings">3. Quality findings schema (<code>quality.findings</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>run_id</code></td>
+<td>string</td>
+<td>which run</td>
+</tr>
+<tr>
+<td><code>supplier</code></td>
+<td>string</td>
+<td>which feed</td>
+</tr>
+<tr>
+<td><code>sku</code> / <code>supplier_sku</code></td>
+<td>string</td>
+<td>which article</td>
+</tr>
+<tr>
+<td><code>field</code></td>
+<td>string</td>
+<td>offending field</td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td>string</td>
+<td>rule id (see below)</td>
+</tr>
+<tr>
+<td><code>severity</code></td>
+<td>enum</td>
+<td><code>error</code> | <code>warning</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>human-readable, supplier-facing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rule-catalogue">Rule catalogue</h3>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>severity</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>missing_required</code></td>
+<td>error</td>
+<td>required field empty</td>
+</tr>
+<tr>
+<td><code>missing_price</code> / <code>invalid_price</code></td>
+<td>error</td>
+<td>no scale / price ≤ 0</td>
+</tr>
+<tr>
+<td><code>invalid_stock</code></td>
+<td>error</td>
+<td>negative stock</td>
+</tr>
+<tr>
+<td><code>duplicate_sku</code></td>
+<td>error</td>
+<td>SKU appears &gt;1× in feed</td>
+</tr>
+<tr>
+<td><code>single_price_scale</code></td>
+<td>warning</td>
+<td>only one tier (promo needs scales)</td>
+</tr>
+<tr>
+<td><code>missing_gtin</code> / <code>invalid_gtin</code></td>
+<td>warning</td>
+<td>EAN missing / fails checksum</td>
+</tr>
+<tr>
+<td><code>missing_image</code> / <code>invalid_image</code></td>
+<td>warning</td>
+<td>image missing / not https-image</td>
+</tr>
+<tr>
+<td><code>missing_print_method</code></td>
+<td>warning</td>
+<td>no decoration method</td>
+</tr>
+<tr>
+<td><code>unmapped_category</code></td>
+<td>warning</td>
+<td>category not in taxonomy</td>
+</tr>
+<tr>
+<td><code>short_description</code></td>
+<td>warning</td>
+<td>description &lt; 30 chars</td>
+</tr>
+<tr>
+<td><code>no_colors</code></td>
+<td>warning</td>
+<td>no colour variants</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-supplier-score-qualitysupplier_scores">4. Supplier score (<code>quality.supplier_scores</code>)</h2>
+<p>Per supplier·run: <code>records, rows_clean, rows_warn_only, rows_with_errors, error_count,
+warning_count, score (0–100), code_tally{}</code>. Drives the dashboard scorecards and the emailed report.
+Score formula in <a href="algorithms.html">algorithms.html §4.3</a>.</p>
+<hr />
+<h2 id="5-versioning">5. Versioning</h2>
+<p>Each run writes an immutable snapshot of <code>mart.products</code> plus a diff
+<code>{added[], removed[], changed[], total}</code> (SKU-level, via row-hash set ops). Guarantees:
+reproducibility (any past catalog rebuildable), traceability (every value → source feed + run),
+and change visibility (what moved between feeds, and why).</p>
+<p>See also: <a href="system-design.html">system-design.html</a> · <a href="algorithms.html">algorithms.html</a></p></div>
+</body></html>

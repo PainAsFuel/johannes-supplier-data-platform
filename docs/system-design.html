@@ -1,0 +1,225 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>SOURCE · System Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#003D7A;--orange:#F39200;--ink:#2b2f36;--muted:#6b7280;--bg:#f4f6f9;--surface:#fff;--line:#e6eaf0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Open Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+.bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:920px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.wm{font-weight:800;letter-spacing:.16em;color:var(--blue);font-size:20px}.wm::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--orange);margin-left:3px}
+.bar a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}.bar a:hover{color:var(--blue)}
+.bar .nav{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}
+.doc{max-width:920px;margin:0 auto;padding:40px 22px 80px}
+.doc h1{color:var(--blue);font-size:32px;font-weight:800;margin:8px 0 20px;letter-spacing:-.01em}
+.doc h2{color:var(--blue);font-size:23px;font-weight:800;margin:34px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.doc h3{color:var(--blue);font-size:17px;font-weight:700;margin:22px 0 8px}
+.doc h4{font-size:15px;font-weight:700;margin:16px 0 6px}
+.doc p{margin:10px 0}.doc ul,.doc ol{margin:10px 0 10px 22px}.doc li{margin:4px 0}
+.doc a{color:#0066CC}.doc strong{color:var(--ink)}
+.doc code{background:#eef1f6;padding:2px 6px;border-radius:4px;font-family:ui-monospace,"Cascadia Code",monospace;font-size:13px;color:#b5410f}
+.doc pre{background:#0b2545;color:#e6eefb;padding:16px 18px;border-radius:10px;overflow:auto;margin:14px 0;font-size:13px;line-height:1.5}
+.doc pre code{background:none;color:inherit;padding:0}
+.doc table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.doc th{background:var(--blue);color:#fff;text-align:left;padding:10px 12px;font-weight:700;font-size:13px}
+.doc td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+.doc tr:nth-child(even) td{background:#fafbfd}
+.doc blockquote{border-left:4px solid var(--orange);background:#fff7ec;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;color:#5b4a2e}
+.doc hr{border:none;border-top:1px solid var(--line);margin:26px 0}
+</style></head>
+<body>
+<div class="bar"><div class="in"><a href="index.html" class="wm">SOURCE</a><div class="nav"><a href="index.html">← Dashboard</a>
+<a href="system-design.html">System Design</a>
+<a href="algorithms.html">Algorithmen</a>
+<a href="data-model.html">Datenmodell</a></div></div></div>
+<div class="doc"><h1 id="system-design-source-product-data-platform">System Design — SOURCE Product Data Platform</h1>
+<p>Author: Yaroslav · Demo for SOURCE GmbH
+Status: reference architecture (the demo implements the logic locally; this doc describes the production GCP system)</p>
+<hr />
+<h2 id="1-problem-goals">1. Problem &amp; goals</h2>
+<p>SOURCE receives product data from <strong>50+ promotional-product suppliers</strong> in heterogeneous formats
+(BMEcat XML, Promidata JSON, CSV, Excel), of varying and often poor quality. We need to:</p>
+<ul>
+<li><strong>G1 — Automate</strong> ingestion &amp; transformation of every supplier feed into one model.</li>
+<li><strong>G2 — Quality</strong>: measure data quality and report issues back to each supplier.</li>
+<li><strong>G3 — Single source of truth</strong>: store versioned, transformed data; trace what changed.</li>
+<li><strong>G4 — Deliver</strong> clean data to consuming systems (webshop, ERP, marketing).</li>
+<li><strong>G5 — Migrate</strong> the existing Talend ETL without disrupting current operations.</li>
+</ul>
+<h3 id="non-functional-requirements">Non-functional requirements</h3>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Onboarding a new supplier</td>
+<td>hours (config), not a code release</td>
+</tr>
+<tr>
+<td>Freshness</td>
+<td>daily full refresh + on-demand per supplier</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>50+ suppliers, ~500k SKUs, millions of price-scale rows</td>
+</tr>
+<tr>
+<td>Auditability</td>
+<td>every published value traceable to the exact source feed &amp; run</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>serverless / pay-per-use; no idle clusters</td>
+</tr>
+<tr>
+<td>Idempotency</td>
+<td>re-running a feed produces the same result</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-high-level-architecture">2. High-level architecture</h2>
+<pre><code> Suppliers (50+)            Ingestion              Transform &amp; Quality            Serve
+ ┌───────────┐   feeds   ┌───────────────┐      ┌────────────────────┐     ┌──────────────┐
+ │ BMEcat    │──────────▶│ Cloud Storage │      │  Dataform on        │     │ Webshop      │
+ │ Promidata │  SFTP/API │  landing/&lt;sup&gt;│─────▶│  BigQuery           │────▶│ (Magento)    │
+ │ CSV/Excel │           │               │ load │  raw → staging →    │     │ ERP / Feeds  │
+ └───────────┘           └───────────────┘      │  quality → mart     │     │ Looker Studio│
+        ▲                        │              └─────────┬──────────┘     └──────────────┘
+        │ quality scorecards     │  orchestrated by                 │ snapshots + diff
+        └────────────────────────┴──── Cloud Composer (Airflow) ────┴──────────────┐
+                                                                                    ▼
+                                                              BigQuery time-travel / version tables
+   Everything provisioned by Terraform · CI/CD via GitHub Actions
+</code></pre>
+<h3 id="medallion-layering-in-bigquery">Medallion layering (in BigQuery)</h3>
+<ul>
+<li><strong>raw</strong> — exact supplier payload, append-only, partitioned by <code>ingested_at</code>. Audit + replay.</li>
+<li><strong>staging</strong> — normalized to the canonical model (Dataform SQL), one model per supplier/standard.</li>
+<li><strong>quality</strong> — per-record findings + per-supplier scores (Dataform assertions + rules table).</li>
+<li><strong>mart</strong> — <code>mart.products</code>: only error-free, deduplicated, governed = the single source of truth.</li>
+</ul>
+<hr />
+<h2 id="3-components">3. Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Responsibility</th>
+<th>GCP service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Landing</td>
+<td>Receive raw feeds (one prefix per supplier)</td>
+<td>Cloud Storage + SFTP/API pull (Cloud Run jobs)</td>
+</tr>
+<tr>
+<td>Ingestion adapters</td>
+<td>Parse BMEcat / Promidata / CSV / Excel → load to <code>raw</code></td>
+<td>Cloud Run / Functions (Python)</td>
+</tr>
+<tr>
+<td>Normalization</td>
+<td>Map to canonical model, FX/units/category</td>
+<td>Dataform (SQL)</td>
+</tr>
+<tr>
+<td>Quality engine</td>
+<td>Apply rules, score, emit findings</td>
+<td>Dataform assertions + rules table</td>
+</tr>
+<tr>
+<td>SoT builder</td>
+<td>Promote error-free rows, dedupe, publish <code>mart.products</code></td>
+<td>Dataform</td>
+</tr>
+<tr>
+<td>Versioning</td>
+<td>Snapshot + diff per run</td>
+<td>BigQuery partition snapshots</td>
+</tr>
+<tr>
+<td>Orchestration</td>
+<td>Schedule, retry, alert, SLAs</td>
+<td>Cloud Composer (Airflow)</td>
+</tr>
+<tr>
+<td>Supplier reporting</td>
+<td>Render scorecards, email suppliers</td>
+<td>Cloud Run + Looker Studio</td>
+</tr>
+<tr>
+<td>Infra</td>
+<td>All resources as code</td>
+<td>Terraform</td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>Test + deploy Dataform &amp; DAGs</td>
+<td>GitHub Actions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration-driven-onboarding">Configuration-driven onboarding</h3>
+<p>Each supplier = one declarative config (<code>config/suppliers/&lt;id&gt;.json</code>): <code>format</code>, <code>source</code>, currency,
+and — for CSV/Excel — a <code>field_map</code>. Because <strong>BMEcat and Promidata are standards</strong>, a single adapter
+each covers the majority of suppliers; adding one is config, not code (<strong>G1</strong>, NFR onboarding).</p>
+<hr />
+<h2 id="4-data-flow-per-run">4. Data flow (per run)</h2>
+<pre><code>for each supplier (parallel, one Airflow task each):
+  1. pull feed → Cloud Storage (raw bytes kept)
+  2. adapter parses → load into BigQuery raw.&lt;supplier&gt; (partition = run_id)
+  3. Dataform: raw → staging (normalize)            [normalize.py in demo]
+  4. Dataform assertions + rules → quality.findings  [quality.py in demo]
+barrier:
+  5. promote error-free rows → mart.products (dedupe by sku, last-good wins)
+  6. snapshot mart.products → versions; compute diff vs previous run
+  7. render per-supplier scorecards; email; refresh Looker dashboards
+</code></pre>
+<p>The demo's <code>run_pipeline.py</code> performs steps 1–7 sequentially in one process; in production each is an
+Airflow task with retries, alerting and SLAs.</p>
+<hr />
+<h2 id="5-key-design-decisions">5. Key design decisions</h2>
+<ul>
+<li><strong>Adapter-per-standard, not per-supplier.</strong> Minimizes long-tail effort; new BMEcat/Promidata suppliers are free.</li>
+<li><strong>Raw is immutable.</strong> Enables reprocessing when rules change, and full lineage (<strong>G3</strong>, auditability).</li>
+<li><strong>Quality is data, not logs.</strong> Findings are stored &amp; queryable → supplier scorecards &amp; trend analysis (<strong>G2</strong>).</li>
+<li><strong>Errors block, warnings don't.</strong> Only error-free rows reach the mart; warnings are published but reported.</li>
+<li><strong>Set-based transforms in SQL (Dataform).</strong> Most Talend <code>tMap</code> logic is set-based and ports cleanly to SQL,
+  is testable (assertions) and version-controlled — the migration target (<strong>G5</strong>).</li>
+<li><strong>Versioned mart.</strong> Every run is snapshotted and diffed; "what changed and why" is always answerable.</li>
+</ul>
+<hr />
+<h2 id="6-scaling-performance">6. Scaling &amp; performance</h2>
+<ul>
+<li>Ingestion is <strong>embarrassingly parallel</strong> per supplier (Airflow dynamic task mapping; Cloud Run autoscale).</li>
+<li>BigQuery handles the volume; tables <strong>partitioned by run/date</strong>, <strong>clustered by <code>supplier</code>, <code>category</code></strong>.</li>
+<li>Diff via <code>EXCEPT DISTINCT</code> on hashed rows — set operation, scales to millions of rows.</li>
+<li>Cost control: serverless, partition pruning, materialize only the mart; raw on cheap storage with lifecycle TTL.</li>
+</ul>
+<hr />
+<h2 id="7-talend-migration-plan">7. Talend migration plan</h2>
+<ol>
+<li><strong>Inventory</strong> Talend jobs: sources, <code>tMap</code> rules, joins, quality logic, schedules.</li>
+<li><strong>Re-express</strong> transformation rules as Dataform models with assertions (set-based → SQL).</li>
+<li><strong>Re-express</strong> orchestration as Airflow DAGs in Composer.</li>
+<li><strong>Parallel run</strong> old + new; reconcile <code>mart.products</code> row-for-row (hash compare).</li>
+<li><strong>Cut over</strong> per data domain (e.g. pens first), decommission Talend job by job.</li>
+</ol>
+<hr />
+<h2 id="8-reliability-observability">8. Reliability &amp; observability</h2>
+<ul>
+<li>Retries + exponential backoff per task; dead-letter for unparseable feeds.</li>
+<li>Schema-drift detection on ingest (new/renamed columns → warning + alert, not silent drop).</li>
+<li>Run manifest table: per run, per supplier — rows in/out, score, errors, duration.</li>
+<li>Alerting on: feed missing past SLA, score drop &gt; X%, published count anomaly.</li>
+</ul>
+<p>See also: <a href="algorithms.html">algorithms.html</a> · <a href="data-model.html">data-model.html</a> · <a href="system-design.html">system-design.html</a></p></div>
+</body></html>

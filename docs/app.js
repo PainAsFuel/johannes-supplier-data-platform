@@ -117,7 +117,7 @@
     const tags = (p.print_methods || []).slice(0, 2).map(t => `<span class="tg">${t}</span>`).join("");
     const d = el("div", "prod"); d.style.animationDelay = Math.min(i * 30, 450) + "ms";
     d.innerHTML = `
-      <div class="ph" style="background:${c.bg};color:${c.fg}">${svg(c.ic)}${p.eco ? '<span class="eco">ECO</span>' : ""}</div>
+      <div class="ph" style="background:${c.bg};color:${c.fg}">${svg(c.ic)}<img class="ph-img" loading="lazy" alt="${p.name}" src="img/${p.sku}.jpg" onerror="this.remove()">${p.eco ? '<span class="eco">ECO</span>' : ""}</div>
       <div class="body">
         <div class="cat">${p.category || "Uncategorized"}</div>
         <div class="nm">${p.name}</div>

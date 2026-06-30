@@ -124,8 +124,9 @@ h1,h2,h3,h4{color:var(--blue);letter-spacing:-.01em;line-height:1.15}
 .prod{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transition:.26s;animation:pop .4s both}
 @keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .prod:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:#cfdcee}
-.prod .ph{height:128px;display:grid;place-items:center;position:relative;border-bottom:1px solid var(--line)}
-.prod .ph svg{width:54px;height:54px;opacity:.9}
+.prod .ph{height:150px;display:grid;place-items:center;position:relative;border-bottom:1px solid var(--line)}
+.prod .ph svg{width:50px;height:50px;opacity:.55}
+.prod .ph .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;background:#fff}
 .prod .eco{position:absolute;top:10px;right:10px;background:#e7f6ed;color:#1f7a45;font-size:10px;font-weight:800;padding:4px 8px;border-radius:5px;letter-spacing:.03em}
 .prod .body{padding:14px 15px 16px}
 .prod .cat{font-size:10.5px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.05em}

@@ -31,6 +31,22 @@ def ean13(e):
     return e
 
 
+with open(os.path.join(OUT, "scraped_images.json"), encoding="utf-8-sig") as _f:
+    _IMGS = json.load(_f)
+POOL = {"senator": _IMGS["pens"], "reflects": _IMGS["bottles"], "halfar": _IMGS["bags"], "stedman": _IMGS["shirts"]}
+IMAGE_MAP = {}
+
+
+def assign_images(products, supplier_id):
+    """Assign a real scraped product photo to each product (cycling the category pool).
+    Products whose img is left blank stay blank (deliberate 'missing image' QA cases)."""
+    pool, idx = POOL[supplier_id], 0
+    for p in products:
+        if p["img"]:
+            p["img"] = pool[idx % len(pool)]; idx += 1
+            IMAGE_MAP[f"SRC-{supplier_id.upper()}-{p['aid']}"] = p["img"]
+
+
 def P(aid, ean, name, manu, cat, material, colors, tiers, moq, prints, area, weight_g, eco, img, stock, lead, desc):
     return dict(aid=aid, ean=ean, name=name, manu=manu, cat=cat, material=material, colors=colors,
                 tiers=tiers, moq=moq, prints=prints, area=area, weight_g=weight_g, eco=eco,
@@ -67,6 +83,7 @@ senator = [
       "Hochwertiger Metallkugelschreiber mit mattem Finish, ideal für gravierte Logos."),  # single scale
 ]
 
+assign_images(senator, "senator")
 root = ET.Element("BMECAT", {"version": "1.2"})
 cat = ET.SubElement(root, "T_NEW_CATALOG")
 for p in senator:
@@ -127,6 +144,9 @@ reflects = [
 ]
 
 
+assign_images(reflects, "reflects")
+
+
 def promi(p):
     return {
         "ProductDetails": {"SupplierAID": p["aid"], "EAN": ean13(p["ean"]), "Name": {"de": p["name"]},
@@ -177,8 +197,7 @@ halfar = [
       "https://img.source-werbeartikel.com/halfar/anton.jpg", 88000, 12,
       "Turnbeutel."),  # no print method + short desc
 ]
-for r in halfar:
-    pass
+assign_images(halfar, "halfar")
 with open(os.path.join(OUT, "halfar_products.csv"), "w", newline="", encoding="utf-8") as fh:
     w = csv.writer(fh, delimiter=";"); w.writerow(halfar_header)
     for p in halfar:
@@ -220,6 +239,7 @@ stedman = [
       "https://img.source-werbeartikel.com/stedman/tuner.jpg", 33000, 8,
       "Sportliches Rundhals-T-Shirt mit moderner Passform, vielseitig veredelbar."),  # invalid (short) GTIN
 ]
+assign_images(stedman, "stedman")
 wb = Workbook(); ws = wb.active; ws.title = "Artikel"; ws.append(mbw_header)
 for p in stedman:
     ws.append([p["aid"], ean13(p["ean"]), p["name"], p["manu"], p["cat"], p["material"], p["colors"][0],
@@ -228,6 +248,9 @@ for p in stedman:
 wb.save(os.path.join(OUT, "stedman_products.xlsx"))
 
 
+with open(os.path.join(OUT, "image_map.json"), "w", encoding="utf-8") as fh:
+    json.dump(IMAGE_MAP, fh, indent=2)
+print(f"Wrote image_map.json with {len(IMAGE_MAP)} product images")
 print("Real-data promotional feeds written to", OUT)
 for fn in sorted(os.listdir(OUT)):
     print("  -", fn)

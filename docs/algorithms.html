@@ -1,0 +1,174 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>SOURCE · Algorithmen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#003D7A;--orange:#F39200;--ink:#2b2f36;--muted:#6b7280;--bg:#f4f6f9;--surface:#fff;--line:#e6eaf0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Open Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+.bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:920px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.wm{font-weight:800;letter-spacing:.16em;color:var(--blue);font-size:20px}.wm::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--orange);margin-left:3px}
+.bar a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}.bar a:hover{color:var(--blue)}
+.bar .nav{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}
+.doc{max-width:920px;margin:0 auto;padding:40px 22px 80px}
+.doc h1{color:var(--blue);font-size:32px;font-weight:800;margin:8px 0 20px;letter-spacing:-.01em}
+.doc h2{color:var(--blue);font-size:23px;font-weight:800;margin:34px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.doc h3{color:var(--blue);font-size:17px;font-weight:700;margin:22px 0 8px}
+.doc h4{font-size:15px;font-weight:700;margin:16px 0 6px}
+.doc p{margin:10px 0}.doc ul,.doc ol{margin:10px 0 10px 22px}.doc li{margin:4px 0}
+.doc a{color:#0066CC}.doc strong{color:var(--ink)}
+.doc code{background:#eef1f6;padding:2px 6px;border-radius:4px;font-family:ui-monospace,"Cascadia Code",monospace;font-size:13px;color:#b5410f}
+.doc pre{background:#0b2545;color:#e6eefb;padding:16px 18px;border-radius:10px;overflow:auto;margin:14px 0;font-size:13px;line-height:1.5}
+.doc pre code{background:none;color:inherit;padding:0}
+.doc table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.doc th{background:var(--blue);color:#fff;text-align:left;padding:10px 12px;font-weight:700;font-size:13px}
+.doc td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+.doc tr:nth-child(even) td{background:#fafbfd}
+.doc blockquote{border-left:4px solid var(--orange);background:#fff7ec;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;color:#5b4a2e}
+.doc hr{border:none;border-top:1px solid var(--line);margin:26px 0}
+</style></head>
+<body>
+<div class="bar"><div class="in"><a href="index.html" class="wm">SOURCE</a><div class="nav"><a href="index.html">← Dashboard</a>
+<a href="system-design.html">System Design</a>
+<a href="algorithms.html">Algorithmen</a>
+<a href="data-model.html">Datenmodell</a></div></div></div>
+<div class="doc"><h1 id="algorithms-source-product-data-platform">Algorithms — SOURCE Product Data Platform</h1>
+<p>The concrete algorithms used in each stage, with rationale, pseudocode and complexity.
+<code>n</code> = records in a feed, <code>t</code> = price tiers per record, <code>f</code> = fields per record.</p>
+<hr />
+<h2 id="1-format-detection-parsing">1. Format detection &amp; parsing</h2>
+<p>Adapters are selected by the supplier config (<code>format</code>), so detection is O(1) config lookup, not sniffing.
+Each adapter is <strong>streaming</strong> where possible so memory stays O(1) in feed size.</p>
+<ul>
+<li><strong>BMEcat 1.2 (XML)</strong> — iterate <code>ARTICLE</code> elements with a streaming parser (<code>iterparse</code>/SAX in prod).
+  Map <code>ARTICLE_FEATURES/FEATURE{FNAME,FVALUE}</code> to a dict; collect <code>ARTICLE_PRICE{LOWER_BOUND, PRICE_AMOUNT}</code>
+  into tiers. Complexity <strong>O(n·f)</strong>, memory O(1) per article.</li>
+<li><strong>Promidata (JSON)</strong> — parse <code>Products[]</code>; resolve nested paths (<code>ProductDetails.Name.de</code>),
+  flatten <code>ChildProducts[].Color</code>, <code>PriceList[].Scale/Price</code>. O(n·f).</li>
+<li><strong>CSV / Excel</strong> — <code>DictReader</code> / row iterator + a declarative <code>field_map</code>. O(n·f).</li>
+</ul>
+<blockquote>
+<p>Production note: for very large feeds, parse as a stream and load to BigQuery in batches; never hold the whole feed in RAM.</p>
+</blockquote>
+<hr />
+<h2 id="2-normalization">2. Normalization</h2>
+<h3 id="21-currency-eur">2.1 Currency → EUR</h3>
+<pre><code>price_eur = round(amount * fx_rate[currency], 2)
+</code></pre>
+<p>FX rates from a daily-refreshed table. O(1) per tier.</p>
+<h3 id="22-unit-kg">2.2 Unit → kg</h3>
+<p>Lookup table <code>{kg:1, g:1e-3, lb:0.45359237}</code>; <code>weight_kg = value * factor</code>. O(1).</p>
+<h3 id="23-price-scale-handling">2.3 Price-scale handling</h3>
+<p>Tiers normalized to <code>[{qty, eur}]</code>, <strong>sorted ascending by qty</strong>; <code>price_from = min(eur)</code>.
+Sorting per record is O(t log t), t tiny (≤ ~6) ⇒ effectively O(1).</p>
+<h3 id="24-category-mapping-taxonomy-resolution">2.4 Category mapping (taxonomy resolution)</h3>
+<p>Supplier category text → SOURCE taxonomy via a normalized dictionary lookup:</p>
+<pre><code>key = lower(strip(raw_category))
+category = category_map.get(key, &quot;&quot;)      # &quot;&quot; ⇒ flagged unmapped by QA
+</code></pre>
+<p>O(1) average (hash map). <strong>Why this matters for SOURCE:</strong> their category names drift over time
+(the reason behind the earlier "synonyms" project). Unmapped values are never silently dropped —
+they are flagged so the taxonomy can be extended.</p>
+<blockquote>
+<p>Production upgrade: when an exact key misses, fall back to <strong>fuzzy/synonym matching</strong> —
+token-set ratio or a small embedding nearest-neighbour against known categories — and queue
+low-confidence matches for human review. Keeps the map self-healing as suppliers change wording.</p>
+</blockquote>
+<hr />
+<h2 id="3-ean-13-validation-checksum">3. EAN-13 validation (checksum)</h2>
+<p>A real GS1 check-digit verification, not a length check:</p>
+<pre><code>valid(code):
+  if not match(/^\d{13}$/): return false
+  s = Σ d[i] * (3 if i odd else 1)  for i in 0..11
+  check = (10 - s % 10) % 10
+  return check == d[12]
+</code></pre>
+<p>O(1). Catches transposed/typo'd barcodes that a regex would pass.</p>
+<hr />
+<h2 id="4-data-quality-scoring">4. Data-quality scoring</h2>
+<h3 id="41-per-record-rules">4.1 Per-record rules</h3>
+<p>Each record runs a fixed set of predicate rules (required fields, price &gt; 0, EAN-13, image URL pattern,
+print method present, category mapped, description length, colours present). Each yields findings tagged
+<strong>error</strong> (blocks publish) or <strong>warning</strong>. O(f) per record.</p>
+<h3 id="42-batch-rule-duplicate-sku">4.2 Batch rule — duplicate SKU</h3>
+<p>Group indices by SKU in one pass (hash map), flag any group with size &gt; 1. <strong>O(n)</strong> time, O(n) space —
+beats the naive O(n²) pairwise compare.</p>
+<h3 id="43-score-transparent-explainable">4.3 Score (transparent &amp; explainable)</h3>
+<p>Row-based so a single field never tanks a feed disproportionately:</p>
+<pre><code>clean      = rows with no findings
+warn_only  = rows with only warnings
+errored    = rows with ≥1 error
+score = 100 * (clean*1.0 + warn_only*0.6) / n      # range 0–100
+</code></pre>
+<p>Weights are explicit (clean 1.0, warning 0.6, error 0.0). O(n).</p>
+<h3 id="44-why-row-based-not-finding-based">4.4 Why row-based, not finding-based</h3>
+<p>A finding-count score punishes a record with five warnings the same as five bad records. Row-based maps to
+the business reality "how many articles are publishable / need work", which is what a supplier scorecard should say.</p>
+<hr />
+<h2 id="5-source-of-truth-promotion-dedup">5. Source-of-truth promotion &amp; dedup</h2>
+<pre><code>candidates = [clean(rec) for rec in all if no error in rec.findings]
+by_sku = {}; for r in candidates: by_sku[r.sku] = r     # last-good wins, dedupe
+mart = values(by_sku)
+</code></pre>
+<p>O(n) with a hash map. Dedup policy is pluggable (last-wins / highest-quality / preferred-supplier).</p>
+<hr />
+<h2 id="6-versioning-change-data-capture-diff">6. Versioning &amp; change-data-capture (diff)</h2>
+<p>Each run snapshots the mart and diffs against the previous version as <strong>set operations on SKUs</strong>:</p>
+<pre><code>added   = keys(curr) - keys(prev)
+removed = keys(prev) - keys(curr)
+changed = { k in curr ∩ prev : hash(curr[k]) != hash(prev[k]) }
+</code></pre>
+<p>O(n) with hash sets. In BigQuery this is <code>EXCEPT DISTINCT</code> on a row hash — fully set-based, scales to millions.
+Row hashing (e.g. FARM_FINGERPRINT of the canonical JSON) makes <code>changed</code> an O(1)-per-row comparison.</p>
+<hr />
+<h2 id="7-orchestration">7. Orchestration</h2>
+<p>DAG = topological order of stages; per-supplier ingest/normalize/quality run in parallel, then a <strong>barrier</strong>
+before the cross-supplier SoT build (it needs all suppliers' clean rows to dedupe globally). Retries with
+exponential backoff; unparseable feeds dead-lettered, not failing the whole run.</p>
+<hr />
+<h2 id="8-complexity-summary">8. Complexity summary</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Time</th>
+<th>Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parse (any format)</td>
+<td>O(n·f)</td>
+<td>O(1) streaming</td>
+</tr>
+<tr>
+<td>Normalize</td>
+<td>O(n·t log t) ≈ O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Quality (per-record)</td>
+<td>O(n·f)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Duplicate SKU</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>SoT promote + dedupe</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Version diff</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<p>Whole pipeline is <strong>linear in feed size</strong> and parallel across suppliers.</p>
+<p>See also: <a href="system-design.html">system-design.html</a> · <a href="data-model.html">data-model.html</a></p></div>
+</body></html>

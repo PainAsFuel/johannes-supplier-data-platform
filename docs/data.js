@@ -1,5 +1,5 @@
 window.SOURCE_DATA = {
-  "generated_at": "29 Jun 2026, 22:59 UTC (live from BigQuery)",
+  "generated_at": "29 Jun 2026, 23:20 UTC (live from BigQuery)",
   "run_id": "bigquery_live",
   "kpis": {
     "suppliers": 4,
@@ -101,8 +101,8 @@ window.SOURCE_DATA = {
         "warning_count": 2,
         "score": 72.0,
         "code_tally": {
-          "invalid_price": 1,
           "missing_image": 1,
+          "invalid_price": 1,
           "single_price_scale": 1
         }
       },
@@ -246,9 +246,9 @@ window.SOURCE_DATA = {
         "warning_count": 1,
         "score": 52.0,
         "code_tally": {
+          "invalid_gtin": 1,
           "missing_required": 1,
-          "invalid_price": 1,
-          "invalid_gtin": 1
+          "invalid_price": 1
         }
       },
       "products": [
@@ -312,6 +312,88 @@ window.SOURCE_DATA = {
     }
   ],
   "catalog": [
+    {
+      "sku": "SRC-HALFAR-HF-CAN-04",
+      "supplier_sku": "HF-CAN-04",
+      "_supplier": "halfar",
+      "_supplier_name": "Halfar System (Bags)",
+      "ean": "4040375200045",
+      "name": "Canvas Shopper 270 g/m² beige",
+      "manufacturer": "Halfar",
+      "category": "Taschen & Gepäck",
+      "material": "Canvas 270g",
+      "colors": [
+        "beige",
+        "schwarz"
+      ],
+      "price_from_eur": 2.25,
+      "price_tiers": [
+        {
+          "qty": 100,
+          "eur": 2.65
+        },
+        {
+          "qty": 250,
+          "eur": 2.4
+        },
+        {
+          "qty": 500,
+          "eur": 2.25
+        }
+      ],
+      "min_order_qty": 100,
+      "print_methods": [
+        "Siebdruck",
+        "Stickerei"
+      ],
+      "print_area": "260 x 300 mm",
+      "weight_kg": 0.21,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/c/2/c21eda75aed119fb2bcc51da387abcb2b187d09c17556fc881529b5f985a5b26.jpeg",
+      "stock_qty": 14000,
+      "lead_time_days": 16,
+      "description": "Robuster Canvas-Shopper mit Innentasche und verstärkten Henkeln."
+    },
+    {
+      "sku": "SRC-HALFAR-HF-GIO-02",
+      "supplier_sku": "HF-GIO-02",
+      "_supplier": "halfar",
+      "_supplier_name": "Halfar System (Bags)",
+      "ean": "4040375200021",
+      "name": "Baumwolltasche GIOVANNI weiss",
+      "manufacturer": "Halfar",
+      "category": "Taschen & Gepäck",
+      "material": "Baumwolle 105g",
+      "colors": [
+        "weiss"
+      ],
+      "price_from_eur": 0.48,
+      "price_tiers": [
+        {
+          "qty": 100,
+          "eur": 0.62
+        },
+        {
+          "qty": 250,
+          "eur": 0.54
+        },
+        {
+          "qty": 500,
+          "eur": 0.48
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Siebdruck"
+      ],
+      "print_area": "220 x 220 mm",
+      "weight_kg": 0.07,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/e/d/ed2c2659d8212fd68724fe6fed6adcf24b47a56ee422802d231043767b4ac7b3.jpeg",
+      "stock_qty": 120000,
+      "lead_time_days": 10,
+      "description": "Leichte Baumwolltasche mit langen Henkeln, ideal als günstiger Streuartikel."
+    },
     {
       "sku": "SRC-HALFAR-HF-IMP-03",
       "supplier_sku": "HF-IMP-03",
@@ -389,50 +471,10 @@ window.SOURCE_DATA = {
       "print_area": "200 x 250 mm",
       "weight_kg": 0.06,
       "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/halfar/anton.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/e/1/e1b7a580ac8bc2ceff9328fec918c4d674a98ac60fc60ac58b4d3532ff173bec.jpeg",
       "stock_qty": 88000,
       "lead_time_days": 12,
       "description": "Turnbeutel."
-    },
-    {
-      "sku": "SRC-HALFAR-HF-GIO-02",
-      "supplier_sku": "HF-GIO-02",
-      "_supplier": "halfar",
-      "_supplier_name": "Halfar System (Bags)",
-      "ean": "4040375200021",
-      "name": "Baumwolltasche GIOVANNI weiss",
-      "manufacturer": "Halfar",
-      "category": "Taschen & Gepäck",
-      "material": "Baumwolle 105g",
-      "colors": [
-        "weiss"
-      ],
-      "price_from_eur": 0.48,
-      "price_tiers": [
-        {
-          "qty": 100,
-          "eur": 0.62
-        },
-        {
-          "qty": 250,
-          "eur": 0.54
-        },
-        {
-          "qty": 500,
-          "eur": 0.48
-        }
-      ],
-      "min_order_qty": 250,
-      "print_methods": [
-        "Siebdruck"
-      ],
-      "print_area": "220 x 220 mm",
-      "weight_kg": 0.07,
-      "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/halfar/giovanni.jpg",
-      "stock_qty": 120000,
-      "lead_time_days": 10,
-      "description": "Leichte Baumwolltasche mit langen Henkeln, ideal als günstiger Streuartikel."
     },
     {
       "sku": "SRC-HALFAR-HF-COT-01",
@@ -472,52 +514,10 @@ window.SOURCE_DATA = {
       "print_area": "250 x 250 mm",
       "weight_kg": 0.09,
       "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/halfar/cotton140.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/e/7/e71cdb930cf3faf43b346c41b1d04e7bb1530cfc0e90bfc297783a2e763d9048.jpeg",
       "stock_qty": 64000,
       "lead_time_days": 12,
       "description": "Klassische Baumwolltasche mit langen Henkeln, vielseitig bedruckbar."
-    },
-    {
-      "sku": "SRC-HALFAR-HF-CAN-04",
-      "supplier_sku": "HF-CAN-04",
-      "_supplier": "halfar",
-      "_supplier_name": "Halfar System (Bags)",
-      "ean": "4040375200045",
-      "name": "Canvas Shopper 270 g/m² beige",
-      "manufacturer": "Halfar",
-      "category": "Taschen & Gepäck",
-      "material": "Canvas 270g",
-      "colors": [
-        "beige",
-        "schwarz"
-      ],
-      "price_from_eur": 2.25,
-      "price_tiers": [
-        {
-          "qty": 100,
-          "eur": 2.65
-        },
-        {
-          "qty": 250,
-          "eur": 2.4
-        },
-        {
-          "qty": 500,
-          "eur": 2.25
-        }
-      ],
-      "min_order_qty": 100,
-      "print_methods": [
-        "Siebdruck",
-        "Stickerei"
-      ],
-      "print_area": "260 x 300 mm",
-      "weight_kg": 0.21,
-      "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/halfar/canvas.jpg",
-      "stock_qty": 14000,
-      "lead_time_days": 16,
-      "description": "Robuster Canvas-Shopper mit Innentasche und verstärkten Henkeln."
     },
     {
       "sku": "SRC-REFLECTS-RF-RPET-01",
@@ -557,10 +557,43 @@ window.SOURCE_DATA = {
       "print_area": "50 x 80 mm",
       "weight_kg": 0.06,
       "eco": true,
-      "image_url": "https://img.source-werbeartikel.com/reflects/rpet500.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/f/5/f5120ab19cdc6c1a0952c190b1b6e2c8d02eae04033b5fa57159ba3bb0f69f04.jpeg",
       "stock_qty": 41000,
       "lead_time_days": 12,
       "description": "Nachhaltige Trinkflasche aus recyceltem PET, BPA-frei mit auslaufsicherem Verschluss."
+    },
+    {
+      "sku": "SRC-REFLECTS-RF-VAK-05",
+      "supplier_sku": "RF-VAK-05",
+      "_supplier": "reflects",
+      "_supplier_name": "REFLECTS (Promidata feed)",
+      "ean": "4034127020050",
+      "name": "Vakuum-Isolierkanne 1 L",
+      "manufacturer": "REFLECTS",
+      "category": "Küche & Zuhause",
+      "material": "Edelstahl",
+      "colors": [
+        "silber",
+        "schwarz"
+      ],
+      "price_from_eur": 7.44,
+      "price_tiers": [
+        {
+          "qty": 50,
+          "eur": 7.44
+        }
+      ],
+      "min_order_qty": 50,
+      "print_methods": [
+        "Lasergravur"
+      ],
+      "print_area": "60 x 80 mm",
+      "weight_kg": 0.52,
+      "eco": false,
+      "image_url": "",
+      "stock_qty": 5200,
+      "lead_time_days": 18,
+      "description": "Robuste Vakuum-Isolierkanne mit Einhand-Ausgießmechanik für Büro und Outdoor."
     },
     {
       "sku": "SRC-REFLECTS-RF-DW-04",
@@ -599,43 +632,10 @@ window.SOURCE_DATA = {
       "print_area": "35 x 55 mm",
       "weight_kg": 0.26,
       "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/reflects/dw400.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/c/9/c998ec84f119e9cf721d3c7dfa0c800aac3bc2e682d82d5f4ca4728301a5d785.jpeg",
       "stock_qty": 7400,
       "lead_time_days": 16,
       "description": "Elegante doppelwandige Flasche mit pulverbeschichteter Oberfläche und Bambusdeckel."
-    },
-    {
-      "sku": "SRC-REFLECTS-RF-VAK-05",
-      "supplier_sku": "RF-VAK-05",
-      "_supplier": "reflects",
-      "_supplier_name": "REFLECTS (Promidata feed)",
-      "ean": "4034127020050",
-      "name": "Vakuum-Isolierkanne 1 L",
-      "manufacturer": "REFLECTS",
-      "category": "Küche & Zuhause",
-      "material": "Edelstahl",
-      "colors": [
-        "silber",
-        "schwarz"
-      ],
-      "price_from_eur": 7.44,
-      "price_tiers": [
-        {
-          "qty": 50,
-          "eur": 7.44
-        }
-      ],
-      "min_order_qty": 50,
-      "print_methods": [
-        "Lasergravur"
-      ],
-      "print_area": "60 x 80 mm",
-      "weight_kg": 0.52,
-      "eco": false,
-      "image_url": "",
-      "stock_qty": 5200,
-      "lead_time_days": 18,
-      "description": "Robuste Vakuum-Isolierkanne mit Einhand-Ausgießmechanik für Büro und Outdoor."
     },
     {
       "sku": "SRC-REFLECTS-RF-ISO-02",
@@ -675,141 +675,52 @@ window.SOURCE_DATA = {
       "print_area": "40 x 60 mm",
       "weight_kg": 0.3,
       "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/reflects/iso500.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/f/d/fd8f98342306d0468233d95af85eafd2d0a3d58c86b0f3d04120a51d880daf84.jpeg",
       "stock_qty": 18500,
       "lead_time_days": 14,
       "description": "Doppelwandige vakuumisolierte Edelstahlflasche, hält Getränke bis zu 12 Stunden warm."
     },
     {
-      "sku": "SRC-STEDMAN-ST-CRU-01",
-      "supplier_sku": "ST-CRU-01",
-      "_supplier": "stedman",
-      "_supplier_name": "Stedman (Textiles)",
-      "ean": "4055835100018",
-      "name": "CRUSADER MEN T-Shirt 150g",
-      "manufacturer": "Stedman",
-      "category": "Bekleidung",
-      "material": "100% Baumwolle",
+      "sku": "SRC-SENATOR-SE-Eco-04",
+      "supplier_sku": "SE-Eco-04",
+      "_supplier": "senator",
+      "_supplier_name": "senator",
+      "ean": "4045645010041",
+      "name": "Öko-Druckkugelschreiber recycelt",
+      "manufacturer": "senator",
+      "category": "Büro & Schreibgeräte",
+      "material": "rABS (recycelt)",
       "colors": [
-        "weiss",
-        "schwarz",
-        "navy",
-        "rot"
+        "blau",
+        "natur",
+        "grün"
       ],
-      "price_from_eur": 3.76,
+      "price_from_eur": 0.17,
       "price_tiers": [
         {
-          "qty": 250,
-          "eur": 4.2
+          "qty": 500,
+          "eur": 0.21
         },
         {
           "qty": 1000,
-          "eur": 3.95
+          "eur": 0.18
         },
         {
           "qty": 5000,
-          "eur": 3.76
+          "eur": 0.17
         }
       ],
-      "min_order_qty": 250,
+      "min_order_qty": 500,
       "print_methods": [
-        "Siebdruck",
-        "Transferdruck",
-        "Stickerei"
+        "Tampondruck"
       ],
-      "print_area": "250 x 350 mm",
-      "weight_kg": 0.165,
-      "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/stedman/crusader.jpg",
-      "stock_qty": 54000,
-      "lead_time_days": 7,
-      "description": "Klassisches Rundhals-T-Shirt für Herren aus ringgesponnener Baumwolle, 150 g/m²."
-    },
-    {
-      "sku": "SRC-STEDMAN-ST-TUN-05",
-      "supplier_sku": "ST-TUN-05",
-      "_supplier": "stedman",
-      "_supplier_name": "Stedman (Textiles)",
-      "ean": "405583510",
-      "name": "TUNER T-Shirt",
-      "manufacturer": "Stedman",
-      "category": "Bekleidung",
-      "material": "Baumwolle 160g",
-      "colors": [
-        "navy",
-        "grau",
-        "rot"
-      ],
-      "price_from_eur": 4.68,
-      "price_tiers": [
-        {
-          "qty": 250,
-          "eur": 4.95
-        },
-        {
-          "qty": 1000,
-          "eur": 4.8
-        },
-        {
-          "qty": 5000,
-          "eur": 4.68
-        }
-      ],
-      "min_order_qty": 250,
-      "print_methods": [
-        "Siebdruck",
-        "Transferdruck"
-      ],
-      "print_area": "250 x 350 mm",
-      "weight_kg": 0.16,
-      "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/stedman/tuner.jpg",
-      "stock_qty": 33000,
-      "lead_time_days": 8,
-      "description": "Sportliches Rundhals-T-Shirt mit moderner Passform, vielseitig veredelbar."
-    },
-    {
-      "sku": "SRC-STEDMAN-ST-IQO-02",
-      "supplier_sku": "ST-IQO-02",
-      "_supplier": "stedman",
-      "_supplier_name": "Stedman (Textiles)",
-      "ean": "4055835100025",
-      "name": "IQONIQ Bryce T-Shirt recycelte Baumwolle",
-      "manufacturer": "Stedman",
-      "category": "Bekleidung",
-      "material": "rec. Baumwolle",
-      "colors": [
-        "schwarz",
-        "weiss",
-        "khaki"
-      ],
-      "price_from_eur": 2.65,
-      "price_tiers": [
-        {
-          "qty": 250,
-          "eur": 2.95
-        },
-        {
-          "qty": 1000,
-          "eur": 2.78
-        },
-        {
-          "qty": 5000,
-          "eur": 2.65
-        }
-      ],
-      "min_order_qty": 250,
-      "print_methods": [
-        "Siebdruck",
-        "Transferdruck"
-      ],
-      "print_area": "240 x 320 mm",
-      "weight_kg": 0.15,
-      "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/stedman/iqoniq.jpg",
-      "stock_qty": 38000,
-      "lead_time_days": 10,
-      "description": "Nachhaltiges T-Shirt aus recycelter Baumwolle, GRS-zertifiziert."
+      "print_area": "40 x 6 mm",
+      "weight_kg": 0.009,
+      "eco": true,
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/5/0/509d736f303e73a2cda542a4591e4fe7d999d95d4e8fcc316a5f23321dd8bb32.jpeg",
+      "stock_qty": 260000,
+      "lead_time_days": 12,
+      "description": "Nachhaltiger Druckkugelschreiber aus recyceltem Kunststoff, klimafreundlich produziert."
     },
     {
       "sku": "SRC-SENATOR-SE-Lib-01",
@@ -850,52 +761,10 @@ window.SOURCE_DATA = {
       "print_area": "45 x 6 mm",
       "weight_kg": 0.011,
       "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/senator/liberty.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/0/e/0e5334f272f30b9225f9180e7152a8158c5a90550acb37a6a1f2ec24239ae3fc.jpeg",
       "stock_qty": 184000,
       "lead_time_days": 10,
       "description": "Soft-Touch Kunststoffkugelschreiber mit blauschreibender Großraummine und angenehmer Haptik."
-    },
-    {
-      "sku": "SRC-SENATOR-SE-Eco-04",
-      "supplier_sku": "SE-Eco-04",
-      "_supplier": "senator",
-      "_supplier_name": "senator",
-      "ean": "4045645010041",
-      "name": "Öko-Druckkugelschreiber recycelt",
-      "manufacturer": "senator",
-      "category": "Büro & Schreibgeräte",
-      "material": "rABS (recycelt)",
-      "colors": [
-        "blau",
-        "natur",
-        "grün"
-      ],
-      "price_from_eur": 0.17,
-      "price_tiers": [
-        {
-          "qty": 500,
-          "eur": 0.21
-        },
-        {
-          "qty": 1000,
-          "eur": 0.18
-        },
-        {
-          "qty": 5000,
-          "eur": 0.17
-        }
-      ],
-      "min_order_qty": 500,
-      "print_methods": [
-        "Tampondruck"
-      ],
-      "print_area": "40 x 6 mm",
-      "weight_kg": 0.009,
-      "eco": true,
-      "image_url": "https://img.source-werbeartikel.com/senator/oeko.jpg",
-      "stock_qty": 260000,
-      "lead_time_days": 12,
-      "description": "Nachhaltiger Druckkugelschreiber aus recyceltem Kunststoff, klimafreundlich produziert."
     },
     {
       "sku": "SRC-SENATOR-SE-Chl-03",
@@ -934,7 +803,7 @@ window.SOURCE_DATA = {
       "print_area": "45 x 6 mm",
       "weight_kg": 0.01,
       "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/senator/challenger.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/8/a/8a00cd82be35601c26b2cf8c537cde965c9098f48d75bf91bc8e6e9268112b83.jpeg",
       "stock_qty": 96000,
       "lead_time_days": 10,
       "description": "Eleganter Soft-Touch Kugelschreiber mit verchromten Applikationen."
@@ -968,7 +837,7 @@ window.SOURCE_DATA = {
       "print_area": "50 x 6 mm",
       "weight_kg": 0.018,
       "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/senator/metal.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/4/8/48a7203150f6b76a37b61526c6cb2a63da4b70027223aee42be7ed548d5e4d3e.jpeg",
       "stock_qty": 22000,
       "lead_time_days": 14,
       "description": "Hochwertiger Metallkugelschreiber mit mattem Finish, ideal für gravierte Logos."
@@ -1012,10 +881,141 @@ window.SOURCE_DATA = {
       "print_area": "45 x 7 mm",
       "weight_kg": 0.009,
       "eco": false,
-      "image_url": "https://img.source-werbeartikel.com/senator/superhit.jpg",
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/f/c/fcd702c22dcd81cea96df9521441ac37408fb6f7506ff1334458df0f5cbbf857.jpeg",
       "stock_qty": 420000,
       "lead_time_days": 8,
       "description": "Der Klassiker: meistverkaufter Werbekugelschreiber mit großer Werbefläche."
+    },
+    {
+      "sku": "SRC-STEDMAN-ST-CRU-01",
+      "supplier_sku": "ST-CRU-01",
+      "_supplier": "stedman",
+      "_supplier_name": "Stedman (Textiles)",
+      "ean": "4055835100018",
+      "name": "CRUSADER MEN T-Shirt 150g",
+      "manufacturer": "Stedman",
+      "category": "Bekleidung",
+      "material": "100% Baumwolle",
+      "colors": [
+        "weiss",
+        "schwarz",
+        "navy",
+        "rot"
+      ],
+      "price_from_eur": 3.76,
+      "price_tiers": [
+        {
+          "qty": 250,
+          "eur": 4.2
+        },
+        {
+          "qty": 1000,
+          "eur": 3.95
+        },
+        {
+          "qty": 5000,
+          "eur": 3.76
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Siebdruck",
+        "Transferdruck",
+        "Stickerei"
+      ],
+      "print_area": "250 x 350 mm",
+      "weight_kg": 0.165,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/1/9/19809f56186701db0dcc101cf5b1bab9673d1198bc417d2dfa0646c6e0848d55.jpeg",
+      "stock_qty": 54000,
+      "lead_time_days": 7,
+      "description": "Klassisches Rundhals-T-Shirt für Herren aus ringgesponnener Baumwolle, 150 g/m²."
+    },
+    {
+      "sku": "SRC-STEDMAN-ST-IQO-02",
+      "supplier_sku": "ST-IQO-02",
+      "_supplier": "stedman",
+      "_supplier_name": "Stedman (Textiles)",
+      "ean": "4055835100025",
+      "name": "IQONIQ Bryce T-Shirt recycelte Baumwolle",
+      "manufacturer": "Stedman",
+      "category": "Bekleidung",
+      "material": "rec. Baumwolle",
+      "colors": [
+        "schwarz",
+        "weiss",
+        "khaki"
+      ],
+      "price_from_eur": 2.65,
+      "price_tiers": [
+        {
+          "qty": 250,
+          "eur": 2.95
+        },
+        {
+          "qty": 1000,
+          "eur": 2.78
+        },
+        {
+          "qty": 5000,
+          "eur": 2.65
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Siebdruck",
+        "Transferdruck"
+      ],
+      "print_area": "240 x 320 mm",
+      "weight_kg": 0.15,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/0/4/04ea1f841899185842ba3c4d2beaf5c16c5306feec5f3d647e1da33145a69422.jpeg",
+      "stock_qty": 38000,
+      "lead_time_days": 10,
+      "description": "Nachhaltiges T-Shirt aus recycelter Baumwolle, GRS-zertifiziert."
+    },
+    {
+      "sku": "SRC-STEDMAN-ST-TUN-05",
+      "supplier_sku": "ST-TUN-05",
+      "_supplier": "stedman",
+      "_supplier_name": "Stedman (Textiles)",
+      "ean": "405583510",
+      "name": "TUNER T-Shirt",
+      "manufacturer": "Stedman",
+      "category": "Bekleidung",
+      "material": "Baumwolle 160g",
+      "colors": [
+        "navy",
+        "grau",
+        "rot"
+      ],
+      "price_from_eur": 4.68,
+      "price_tiers": [
+        {
+          "qty": 250,
+          "eur": 4.95
+        },
+        {
+          "qty": 1000,
+          "eur": 4.8
+        },
+        {
+          "qty": 5000,
+          "eur": 4.68
+        }
+      ],
+      "min_order_qty": 250,
+      "print_methods": [
+        "Siebdruck",
+        "Transferdruck"
+      ],
+      "print_area": "250 x 350 mm",
+      "weight_kg": 0.16,
+      "eco": false,
+      "image_url": "https://img.source-werbeartikel.com/media/catalog/product/cache/dc09e1c71e492175f875827bcbf6a37c/7/4/74d96df8083402a20c33b63df40a24751f82c82a9cd3466aa6c4c6ba14c687d3.jpeg",
+      "stock_qty": 33000,
+      "lead_time_days": 8,
+      "description": "Sportliches Rundhals-T-Shirt mit moderner Passform, vielseitig veredelbar."
     }
   ],
   "category_breakdown": {
@@ -1025,14 +1025,14 @@ window.SOURCE_DATA = {
     "Bekleidung": 3
   },
   "issue_totals": {
-    "invalid_price": 2,
     "missing_image": 2,
+    "invalid_price": 2,
     "single_price_scale": 2,
-    "missing_required": 1,
-    "invalid_gtin": 1,
     "missing_print_method": 1,
     "short_description": 1,
-    "missing_gtin": 1
+    "missing_gtin": 1,
+    "invalid_gtin": 1,
+    "missing_required": 1
   },
   "diff": {
     "added": 17,
