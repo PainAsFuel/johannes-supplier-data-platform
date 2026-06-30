@@ -1,6 +1,6 @@
 window.SOURCE_DATA = {
-  "generated_at": "29 Jun 2026, 23:12 UTC",
-  "run_id": "run_20260629_231219",
+  "generated_at": "30 Jun 2026, 00:06 UTC",
+  "run_id": "run_20260630_000624",
   "kpis": {
     "suppliers": 4,
     "incoming": 20,
@@ -39,7 +39,7 @@ window.SOURCE_DATA = {
           "ean": "4040375018169",
           "name": "Rucksack EVENT",
           "manufacturer": "Halfar",
-          "category": "Bags & Travel",
+          "category": "Taschen & Gepäck",
           "_raw_category": "rucksack",
           "material": "Polyester 600D",
           "colors": [
@@ -84,7 +84,7 @@ window.SOURCE_DATA = {
           "ean": "4040375018206",
           "name": "Citybag GROOVE",
           "manufacturer": "Halfar",
-          "category": "Bags & Travel",
+          "category": "Taschen & Gepäck",
           "_raw_category": "taschen",
           "material": "rPET",
           "colors": [
@@ -127,7 +127,7 @@ window.SOURCE_DATA = {
           "ean": "4040375018220",
           "name": "Sportsbag MOVE",
           "manufacturer": "Halfar",
-          "category": "Bags & Travel",
+          "category": "Taschen & Gepäck",
           "_raw_category": "taschen",
           "material": "Polyester",
           "colors": [
@@ -177,7 +177,7 @@ window.SOURCE_DATA = {
           "ean": "4040375018251",
           "name": "Shopper BASIC",
           "manufacturer": "Halfar",
-          "category": "Bags & Travel",
+          "category": "Taschen & Gepäck",
           "_raw_category": "taschen",
           "material": "Baumwolle",
           "colors": [
@@ -231,7 +231,7 @@ window.SOURCE_DATA = {
           "ean": "4040375018305",
           "name": "Laptop-Rucksack PRO",
           "manufacturer": "Halfar",
-          "category": "Bags & Travel",
+          "category": "Taschen & Gepäck",
           "_raw_category": "rucksack",
           "material": "Polyester 900D",
           "colors": [
@@ -291,7 +291,7 @@ window.SOURCE_DATA = {
           "ean": "4055835007508",
           "name": "Schmoozies® Bär",
           "manufacturer": "mbw",
-          "category": "Giveaways",
+          "category": "Streuartikel",
           "_raw_category": "plush",
           "material": "Mikrofaser",
           "colors": [
@@ -334,7 +334,7 @@ window.SOURCE_DATA = {
           "ean": "4055835007607",
           "name": "MiniFeet® Schlüsselanhänger",
           "manufacturer": "mbw",
-          "category": "Giveaways",
+          "category": "Streuartikel",
           "_raw_category": "giveaway",
           "material": "Plüsch",
           "colors": [
@@ -376,7 +376,7 @@ window.SOURCE_DATA = {
           "ean": "4055835007706",
           "name": "Squeezies® Stressball",
           "manufacturer": "mbw",
-          "category": "Giveaways",
+          "category": "Streuartikel",
           "_raw_category": "giveaway",
           "material": "PU-Schaum",
           "colors": [
@@ -427,7 +427,7 @@ window.SOURCE_DATA = {
           "ean": "4055835007805",
           "name": "Schmoozies® Smiley",
           "manufacturer": "mbw",
-          "category": "Giveaways",
+          "category": "Streuartikel",
           "_raw_category": "plush",
           "material": "Mikrofaser",
           "colors": [
@@ -476,7 +476,7 @@ window.SOURCE_DATA = {
           "ean": "405583500",
           "name": "Plüsch-Elefant MAXI",
           "manufacturer": "mbw",
-          "category": "Giveaways",
+          "category": "Streuartikel",
           "_raw_category": "plueschtiere",
           "material": "Plüsch",
           "colors": [
@@ -547,7 +547,7 @@ window.SOURCE_DATA = {
           "ean": "4034127001004",
           "name": "REEVES drinking bottle",
           "manufacturer": "REFLECTS",
-          "category": "Drinkware",
+          "category": "Küche & Zuhause",
           "_raw_category": "drinkware",
           "material": "Tritan",
           "colors": [
@@ -593,7 +593,7 @@ window.SOURCE_DATA = {
           "ean": "4034127001103",
           "name": "ABERDEEN thermo mug",
           "manufacturer": "REFLECTS",
-          "category": "Drinkware",
+          "category": "Küche & Zuhause",
           "_raw_category": "drinkware",
           "material": "Edelstahl",
           "colors": [
@@ -638,7 +638,7 @@ window.SOURCE_DATA = {
           "ean": "4034127001202",
           "name": "DAKAR power bank 5000",
           "manufacturer": "REFLECTS",
-          "category": "Technology",
+          "category": "Elektronik & Mechanik",
           "_raw_category": "tech",
           "material": "ABS / Aluminium",
           "colors": [
@@ -744,7 +744,7 @@ window.SOURCE_DATA = {
           "ean": "4034127001400",
           "name": "SANTOS coffee-to-go cup",
           "manufacturer": "REFLECTS",
-          "category": "Drinkware",
+          "category": "Küche & Zuhause",
           "_raw_category": "drinkware",
           "material": "Bambusfaser",
           "colors": [
@@ -807,7 +807,7 @@ window.SOURCE_DATA = {
           "ean": "4250369812349",
           "name": "uma RECYCLED PET Pen",
           "manufacturer": "uma",
-          "category": "Writing",
+          "category": "Büro & Schreibgeräte",
           "_raw_category": "pens",
           "material": "rPET",
           "colors": [
@@ -852,7 +852,7 @@ window.SOURCE_DATA = {
           "ean": "4250369812356",
           "name": "uma STRAIGHT SI",
           "manufacturer": "uma",
-          "category": "Writing",
+          "category": "Büro & Schreibgeräte",
           "_raw_category": "pens",
           "material": "ABS",
           "colors": [
@@ -897,7 +897,7 @@ window.SOURCE_DATA = {
           "ean": "",
           "name": "uma FLEXI soft",
           "manufacturer": "uma",
-          "category": "Writing",
+          "category": "Büro & Schreibgeräte",
           "_raw_category": "pens",
           "material": "ABS",
           "colors": [
@@ -944,7 +944,7 @@ window.SOURCE_DATA = {
           "ean": "4250369812370",
           "name": "uma SLIM cosmo",
           "manufacturer": "uma",
-          "category": "Writing",
+          "category": "Büro & Schreibgeräte",
           "_raw_category": "pens",
           "material": "Aluminium",
           "colors": [
@@ -1041,7 +1041,7 @@ window.SOURCE_DATA = {
       "ean": "4040375018169",
       "name": "Rucksack EVENT",
       "manufacturer": "Halfar",
-      "category": "Bags & Travel",
+      "category": "Taschen & Gepäck",
       "material": "Polyester 600D",
       "colors": [
         "schwarz",
@@ -1084,7 +1084,7 @@ window.SOURCE_DATA = {
       "ean": "4040375018206",
       "name": "Citybag GROOVE",
       "manufacturer": "Halfar",
-      "category": "Bags & Travel",
+      "category": "Taschen & Gepäck",
       "material": "rPET",
       "colors": [
         "schwarz",
@@ -1125,7 +1125,7 @@ window.SOURCE_DATA = {
       "ean": "4040375018220",
       "name": "Sportsbag MOVE",
       "manufacturer": "Halfar",
-      "category": "Bags & Travel",
+      "category": "Taschen & Gepäck",
       "material": "Polyester",
       "colors": [
         "blau",
@@ -1166,7 +1166,7 @@ window.SOURCE_DATA = {
       "ean": "4040375018251",
       "name": "Shopper BASIC",
       "manufacturer": "Halfar",
-      "category": "Bags & Travel",
+      "category": "Taschen & Gepäck",
       "material": "Baumwolle",
       "colors": [
         "natur",
@@ -1205,7 +1205,7 @@ window.SOURCE_DATA = {
       "ean": "4040375018305",
       "name": "Laptop-Rucksack PRO",
       "manufacturer": "Halfar",
-      "category": "Bags & Travel",
+      "category": "Taschen & Gepäck",
       "material": "Polyester 900D",
       "colors": [
         "schwarz"
@@ -1242,7 +1242,7 @@ window.SOURCE_DATA = {
       "ean": "4055835007508",
       "name": "Schmoozies® Bär",
       "manufacturer": "mbw",
-      "category": "Giveaways",
+      "category": "Streuartikel",
       "material": "Mikrofaser",
       "colors": [
         "braun",
@@ -1283,7 +1283,7 @@ window.SOURCE_DATA = {
       "ean": "4055835007607",
       "name": "MiniFeet® Schlüsselanhänger",
       "manufacturer": "mbw",
-      "category": "Giveaways",
+      "category": "Streuartikel",
       "material": "Plüsch",
       "colors": [
         "bunt"
@@ -1323,7 +1323,7 @@ window.SOURCE_DATA = {
       "ean": "405583500",
       "name": "Plüsch-Elefant MAXI",
       "manufacturer": "mbw",
-      "category": "Giveaways",
+      "category": "Streuartikel",
       "material": "Plüsch",
       "colors": [
         "grau"
@@ -1363,7 +1363,7 @@ window.SOURCE_DATA = {
       "ean": "4034127001004",
       "name": "REEVES drinking bottle",
       "manufacturer": "REFLECTS",
-      "category": "Drinkware",
+      "category": "Küche & Zuhause",
       "material": "Tritan",
       "colors": [
         "transparent",
@@ -1407,7 +1407,7 @@ window.SOURCE_DATA = {
       "ean": "4034127001103",
       "name": "ABERDEEN thermo mug",
       "manufacturer": "REFLECTS",
-      "category": "Drinkware",
+      "category": "Küche & Zuhause",
       "material": "Edelstahl",
       "colors": [
         "silber",
@@ -1490,7 +1490,7 @@ window.SOURCE_DATA = {
       "ean": "4034127001400",
       "name": "SANTOS coffee-to-go cup",
       "manufacturer": "REFLECTS",
-      "category": "Drinkware",
+      "category": "Küche & Zuhause",
       "material": "Bambusfaser",
       "colors": [
         "natur",
@@ -1523,7 +1523,7 @@ window.SOURCE_DATA = {
       "ean": "4250369812349",
       "name": "uma RECYCLED PET Pen",
       "manufacturer": "uma",
-      "category": "Writing",
+      "category": "Büro & Schreibgeräte",
       "material": "rPET",
       "colors": [
         "blau",
@@ -1566,7 +1566,7 @@ window.SOURCE_DATA = {
       "ean": "4250369812356",
       "name": "uma STRAIGHT SI",
       "manufacturer": "uma",
-      "category": "Writing",
+      "category": "Büro & Schreibgeräte",
       "material": "ABS",
       "colors": [
         "weiss",
@@ -1609,7 +1609,7 @@ window.SOURCE_DATA = {
       "ean": "",
       "name": "uma FLEXI soft",
       "manufacturer": "uma",
-      "category": "Writing",
+      "category": "Büro & Schreibgeräte",
       "material": "ABS",
       "colors": [
         "schwarz"
@@ -1641,7 +1641,7 @@ window.SOURCE_DATA = {
       "ean": "4250369812370",
       "name": "uma SLIM cosmo",
       "manufacturer": "uma",
-      "category": "Writing",
+      "category": "Büro & Schreibgeräte",
       "material": "Aluminium",
       "colors": [
         "silber",
@@ -1717,10 +1717,10 @@ window.SOURCE_DATA = {
     }
   ],
   "category_breakdown": {
-    "Bags & Travel": 5,
-    "Writing": 4,
-    "Giveaways": 3,
-    "Drinkware": 3,
+    "Taschen & Gepäck": 5,
+    "Büro & Schreibgeräte": 4,
+    "Streuartikel": 3,
+    "Küche & Zuhause": 3,
     "Uncategorized": 2
   },
   "issue_totals": {

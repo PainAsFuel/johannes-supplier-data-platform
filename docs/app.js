@@ -6,13 +6,17 @@
   const euro = n => n == null ? "—" : "€" + Number(n).toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   const CAT = {
-    "Writing":       { g: "linear-gradient(135deg,#0b3d91,#2f7bff)", i: "🖊️" },
-    "Bags & Travel": { g: "linear-gradient(135deg,#7c3aed,#a855f7)", i: "🎒" },
-    "Drinkware":     { g: "linear-gradient(135deg,#0891b2,#22d3ee)", i: "🍶" },
-    "Technology":    { g: "linear-gradient(135deg,#1e293b,#475569)", i: "🔌" },
-    "Giveaways":     { g: "linear-gradient(135deg,#ff6b1a,#ff9248)", i: "🧸" },
-    "Apparel":       { g: "linear-gradient(135deg,#db2777,#f472b6)", i: "👕" },
-    "Uncategorized": { g: "linear-gradient(135deg,#64748b,#94a3b8)", i: "📦" }
+    "Büro & Schreibgeräte":  { g: "linear-gradient(135deg,#0b3d91,#2f7bff)", i: "🖊️" },
+    "Taschen & Gepäck":      { g: "linear-gradient(135deg,#7c3aed,#a855f7)", i: "🎒" },
+    "Küche & Zuhause":       { g: "linear-gradient(135deg,#0891b2,#22d3ee)", i: "🍶" },
+    "Elektronik & Mechanik": { g: "linear-gradient(135deg,#1e293b,#475569)", i: "🔌" },
+    "Streuartikel":          { g: "linear-gradient(135deg,#ff6b1a,#ff9248)", i: "🧸" },
+    "Bekleidung":            { g: "linear-gradient(135deg,#db2777,#f472b6)", i: "👕" },
+    "Auto & Reisen":         { g: "linear-gradient(135deg,#0d9488,#2dd4bf)", i: "🚗" },
+    "Werkzeug":              { g: "linear-gradient(135deg,#475569,#94a3b8)", i: "🔧" },
+    "Wellness & Kosmetik":   { g: "linear-gradient(135deg,#e11d48,#fb7185)", i: "🧴" },
+    "Essen & Trinken":       { g: "linear-gradient(135deg,#d97706,#fbbf24)", i: "🍫" },
+    "Uncategorized":         { g: "linear-gradient(135deg,#64748b,#94a3b8)", i: "📦" }
   };
   const catOf = c => CAT[c] || CAT["Uncategorized"];
   const DONUT_COLORS = ["#0b3d91", "#ff6b1a", "#0891b2", "#7c3aed", "#16a34a", "#db2777", "#64748b", "#f59e0b"];
@@ -90,7 +94,7 @@
   /* ---------- pipeline flow ---------- */
   const STAGES = [
     { i: "📥", h: "Ingest", p: "BMEcat, Promidata, CSV & Excel adapters pull every supplier feed.", g: "Cloud Storage + Functions" },
-    { i: "🧬", h: "Normalize", p: "Map to one product model: currency→EUR, units→kg, category taxonomy.", g: "Dataform (staging)" },
+    { i: "🧬", h: "Normalize", p: "Map to one product model: currency→EUR, units→kg, supplier categories → SOURCE taxonomy (Auto&nbsp;&amp;&nbsp;Reisen, Büro&nbsp;&amp;&nbsp;Schreibgeräte …).", g: "Dataform (staging)" },
     { i: "🔎", h: "Quality", p: "Score each feed; flag errors & warnings to report back to suppliers.", g: "Dataform assertions" },
     { i: "✅", h: "Source of truth", p: "Only error-free articles promoted to the governed catalog.", g: "BigQuery mart" },
     { i: "🕒", h: "Version", p: "Immutable snapshot + diff per run, so any state is reproducible.", g: "BigQuery snapshots" }

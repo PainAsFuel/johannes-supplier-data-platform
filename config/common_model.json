@@ -21,13 +21,18 @@
     "lead_time_days": { "required": false, "desc": "Production / delivery lead time" },
     "description":    { "required": false, "desc": "Marketing description" }
   },
+  "_category_note": "Target taxonomy = SOURCE's real top-level categories (from their own category sheet). Supplier categories drift over time, so unmapped values are flagged for review.",
   "category_map": {
-    "pen": "Writing", "pens": "Writing", "schreibgeraete": "Writing", "kugelschreiber": "Writing", "writing": "Writing",
-    "bag": "Bags & Travel", "bags": "Bags & Travel", "taschen": "Bags & Travel", "rucksack": "Bags & Travel",
-    "drinkware": "Drinkware", "trinkflaschen": "Drinkware", "becher": "Drinkware", "tassen": "Drinkware", "bottle": "Drinkware",
-    "tech": "Technology", "technik": "Technology", "usb": "Technology", "electronics": "Technology",
-    "giveaway": "Giveaways", "giveaways": "Giveaways", "werbeartikel": "Giveaways", "plush": "Giveaways", "plueschtiere": "Giveaways",
-    "textil": "Apparel", "textiles": "Apparel", "apparel": "Apparel", "kleidung": "Apparel"
+    "pen": "Büro & Schreibgeräte", "pens": "Büro & Schreibgeräte", "schreibgeraete": "Büro & Schreibgeräte", "kugelschreiber": "Büro & Schreibgeräte", "writing": "Büro & Schreibgeräte", "office": "Büro & Schreibgeräte",
+    "bag": "Taschen & Gepäck", "bags": "Taschen & Gepäck", "taschen": "Taschen & Gepäck", "rucksack": "Taschen & Gepäck", "gepaeck": "Taschen & Gepäck",
+    "drinkware": "Küche & Zuhause", "trinkflaschen": "Küche & Zuhause", "becher": "Küche & Zuhause", "tassen": "Küche & Zuhause", "bottle": "Küche & Zuhause", "kueche": "Küche & Zuhause", "home": "Küche & Zuhause",
+    "tech": "Elektronik & Mechanik", "technik": "Elektronik & Mechanik", "usb": "Elektronik & Mechanik", "electronics": "Elektronik & Mechanik", "elektronik": "Elektronik & Mechanik",
+    "giveaway": "Streuartikel", "giveaways": "Streuartikel", "streuartikel": "Streuartikel", "plush": "Streuartikel", "plueschtiere": "Streuartikel", "werbeartikel": "Streuartikel",
+    "textil": "Bekleidung", "textiles": "Bekleidung", "apparel": "Bekleidung", "kleidung": "Bekleidung", "bekleidung": "Bekleidung",
+    "werkzeug": "Werkzeug", "tools": "Werkzeug",
+    "auto": "Auto & Reisen", "reisen": "Auto & Reisen", "autozubehoer": "Auto & Reisen",
+    "wellness": "Wellness & Kosmetik", "kosmetik": "Wellness & Kosmetik",
+    "essen": "Essen & Trinken", "trinken": "Essen & Trinken", "food": "Essen & Trinken"
   },
   "fx_to_eur": { "EUR": 1.0, "USD": 0.92, "GBP": 1.17, "CHF": 1.03 }
 }
