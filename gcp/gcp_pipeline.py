@@ -41,8 +41,9 @@ def _dec(b):
 
 
 def bq(args, inp=None):
+    env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}  # force bq to emit UTF-8
     r = subprocess.run([BQ, "--quiet", "--headless"] + args,
-                       input=(inp.encode("utf-8") if inp else None), capture_output=True)
+                       input=(inp.encode("utf-8") if inp else None), capture_output=True, env=env)
     return types.SimpleNamespace(returncode=r.returncode, stdout=_dec(r.stdout), stderr=_dec(r.stderr))
 
 

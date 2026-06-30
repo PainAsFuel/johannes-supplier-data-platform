@@ -182,7 +182,7 @@
         <span class="l">${ISSUE[code] || code}</span><span class="code">${code}</span></div>`;
     }).join("") || `<div class="fix clean"><span class="c" style="color:var(--ok)">✓</span><span class="l">Keine Probleme — Feed ist sauber</span></div>`;
     const rows = s.products.map(p => {
-      const bd = (p._issues || []).map(i => `<span class="bp ${i.severity === "error" ? "e" : "w"}">${i.message}</span>`).join("") || '<span class="bok">OK</span>';
+      const bd = (p._issues || []).map(i => `<span class="bp ${i.severity === "error" ? "e" : "w"}">${ISSUE[i.code] || i.message}</span>`).join("") || '<span class="bok">OK</span>';
       return `<tr><td><b>${p.supplier_sku || "—"}</b></td><td>${p.name || "—"}</td><td>${euro(p.price_from_eur)}</td>
         <td>${p.stock_qty != null ? p.stock_qty.toLocaleString("de-DE") : "—"}</td><td><div class="bd">${bd}</div></td></tr>`;
     }).join("");

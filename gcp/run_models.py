@@ -38,7 +38,8 @@ def bq_run(project, args, sql=None):
     # SQL is passed via STDIN, not as an argument: bq is a .cmd wrapper on Windows
     # and a multi-line argument gets truncated at the first newline.
     cmd = [BQ, "--quiet", "--headless", "query", f"--project_id={project}", "--use_legacy_sql=false", "--format=none"] + args
-    r = subprocess.run(cmd, input=sql, text=True, capture_output=True, encoding="utf-8")
+    env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}  # make bq read our UTF-8 stdin as UTF-8
+    r = subprocess.run(cmd, input=sql, text=True, capture_output=True, encoding="utf-8", env=env)
     return r
 
 
