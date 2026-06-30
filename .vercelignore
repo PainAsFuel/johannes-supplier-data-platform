@@ -1,0 +1,9 @@
+# only the static dashboard is needed at deploy
+gcp/
+warehouse/
+data/
+tools/
+src/
+design/
+__pycache__/
+*.pyc
